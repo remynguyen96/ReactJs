@@ -1,0 +1,47 @@
+.App {
+  text-align: center; }
+
+.App-redux {
+  margin: 20px; }
+
+.menu {
+  display: flex;
+  justify-content: center;
+  list-style-type: none; }
+  .menu li {
+    margin-right: 35px; }
+    .menu li a {
+      font-size: 22px;
+      text-decoration: none;
+      color: #7075FF; }
+
+.about-us {
+  width: 350px;
+  height: 350px;
+  margin: 35px auto;
+  background: #4683FF;
+  position: relative; }
+  .about-us-bg {
+    width: 150px;
+    height: 150px;
+    border-radius: 90% 35% 0 40%;
+    background: #FF5E6A;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg); }
+
+.contact-me {
+  position: relative;
+  width: 700px;
+  height: 700px;
+  background: #DCFFD8;
+  overflow: hidden; }
+
+.contact-me-btn {
+  padding: 8%;
+  border-radius: 50%;
+  border: none;
+  background: #59FF57;
+  position: absolute;
+  transition: transform 0.3s cubic-bezier(0, 0.64, 0.52, 0.24); }

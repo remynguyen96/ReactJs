@@ -1,0 +1,27 @@
+.user-form {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    margin: 0 auto;
+}
+.part {
+    margin: 12px;
+}
+.part label {
+    width: 100px;
+    display: inline-block;
+}
+.part input {
+    width: 300px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    border: 1px solid #C3D8DA;
+}
+.part button {
+    padding: 8px 20px;
+    background: #58FF73;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+}
