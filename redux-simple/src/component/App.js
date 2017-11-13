@@ -5,8 +5,6 @@ import UserContainer from '../containers/user-list';
 import FoodDetailContainer from '../containers/food-detail';
 import {Switch, Route, Link} from 'react-router-dom'
 
-
-
 class AboutUs extends React.Component {
     constructor(props) {
         super(props);
@@ -114,16 +112,16 @@ class ContactMe extends React.Component {
 class Home extends React.Component {
 
     componentWillMount() {
-        // console.log("HEHEHE Home");
+        console.log("HEHEHE Home");
     }
 
 
     componentDidMount() {
-        // console.log("HEHEHE Home 2");
+        console.log("HEHEHE Home 2");
     }
 
     componentWillUnmount() {
-        // console.log("HEHEHE Exit Home");
+        console.log("HEHEHE Exit Home");
     }
 
     render() {
