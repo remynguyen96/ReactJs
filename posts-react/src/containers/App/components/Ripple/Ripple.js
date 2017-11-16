@@ -52,4 +52,8 @@ class Ripple extends React.Component {
         )
     }
 }
+
+
+
+// Ripple.propTypes = {}
 export default Ripple;

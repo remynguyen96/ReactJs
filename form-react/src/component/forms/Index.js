@@ -64,11 +64,11 @@ export default class FormsComponent extends React.Component {
             <div>
                 <UserFormComponent
                     notify={this.state.notify}
-                    updateNotify={status => this.stateNotify(status)}
-                    messageNotify={this.state.message}
-                    statusNotify={this.state.status}
-                    info={submission => this.saveInfo(submission)}
-                    editInfo={this.infoDetail}
+        updateNotify={status => this.stateNotify(status)}
+        // messageNotify={this.state.message}
+        statusNotify={this.state.status}
+        info={submission => this.saveInfo(submission)}
+        editInfo={this.infoDetail}
                 />
                 {/*<UserFormComponent notify={this.state.notify} info={submission => this.saveInfo(submission)}/>*/}
                 <hr/>

@@ -40,7 +40,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapStateToProps2 = (state) => ({
+
+const mapStateToProps2 = state => ({
     count: state.count
 });
 //or const mapStateToProps = (state) => ({count : state.count})
@@ -60,7 +61,8 @@ const mapStateToProps2 = (state) => ({
 //     decrement: () => ({type: 'DECREMENT'}),
 // })
 
-const mapDispatchToProps = (dispatch) =>  ({
+
+const mapDispatchToProps = dispatch =>  ({
     increment: () => dispatch({type: 'INCREMENT'}),
     decrement: () => dispatch({type: 'DECREMENT'}),
 })

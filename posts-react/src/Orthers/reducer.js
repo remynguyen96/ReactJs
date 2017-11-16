@@ -1,5 +1,7 @@
 import {combineReducers} from 'redux';
 
+import {reducers2, reducers1} from './Test/test-reducer'
+
 export const userByIdReducer = (state = {}, action) => {
     switch (action.type) {
         case 'RECEIVE_DATA':
@@ -60,6 +62,8 @@ export default combineReducers({
     postsById: postsByIdReducer,
     postListing: postListingReducer,
     count: counterReducer,
+    test: reducers1,
+    person: reducers2,
 });
 
 
