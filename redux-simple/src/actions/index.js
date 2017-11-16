@@ -10,12 +10,16 @@ import * as allTypes from './actionTypes';
 // }
 
 
-// export const selectFood = (food) => {
-//     return {
-//         type: allTypes.SELECT_FOOD,
-//         payload: food
-//     }
-// }
+export const selectFood = (food) => {
+    return {
+        type: allTypes.SELECT_FOOD,
+        payload: food
+    }
+}
+
+/**
+ * @Description: Recommend methods 2
+ */
 export function selectFood2(food) {
     console.log(food);
     return {
@@ -23,6 +27,7 @@ export function selectFood2(food) {
         payload: food
     }
 }
+
 
 export function addFood(food) {
     return {

@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 
 class Emitter extends Component {
-    constructor(props) {
-        super(props);
-    }
-
+    // constructor(props) {
+    //     super(props);
+    // }
     good = () => {
         console.log('asdsadsa');
     }

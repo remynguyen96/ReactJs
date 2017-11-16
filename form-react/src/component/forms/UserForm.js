@@ -30,21 +30,18 @@ export default class UserFormComponent extends React.Component {
             password: '',
         });
     }
-
     componentDidUpdate(prevProps, prevState) {
         if(this.props.editInfo) {
             let info = this.props.editInfo;
             this.setState(info);
         }
     }
-
-
-
     render() {
+        const {messageNotify, statusNotify, notify} = this.props
         return (
             <div>
-                { this.props.notify &&
-                  <Notify status={this.props.statusNotify} message={this.props.messageNotify}/>
+                { notify &&
+                  <Notify status={statusNotify} message={messageNotify}/>
                 }
                 <form className='user-form' onSubmit={e => this.onSubmit(e)} autoComplete='off'>
                     <div className='part'>
@@ -67,3 +64,14 @@ export default class UserFormComponent extends React.Component {
         )
     }
 }
+
+
+UserFormComponent.defaultProps = {
+    notify: '',
+    updateNotify: '',
+    messageNotify: 'GOOD BOY !!!!',
+    statusNotify: '',
+    editInfo: '',
+    info: '',
+}
+

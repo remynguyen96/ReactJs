@@ -21,6 +21,10 @@ import IndexRipple from './components/Ripple'
  */
 import ReselectRedux from '../../Orthers'
 
+/**
+ * @Description: Router React Dom examble;
+ */
+import ExambleRouter from '../../ExambleRouter'
 
 class App extends Component {
 
@@ -36,14 +40,16 @@ class App extends Component {
                         <Link className="link" to="/">App Container</Link>
                         <Link className="link" to="/todo">Todo Container</Link>
                         <Link className="link" to="/posts">Posts Container</Link>
+                        <Link className="link" to="/router">Router Examble</Link>
                     </Nav>
                     <Route exact path="/" component={props => <TabsAnimation {...props} />} />
                     <Route path="/todo" component={ReselectRedux} />
+                    <Route path="/router" component={ExambleRouter} />
                     <Switch>
                         <Route path="/posts" render={() => {
-                            return (
-                                <h2>hello havana !!!</h2>
-                            )
+                                return (
+                                    <h2>hello havana !!!</h2>
+                                )
                         }}>
                         </Route>
                     </Switch>

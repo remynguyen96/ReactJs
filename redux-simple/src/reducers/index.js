@@ -1,7 +1,7 @@
 import  FoodReducer from './foods-reducer';
 import  UserReducer from './users-reducer';
-import {combineReducers} from 'redux';
 import  ActiveFoodReducer from './active-food-reducer';
+import {combineReducers} from 'redux';
 
 const allReducers = combineReducers({
     foods: FoodReducer,

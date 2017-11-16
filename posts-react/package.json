@@ -24,6 +24,7 @@
     "start": "set PORT=4000 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "jsonserver": "json-server --watch db.json --port 8080"
   }
 }
