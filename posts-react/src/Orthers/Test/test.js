@@ -32,7 +32,8 @@ class Test extends React.Component {
     // }
     
     render() {
-        const {id, name, email, picture, phone} = this.props.listPerson;
+        const {email, phone} = this.props.listPerson;
+        // const {id, name, email, picture, phone} = this.props.listPerson;
         // console.log(this.props.listPerson)
         return (
             <div>

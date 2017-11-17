@@ -32,7 +32,7 @@ class Login extends React.Component {
     render() {
         const {redirectToReferrer} = this.state;
         const {from} = this.props.location.state || {from: {pathname: '/'}};
-        // console.log(this.props);
+
         if (redirectToReferrer) {
             return (
                 <Redirect to={from}/>
@@ -48,4 +48,5 @@ class Login extends React.Component {
     }
 }
 
-export default Login
+export default Login;
+

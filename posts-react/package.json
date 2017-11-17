@@ -15,10 +15,12 @@
     "react-router-redux": "^4.0.8",
     "react-scripts": "1.0.17",
     "redux": "^3.7.2",
+    "redux-form": "^7.1.2",
     "redux-logger": "^3.0.6",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
-    "styled-components": "^2.2.3"
+    "styled-components": "^2.2.3",
+    "superagent": "^3.8.1"
   },
   "scripts": {
     "start": "set PORT=4000 && react-scripts start",

@@ -1,5 +1,5 @@
 import {put, takeLatest, call} from "redux-saga/effects";
-import {RECEIVE_TEST, REQUEST_TEST, receiveTest, getPerson, GET_PERSON, SET_PERSON, setPerson} from "./test-action";
+import {REQUEST_TEST, receiveTest, getPerson, SET_PERSON} from "./test-action";
 import {fetchData} from "./api";
 
 function* testSaga(action) {

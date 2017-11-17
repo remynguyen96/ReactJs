@@ -26,6 +26,11 @@ import ReselectRedux from '../../Orthers'
  */
 import ExambleRouter from '../../ExambleRouter'
 
+/**
+ * @Description: Redux Form
+ */
+import FormRedux from '../../FormRedux';
+
 class App extends Component {
 
     componentWillMount() {
@@ -35,16 +40,17 @@ class App extends Component {
         return (
             <Router>
                 <div className="App">
-
                     <Nav>
                         <Link className="link" to="/">App Container</Link>
                         <Link className="link" to="/todo">Todo Container</Link>
                         <Link className="link" to="/posts">Posts Container</Link>
                         <Link className="link" to="/router">Router Examble</Link>
+                        <Link className="link" to="/redux-form">Redux Form</Link>
                     </Nav>
                     <Route exact path="/" component={props => <TabsAnimation {...props} />} />
                     <Route path="/todo" component={ReselectRedux} />
                     <Route path="/router" component={ExambleRouter} />
+                    <Route path="/redux-form" component={FormRedux} />
                     <Switch>
                         <Route path="/posts" render={() => {
                                 return (
