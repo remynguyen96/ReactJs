@@ -6,7 +6,7 @@ let count = 0;
 
 class Posts extends React.Component {
     render() {
-        console.log(`Posts render ${++count}`);
+        // console.log(`Posts render ${++count}`);
         return (
             <div>
                 <h3>Post (file Posts.js)</h3>
@@ -23,8 +23,6 @@ class Posts extends React.Component {
                             <li key={posts.id}>{`${posts.title} - ${posts.user.first} ${posts.user.last}`}</li>
                         )
                     })}
-
-
                 </ul>
             </div>
         )
@@ -46,14 +44,11 @@ const mapToStateProps = (state) => {
     return {
         posts: getListing(state),
     }
-}
-
-
+};
 
 /**
  * @Description: method2 use createStructuredSelector
  */
-
 
 const structuredSelector = createStructuredSelector({
     //get all methods in reducers
@@ -71,7 +66,6 @@ const structuredSelector = createStructuredSelector({
         })
     }
 });
-
 
 //default without reselect
 

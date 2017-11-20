@@ -59,9 +59,6 @@ const PrivateRoute = ({component: Component, ...rest}) => (
     }}/>
 );
 
-
-
-
 const Protected = () => <h3>Protected</h3>
 
 

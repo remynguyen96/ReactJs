@@ -6,7 +6,7 @@ import {createSelector} from 'reselect';
 let count = 0;
 class PostsByUser extends React.Component {
     render() {
-        console.log(`PostsByUser render ${++count}`);
+        // console.log(`PostsByUser render ${++count}`);
         return (
             <div>
                 <h3>Posts</h3>

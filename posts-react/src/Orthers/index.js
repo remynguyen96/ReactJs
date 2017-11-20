@@ -17,10 +17,10 @@ class ReselectRedux extends React.Component {
                 <Counter />
                 <h2>User 1</h2>
                 <PostsByUser user={'user-1'} />
-                <h2>User 2</h2>
-                <PostsByUser user={'user-2'} />
-                <h2>User 3</h2>
-                <PostsByUser user={'user-3'} />
+                {/*<h2>User 2</h2>*/}
+                {/*<PostsByUser user={'user-2'} />*/}
+                {/*<h2>User 3</h2>*/}
+                {/*<PostsByUser user={'user-3'} />*/}
                 {/*<pre>{JSON.stringify(initial, null, 2)}</pre>*/}
                 <hr/>
                 <Test />

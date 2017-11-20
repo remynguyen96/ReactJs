@@ -9,6 +9,7 @@ const defaultState = {};
 const sagaMiddleware = createSagaMiddleware();
 
 const middleware = [sagaMiddleware, reduxLogger];
+// const middleware = [sagaMiddleware];
 
 const store = createStore(reducers, defaultState, applyMiddleware(...middleware));
 

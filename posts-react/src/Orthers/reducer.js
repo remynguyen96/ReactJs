@@ -9,6 +9,7 @@ export const userByIdReducer = (state = {}, action) => {
         default: return state;
     }
 }
+
 function receiveData(state, action) {
     const newState = {...state};
     action.payload.users.forEach((user) => {
@@ -46,7 +47,7 @@ export const postListingReducer = (state = [], action) => {
     }
 }
 
-export function counterReducer(state = 1, action) {
+function counterReducer(state = 1, action) {
     switch (action.type) {
         case 'INCREMENT':
             return state+ 1;

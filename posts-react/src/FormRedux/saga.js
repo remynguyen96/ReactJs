@@ -3,6 +3,11 @@ import { fork, call, put } from 'redux-saga/effects';
 import request from 'superagent';
 
 
-export default function* mySaga() {
 
+
+
+export default function* root() {
+    yield [
+
+    ]
 }

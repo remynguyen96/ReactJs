@@ -1,15 +1,23 @@
 import React from 'react';
 import {Provider} from 'react-redux';
 import store from './store';
+import ContactForm from '../FormRedux/containers/ContactForm'
+
 
 class FormRedux extends React.Component {
     constructor(props) {
         super(props);
     }
 
+    submitForm = (value) => {
+        console.log(value)
+    }
+
     render() {
         return (
-            <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam at aut culpa delectus dolores, error fugit necessitatibus neque nesciunt obcaecati odio perspiciatis quam repellat rerum sunt. Dolores dolorum mollitia repellendus!</div>
+           <div>
+               <ContactForm onSubmit={this.submitForm} />
+           </div>
         )
     }
 }
@@ -19,4 +27,3 @@ export default () => (
         <FormRedux />
     </Provider>
 );
-

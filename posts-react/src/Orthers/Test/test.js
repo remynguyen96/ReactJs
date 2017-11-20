@@ -13,12 +13,12 @@ class Test extends React.Component {
 
     componentDidMount() {
         // this.props.request()
-        const obj = Map({
-            prop: 'test',
-            prop2: 'test2',
-            prop3: 'test3',
-        });
-        const obj2 = obj.set('prop', 'goodboy');
+        // const obj = Map({
+        //     prop: 'test',
+        //     prop2: 'test2',
+        //     prop3: 'test3',
+        // });
+        // const obj2 = obj.set('prop', 'goodboy');
     }
 
     mapKey = (params) => {
@@ -107,7 +107,7 @@ const mapDispatchToProps = dispatch => ({
     request: () => dispatch(requestTest()),
     receive: (test) => dispatch(receiveTest(test)),
     setPerson: () => dispatch(setPerson()),
-    getPerson: (personData) => dispatch(getPerson(personData)),
+    // getPerson: (personData) => dispatch(getPerson(personData)),
 });
 
 /*const mapDispatchToProps = dispatch => {

@@ -1,4 +1,5 @@
-import {put, takeLatest, call} from "redux-saga/effects";
+import {put, takeLatest, call, take, cancel} from "redux-saga/effects";
+import {LOCATION_CHANGE} from 'react-router-redux';
 import {REQUEST_TEST, receiveTest, getPerson, SET_PERSON} from "./test-action";
 import {fetchData} from "./api";
 
@@ -34,8 +35,11 @@ function* getPersonSaga() {
 }
 
 export default function* mySaga() {
-    yield takeLatest(REQUEST_TEST, testSaga);
-    yield takeLatest(SET_PERSON, getPersonSaga);
+    const watcher1 = yield takeLatest(REQUEST_TEST, testSaga);
+    const watcher2 = yield takeLatest(SET_PERSON, getPersonSaga);
+    yield take(LOCATION_CHANGE);
+    yield cancel(watcher1);
+    yield cancel(watcher2);
 }
 
 // inefficient way

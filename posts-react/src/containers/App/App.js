@@ -24,7 +24,8 @@ import ReselectRedux from '../../Orthers'
 /**
  * @Description: Router React Dom examble;
  */
-import ExambleRouter from '../../ExambleRouter'
+import ExambleRouter from '../../ExambleRouter';
+import ExambleRouter2 from '../../ExambleRouter2';
 
 /**
  * @Description: Redux Form
@@ -45,11 +46,13 @@ class App extends Component {
                         <Link className="link" to="/todo">Todo Container</Link>
                         <Link className="link" to="/posts">Posts Container</Link>
                         <Link className="link" to="/router">Router Examble</Link>
+                        <Link className="link" to="/router2">Router Examble 2</Link>
                         <Link className="link" to="/redux-form">Redux Form</Link>
                     </Nav>
                     <Route exact path="/" component={props => <TabsAnimation {...props} />} />
                     <Route path="/todo" component={ReselectRedux} />
                     <Route path="/router" component={ExambleRouter} />
+                    <Route path="/router2" component={ExambleRouter2} />
                     <Route path="/redux-form" component={FormRedux} />
                     <Switch>
                         <Route path="/posts" render={() => {
