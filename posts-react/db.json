@@ -20,5 +20,19 @@
       "url": "router2/list-posts",
       "id": "7SuVz4Y"
     }
+  ],
+  "auth": [
+    {
+        "email": "user1",
+        "password": "user1"
+    },
+    {
+      "email": "user2",
+      "password": "user2"
+    },
+    {
+      "email": "user3",
+      "password": "user3"
+    }
   ]
 }

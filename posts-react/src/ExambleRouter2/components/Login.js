@@ -22,6 +22,7 @@ const Login = styled.div`
                     border: none;
                     border-radius: 2px;
                     font-size: .9em;
+                    margin-left: 25px;
               }
           }
     

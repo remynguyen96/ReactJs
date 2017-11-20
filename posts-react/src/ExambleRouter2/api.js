@@ -9,3 +9,14 @@ export const menuApi = async () => {
     .catch(err => console.log(err));
     return res;
 }
+
+export const loginApi = async (data) => {
+    const res = await fetch(`${url}/auth`, {
+        method: 'POST',
+        body: data,
+        headers: new Headers({'Content-Type':'application/json'})
+    })
+    .then(res => res.json())
+    .catch(err => console.log(err));
+    return res;
+}

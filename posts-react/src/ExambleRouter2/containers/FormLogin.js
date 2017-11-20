@@ -3,25 +3,22 @@ import Proptypes from 'prop-types';
 import LoginComponent from '../components/Login'
 
 class FormLogin extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
-        const { email, email2, password, password2, submitForm } = this.props;
+        const { valuePassword, valueEmail, email, password, submitForm, resetForm } = this.props;
         return (
             <LoginComponent>
-                <form onSubmit={(e) => submitForm(e)}>
+                <form onSubmit={e => submitForm(e)}>
                     <div className={`part-login`}>
                         <label htmlFor="email">Email</label>
-                        <input type="text" name='email' id='email' value={email} onChange={(e) => email2(e)} />
+                        <input type="text" name='email' id='email' value={valueEmail} onChange={e => email(e)} />
                     </div>
                     <div className={`part-login`}>
                         <label htmlFor="pass">Password</label>
-                        <input type="password" name='pass' id='pass' value={password} onChange={(e) => password2(e)} />
+                        <input type="password" name='password' value={valuePassword} id='pass' onChange={e => password(e)} />
                     </div>
                     <div className={`part-login`}>
                         <button type='submit'>Login Form</button>
+                        <button type='button' onClick={() => resetForm()}>Reset Form</button>
                     </div>
                 </form>
             </LoginComponent>
@@ -30,13 +27,16 @@ class FormLogin extends React.Component {
 }
 
 FormLogin.propTypes = {
-    email: Proptypes.string,
-    password: Proptypes.string,
-    submitForm: Proptypes.func,
-}
+    email: Proptypes.func.isRequired,
+    password: Proptypes.func.isRequired,
+    submitForm: Proptypes.func.isRequired,
+    resetForm: Proptypes.func.isRequired,
+};
+
+
 FormLogin.defaultProps = {
-    email: '',
-    password: '',
+ 
 }
 
 export default FormLogin;
+

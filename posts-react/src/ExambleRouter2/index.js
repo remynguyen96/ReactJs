@@ -44,7 +44,7 @@ class ExambleRouter2 extends React.Component {
 
     render() {
         const { menus } = this.props;
-        console.log(menus);
+        // console.log(menus);
         return (
             <Router>
                 <div>
@@ -71,12 +71,13 @@ class ExambleRouter2 extends React.Component {
 
 
 ExambleRouter2.propTypes = {
-    menus: Proptypes.array,
-    callMenu: Proptypes.func,
+    // menus: Proptypes.arrayOf(Proptypes.object),
+    // menus: Proptypes.array.isRequired,
+    callMenu: Proptypes.func.isRequired,
 }
 
 ExambleRouter2.defaultProps = {
-
+    menus: [],
 }
 
 const mapStateToProps = createStructuredSelector({

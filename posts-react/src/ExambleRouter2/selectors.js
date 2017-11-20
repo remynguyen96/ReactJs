@@ -5,6 +5,18 @@ const makeSelectorMenu = (state) => createSelector(
     (menu) => menu
 );
 
+const makeSelectorLogin = (state) => createSelector(
+    (state) => state.login,
+    (formData) => formData,
+)
+
+
+
+
+const getDataLogin = state => state.login;
+
 export {
-    makeSelectorMenu
+    makeSelectorMenu,
+    makeSelectorLogin,
+    getDataLogin,
 }
