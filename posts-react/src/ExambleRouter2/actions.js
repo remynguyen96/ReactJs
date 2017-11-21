@@ -1,26 +1,21 @@
 export const API_MENU = "API_MENU";
-export const CALL_API_MENU = "CALL_API_MENU";
 export const LOGIN = "LOGIN";
 export const CHECK_LOGIN = "CHECK_LOGIN";
 export const RESETLOGIN = "RESETLOGIN";
 export const CHANGE_EMAIL = "CHANGE_EMAIL";
 export const CHANGE_PASSWORD = "CHANGE_PASSWORD";
-
+export const AUTH_GUARD_SUCCESS = "AUTH_GUARD_SUCCESS";
+export const AUTH_GUARD_FAIL = "AUTH_GUARD_FAIL";
 // export function requestTest() {
 //     return {
 //         type: REQUEST_TEST,
 //     }
 // }
 
-export const loginForm = (dataLogin) => ({
-   type: LOGIN,
-    dataLogin,
+export const getApiMenu = (data) => ({
+    type: API_MENU,
+    data
 });
-
-export const checkLogin = (checkData) => ({
-    type: CHECK_LOGIN,
-    checkData
-})
 
 export const resetForm = () => ({
     type: RESETLOGIN,
@@ -36,14 +31,22 @@ export const changePassword = (password) => ({
     password
 });
 
-export const getApiMenu = (data) => ({
-    type: API_MENU,
-    data
+export const loginForm = (infoLogin) => ({
+   type: LOGIN,
+    infoLogin,
 });
 
-export const getCallMenu = () => ({
-    type: CALL_API_MENU,
-})
+export const guardSuccess = (dataGuard) => ({
+    type: AUTH_GUARD_SUCCESS,
+    dataGuard
+});
+export const guardFail = (message) => ({
+    type: AUTH_GUARD_FAIL,
+    message
+});
+
+
+
 
 
 

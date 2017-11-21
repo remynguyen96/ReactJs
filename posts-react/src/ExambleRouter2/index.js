@@ -6,9 +6,10 @@ import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import NavComponent from './components/Nav';
 import ContentMenuComponent from './components/ContentMenu';
 import {connect} from 'react-redux';
+import { ConnectedRouter } from 'react-router-redux';
+import createHistory from 'history/createBrowserHistory';
 import {createStructuredSelector} from 'reselect'
 import {makeSelectorMenu} from './selectors';
-import {getCallMenu} from './actions'
 
 /**
  * @Description: Containers
@@ -17,7 +18,9 @@ import Login from './containers/Login';
 import Posts from './containers/Posts';
 import SignUp from './containers/SignUp';
 import Dashboard from './containers/Dashboard';
+import AuthGuard from './containers/AuthGuard';
 
+const history = createHistory();
 
 const CustomLink = ({...spread}) => (
     <Route path={`/${spread.url}`} children={({match}) => {
@@ -35,16 +38,15 @@ class ExambleRouter2 extends React.Component {
     }
 
     componentDidMount() {
-       this.props.callMenu();
+       
     }
 
     componentWillUnmount() {
-        this.props.callMenu([]);
+
     }
 
     render() {
         const { menus } = this.props;
-        // console.log(menus);
         return (
             <Router>
                 <div>
@@ -60,7 +62,7 @@ class ExambleRouter2 extends React.Component {
                            <Route path='/router2/login' component={Login} />
                            <Route path='/router2/sign-up' component={SignUp} />
                            <Route path='/router2/list-posts' component={Posts} />
-                           <Route path='/router2/dashboard' component={Dashboard} />
+                           <AuthGuard path='/router2/dashboard' component={Dashboard}></AuthGuard>
                        </Switch>
                     </ContentMenuComponent>
                 </div>
@@ -71,9 +73,10 @@ class ExambleRouter2 extends React.Component {
 
 
 ExambleRouter2.propTypes = {
-    // menus: Proptypes.arrayOf(Proptypes.object),
-    // menus: Proptypes.array.isRequired,
-    callMenu: Proptypes.func.isRequired,
+    menus: Proptypes.oneOfType([
+        Proptypes.array,
+        Proptypes.object,
+    ]),
 }
 
 ExambleRouter2.defaultProps = {
@@ -84,16 +87,15 @@ const mapStateToProps = createStructuredSelector({
     menus: makeSelectorMenu(),
 });
 
-const mapDispatchToProps = dispatch => ({
-    callMenu: () => dispatch(getCallMenu()),
-});
 
-const ExambleContainer = connect(mapStateToProps, mapDispatchToProps)(ExambleRouter2);
+const ExambleContainer = connect(mapStateToProps)(ExambleRouter2);
 
 
 export default () => (
     <Provider store={store}>
-        <ExambleContainer />
+        <ConnectedRouter history={history}>
+            <ExambleContainer />
+        </ConnectedRouter>
     </Provider>
 )
 

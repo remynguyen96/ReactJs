@@ -1,12 +1,35 @@
-import {createStore, applyMiddleware} from 'redux';
+import {createStore, applyMiddleware, compose} from 'redux';
 import logger from 'redux-logger'
 import reducers from './reducers';
 import createSagaMiddleware from 'redux-saga';
 import mySaga from './saga';
+import createHistory from 'history/createBrowserHistory';
+import {routerMiddleware} from 'react-router-redux'
 
+/**
+ * @Description: Setup redux extentions
+ */
+const composeEnhancers =
+    typeof window === 'object' &&
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
+        window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+            // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+        }) : compose;
+/**
+ * @Description: Setup Saga and Logger Redux, React Router Redux
+ */
+const history = createHistory();
 const sagaMiddleware = createSagaMiddleware();
-const middlewares = [sagaMiddleware, logger];
-const store = createStore(reducers, applyMiddleware(...middlewares));
+const middleware = [sagaMiddleware, routerMiddleware(history), logger];
+
+/**
+ * @Description: Setup Store with saga middlewares and redux tools !
+ */
+const enhancer = composeEnhancers(
+    applyMiddleware(...middleware),
+    // other store enhancers if any
+);
+const store = createStore(reducers, enhancer);
 sagaMiddleware.run(mySaga);
 
 export default store;

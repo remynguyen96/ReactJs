@@ -10,10 +10,9 @@ export const menuApi = async () => {
     return res;
 }
 
-export const loginApi = async (data) => {
+export const loginApi = async () => {
     const res = await fetch(`${url}/auth`, {
-        method: 'POST',
-        body: data,
+        method: 'GET',
         headers: new Headers({'Content-Type':'application/json'})
     })
     .then(res => res.json())

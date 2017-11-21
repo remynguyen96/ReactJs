@@ -3,7 +3,8 @@ import FormLogin from './FormLogin';
 import {makeSelectorLogin} from '../selectors';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
-import * as actions from '../actions'
+import * as actions from '../actions';
+
 
 class Login extends React.Component {
     constructor(props) {
@@ -41,8 +42,11 @@ class Login extends React.Component {
 
     render() {
         const {email, password} = this.state;
+        const {loading} = this.props.dataLogin.toJS();
         return (
-               <FormLogin valueEmail={email} valuePassword={password} email={this.handleChange} password={this.handleChange} submitForm={this.submitLogin} resetForm={this.resetForm} />
+            <div>
+                <FormLogin checkLogin={loading} valueEmail={email} valuePassword={password} email={this.handleChange} password={this.handleChange} submitForm={this.submitLogin} resetForm={this.resetForm} />
+            </div>
         )
     }
 }
