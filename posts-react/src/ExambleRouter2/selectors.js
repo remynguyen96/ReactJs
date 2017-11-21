@@ -16,10 +16,14 @@ const makeSelectorGuard = (state) => createSelector(
 )
 
 const getDataLogin = state => state.login;
+const getDataGuard = state => state.authGuard;
+const getDataMenu = state => state.menu;
 
 export {
     makeSelectorMenu,
     makeSelectorLogin,
     makeSelectorGuard,
     getDataLogin,
+    getDataGuard,
+    getDataMenu,
 }

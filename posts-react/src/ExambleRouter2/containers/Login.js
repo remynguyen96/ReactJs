@@ -1,9 +1,10 @@
 import React from 'react';
-import FormLogin from './FormLogin';
-import {makeSelectorLogin} from '../selectors';
+import FormLogin from '../components/Login/';
+import {makeSelectorLogin, makeSelectorGuard} from '../selectors';
 import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import * as actions from '../actions';
+import {Redirect} from 'react-router-dom';
 
 
 class Login extends React.Component {
@@ -36,24 +37,37 @@ class Login extends React.Component {
         this.setState({
             email: '',
             password: '',
-        })
+        });
         this.props.resetForm();
     }
 
     render() {
         const {email, password} = this.state;
         const {loading} = this.props.dataLogin.toJS();
+        const {message, guard} = this.props.guard.toJS();
         return (
             <div>
-                <FormLogin checkLogin={loading} valueEmail={email} valuePassword={password} email={this.handleChange} password={this.handleChange} submitForm={this.submitLogin} resetForm={this.resetForm} />
+                {guard
+                    ? <Redirect to={{pathname: '/router2/dashboard'}} />
+                    : <FormLogin
+                        checkLogin={loading}
+                        valueEmail={email}
+                        valuePassword={password}
+                        email={this.handleChange}
+                        password={this.handleChange}
+                        submitForm={this.submitLogin}
+                        resetForm={this.resetForm}
+                        message={message}
+                    />
+                }
             </div>
         )
     }
 }
 
-
 const mapStateToProps = createStructuredSelector({
     dataLogin: makeSelectorLogin(),
+    guard: makeSelectorGuard(),
 });
 
 const mapDispatchToProps = dispatch => ({

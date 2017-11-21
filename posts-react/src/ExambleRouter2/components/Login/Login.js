@@ -43,6 +43,12 @@ const Login = styled.div`
            0% { opacity: 0; transform: scale(.8)}
             50% { opacity: 1; transform: scale(1.1)}
           }
+          
+          & .errors {
+            font-size: 1em;
+            color: #FF4A50;
+            font-weight: 600;
+          }
     `;
 
 export default Login;

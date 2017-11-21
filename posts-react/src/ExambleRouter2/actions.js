@@ -1,5 +1,6 @@
 export const API_MENU = "API_MENU";
 export const LOGIN = "LOGIN";
+export const LOGOUT = "LOGOUT";
 export const CHECK_LOGIN = "CHECK_LOGIN";
 export const RESETLOGIN = "RESETLOGIN";
 export const CHANGE_EMAIL = "CHANGE_EMAIL";
@@ -40,10 +41,16 @@ export const guardSuccess = (dataGuard) => ({
     type: AUTH_GUARD_SUCCESS,
     dataGuard
 });
+
 export const guardFail = (message) => ({
     type: AUTH_GUARD_FAIL,
     message
 });
+
+export const logout = () => ({
+    type: LOGOUT
+});
+
 
 
 

@@ -42,12 +42,12 @@ const login = (state = initialStateLogin, action) => {
     }
 };
 
-
 const initialStateGuard = fromJS({
   guard: false,
   infomation: {},
   message: '',
 });
+
 export const authGuard = (state = initialStateGuard, action) => {
     switch(action.type) {
         case actions.AUTH_GUARD_SUCCESS:

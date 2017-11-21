@@ -5,6 +5,7 @@ import * as actions from './actions';
 import * as selector from './selectors'
 import {isEqual} from 'lodash';
 
+
 function* checkLogin() {
     try {
         const resultLogin = yield select(selector.getDataLogin);
@@ -27,6 +28,16 @@ function* checkLogin() {
     }
 }
 
+function* logoutUser() {
+    try {
+        const message = 'Logout Successful !';
+        return yield put(actions.guardFail(message))
+    } catch(err) {
+        console.log(err);
+    }
+}
+
+
 function* getMenu() {
     try {
         const dataMenu = yield call(menuApi);
@@ -41,6 +52,7 @@ function* getMenu() {
 export default function* onLoadWatcher() {
     yield fork(getMenu);
     const watcher = yield takeLatest(actions.LOGIN, checkLogin);
+    const watcher2 = yield takeLatest(actions.LOGOUT, logoutUser);
     yield take(LOCATION_CHANGE);
     // yield cancel(watcher);
 }

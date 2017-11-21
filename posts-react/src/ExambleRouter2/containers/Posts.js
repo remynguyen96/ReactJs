@@ -8,7 +8,9 @@ class Posts extends React.Component {
 
     render() {
         return (
-            <div></div>
+           <div>
+                <h2>This is Page Posts</h2>
+           </div>
         )
     }
 }
