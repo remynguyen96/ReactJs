@@ -11,12 +11,19 @@ import {
   EDIT_PRODUCTS,
   DELETE_PRODUCTS,
   API_FAIL,
+  GET_PRODUCTS_SUCCESS,
 } from './constants';
 
-export function getAllProducts(listProducts) {
+export function getAllProducts(products) {
   return {
     type: GET_PRODUCTS,
-    listProducts,
+    products,
+  };
+}
+
+export function getProductsSuccess() {
+  return {
+    type: GET_PRODUCTS_SUCCESS,
   };
 }
 

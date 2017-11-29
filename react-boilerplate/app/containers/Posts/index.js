@@ -25,6 +25,7 @@ export class Posts extends React.Component { // eslint-disable-line react/prefer
           <title>Posts</title>
           <meta name="description" content="Description of Posts" />
         </Helmet>
+        <h3>POST</h3>
       </div>
     );
   }

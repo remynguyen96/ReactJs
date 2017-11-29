@@ -16,7 +16,7 @@ const makeSelectProducts = () => createSelector(
 
 const makeSelectListProducts = () => createSelector(
   selectProductsDomain,
-  (substate) => substate.get('listProducts')
+  (substate) => substate.get('listProducts'),
 );
 
 export default makeSelectProducts;

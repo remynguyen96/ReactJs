@@ -7,7 +7,7 @@ class DetailProducts extends React.Component {
 
   render() {
     return (
-      <div>List Products</div>
+      <div>DETAIL</div>
     );
   }
 }
