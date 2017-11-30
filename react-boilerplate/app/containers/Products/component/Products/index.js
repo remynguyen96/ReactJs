@@ -19,7 +19,7 @@ import AddProducts from '../AddProducts/Loadable';
 import EditProducts from '../EditProducts/Loadable';
 import DetailProducts from '../DetailProducts/Loadable';
 
-function Products({ listProducts, onSubmitForm }) {
+function ProductsComponent({ listProducts, onSubmitForm }) {
   return (
     <Router>
       <div>
@@ -30,15 +30,14 @@ function Products({ listProducts, onSubmitForm }) {
         </Navbar>
         <Content>
           <Switch>
-
-            <Route path="/products/lists-products" children={(props) => (
+            <Route exact path="/products/lists-products" render={(props) => (
               <ListProducts
                 listProducts={listProducts}
                 router={{...props}}
               />
             )} />
 
-            <Route path="/products/add" children={(props) => (
+            <Route exact path="/products/add" render={(props) => (
               <AddProducts
                 router={{ ...props }}
                 onSubmitForm={onSubmitForm}
@@ -52,7 +51,7 @@ function Products({ listProducts, onSubmitForm }) {
             <Route path="/products/:id" children={(props) => (
               <DetailProducts router={{ ...props }} />
             )} />
-            
+
           </Switch>
         </Content>
       </div>
@@ -60,7 +59,7 @@ function Products({ listProducts, onSubmitForm }) {
   );
 }
 
-Products.propTypes = {
+ProductsComponent.propTypes = {
   listProducts: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.object,
@@ -68,4 +67,4 @@ Products.propTypes = {
 };
 
 
-export default Products;
+export default ProductsComponent;

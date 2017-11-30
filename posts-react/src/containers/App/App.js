@@ -26,6 +26,7 @@ import ReselectRedux from '../../Orthers'
  */
 import ExambleRouter from '../../ExambleRouter';
 import ExambleRouter2 from '../../ExambleRouter2';
+import ExambleRouter3 from '../../ExambleRouter3';
 
 /**
  * @Description: Redux Form
@@ -47,12 +48,14 @@ class App extends Component {
                         <Link className="link" to="/posts">Posts Container</Link>
                         <Link className="link" to="/router">Router Examble</Link>
                         <Link className="link" to="/router2">Router Examble 2</Link>
+                        <Link className="link" to="/router3">Router Examble 3</Link>
                         <Link className="link" to="/redux-form">Redux Form</Link>
                     </Nav>
                     <Route exact path="/" component={props => <TabsAnimation {...props} />} />
                     <Route path="/todo" component={ReselectRedux} />
                     <Route path="/router" component={ExambleRouter} />
                     <Route path="/router2" component={ExambleRouter2} />
+                    <Route path="/router3" component={ExambleRouter3} />
                     <Route path="/redux-form" component={FormRedux} />
                     <Switch>
                         <Route path="/posts" render={() => {
@@ -98,7 +101,7 @@ Hold me so I'm not shooting stars`,
             aTab: 'Tab Link 1',
             bTab: 'Tab 2',
             cTab: 'Tab 3',
-        }
+        };
         const tabsLink = [];
         for (let nav of Object.entries(link)) {
             const tab = <TabItem key={nav[0]}>{nav[1]}</TabItem>;

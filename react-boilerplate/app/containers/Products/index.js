@@ -10,7 +10,6 @@ import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 import {createStructuredSelector} from 'reselect';
 import {compose} from 'redux';
-import {Redirect} from 'react-router-dom';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectProducts, {makeSelectListProducts} from './selectors';
@@ -44,7 +43,7 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     // };
     // this.props.addProducts(dataForm);
     // this.props.router.history.push('/');
-    this.props.router.history.push('/products/5');
+    this.props.router.history.push('/products/lists-products');
   }
 
   componentWillReceiveProps(nextProps) {
