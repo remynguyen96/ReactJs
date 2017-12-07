@@ -12,8 +12,8 @@ export const getProductsApi = async () => {
   return listProducts;
 };
 
-export const addProductsApi = async () => {
-
+export const addProductsApi = async (product) => {
+  return product;
 };
 
 export const editProductsApi = async () => {

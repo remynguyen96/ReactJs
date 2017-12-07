@@ -41,9 +41,9 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     //   price: 670,
     //   updatedAt: "2017-11-29T03:11:54.000Z",
     // };
-    // this.props.addProducts(dataForm);
+    this.props.addProducts(dataForm);
     // this.props.router.history.push('/');
-    this.props.router.history.push('/products/lists-products');
+    // this.props.router.history.push('/products/lists-products');
   }
 
   componentWillReceiveProps(nextProps) {

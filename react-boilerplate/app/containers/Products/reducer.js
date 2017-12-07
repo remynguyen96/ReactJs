@@ -8,6 +8,7 @@ import { fromJS } from 'immutable';
 import * as typeActions from './constants';
 import {GET_PRODUCTS} from "./constants";
 import {ADD_PRODUCTS} from "./constants";
+import {ADD_PRODUCTS_SUCCESS} from "./constants";
 
 const initialState = fromJS({
   listProducts: [
@@ -31,7 +32,8 @@ function productsReducer(state = initialState, action) {
     case typeActions.GET_PRODUCTS:
       return state.set('listProducts', action.products);
     case typeActions.ADD_PRODUCTS:
-      // console.log(state.set('listProducts', products.concat(action.product)).toJS());
+      // add before [] console.log([action.product].concat(products));
+      // add after [] console.log(products.concat(action.product));
       return state.set('listProducts', [action.product].concat(products));
     case typeActions.EDIT_PRODUCTS:
       return state;

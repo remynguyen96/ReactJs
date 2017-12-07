@@ -8,6 +8,7 @@ import {
   GET_PRODUCTS,
   GET_PRODUCT_DETAIL,
   ADD_PRODUCTS,
+  ADD_PRODUCTS_SUCCESS,
   EDIT_PRODUCTS,
   DELETE_PRODUCTS,
   API_FAIL,
@@ -37,6 +38,13 @@ export function getProduct(product) {
 export function addProduct(product) {
   return {
     type: ADD_PRODUCTS,
+    product,
+  };
+}
+
+export function addProductSuccess(product) {
+  return {
+    type: ADD_PRODUCTS_SUCCESS,
     product,
   };
 }
