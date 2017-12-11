@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 import {Helmet} from 'react-helmet';
 import {createStructuredSelector} from 'reselect';
 import {compose} from 'redux';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
 import makeSelectProducts, {makeSelectListProducts} from './selectors';
@@ -19,12 +20,23 @@ import * as actions from './actions';
 /**
  * @Description: Component
  */
-import ProductsComponent from './component/Products/Loadable';
+import ListProducts from './component/ListProducts/Loadable';
+import AddProducts from './component/AddProducts/Loadable';
+import EditProducts from './component/EditProducts/Loadable';
+import DetailProducts from './component/DetailProducts/Loadable';
+
+
+import Navbar from './Navbar';
+import Link from './Link';
+import Content from './Content';
 
 export class Products extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   constructor(props) {
     super(props);
+    this.state = {
+      url: ''
+    }
   }
 
   componentDidMount() {
@@ -33,14 +45,9 @@ export class Products extends React.Component { // eslint-disable-line react/pre
   }
 
   submitForm = (dataForm) => {
-    // const demo = {
-    //   createdAt: "2017-11-29T03:11:54.000Z",
-    //   description: "YEPPPPPPP",
-    //   images: "http://lorempixel.com/640/480/fashion",
-    //   name: "CHEESEAAAAAA",
-    //   price: 670,
-    //   updatedAt: "2017-11-29T03:11:54.000Z",
-    // };
+    // const files = dataForm.images;
+    // const imageUrl = URL.createObjectURL(files);
+    // console.log(imageUrl);
     this.props.addProducts(dataForm);
     // this.props.router.history.push('/');
     // this.props.router.history.push('/products/lists-products');
@@ -51,18 +58,52 @@ export class Products extends React.Component { // eslint-disable-line react/pre
   }
 
   render() {
-    const {listProducts} = this.props;
+    const {listProducts, router} = this.props;
     return (
-      <div>
-        <Helmet>
-          <title>Products</title>
-          <meta name="description" content="Description of Products"/>
-        </Helmet>
-        <ProductsComponent
-          listProducts={listProducts}
-          onSubmitForm={this.submitForm}
-        />
-      </div>
+      <Router>
+           <div>
+             <Helmet>
+               <title>Products</title>
+               <meta name="description" content="Description of Products"/>
+             </Helmet>
+
+             <Navbar>
+               <Link to="/products/add">Add Products</Link>
+             </Navbar>
+             <ListProducts
+               listProducts={listProducts}
+               history={router.history}
+             />
+
+             <Content>
+               <Switch>
+                 <Route exact path="/products/add" render={({history}) => {
+                   // console.log(history);
+                   return (
+                     <AddProducts
+                       router={{history}}
+                     />
+                   )
+                 }}/>
+
+                 <Route  path="/products/:id" children={(props) => {
+                   return (
+                     <DetailProducts
+                       router={{...props}}
+                       listProducts={listProducts}
+                     />
+                   )
+                 }}/>
+
+                 <Route exact path="/products/edit/:id" children={(props) => (
+                   <EditProducts router={{...props}}/>
+                 )}/>
+                 {/*<Route path="" render={() => (<h1>Not Found </h1>)}/>*/}
+               </Switch>
+             </Content>
+
+           </div>
+      </Router>
     );
   }
 }

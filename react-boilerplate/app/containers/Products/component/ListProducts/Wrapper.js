@@ -9,6 +9,7 @@ export default styled.div`
     padding: 10px;
     background: #eceaea;
     border-radius: 4px;
+    cursor: pointer;
     img {
       width: 120px;
       height: 120px;

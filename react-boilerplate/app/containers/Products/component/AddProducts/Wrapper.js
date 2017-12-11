@@ -23,10 +23,11 @@ export default styled.form`
   } 
   .upload {
     border: 1px solid #6e6e6e;
-    padding: 12px 25px;
-    margin: 5px;
+    padding: 4px 20px;
+    margin: 4px 20px;
     border-radius: 4px;
     margin-left: 120px;
+    height: 40px;
   }
   .submit {
     border: 1px solid #6e6e6e;

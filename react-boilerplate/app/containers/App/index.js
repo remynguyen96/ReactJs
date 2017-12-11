@@ -43,13 +43,13 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
 
-        <Route path="/products" children={(props) => (
+        <Route exact path="/products" children={(props) => (
           <ProductsPage router={{...props}} />
         )} />
 
-        <Route path="/posts" component={PostsPage} />
+        <Route exact path="/posts" component={PostsPage} />
 
-        <Route path="/users" component={UsersPage} />
+        <Route exact path="/users" component={UsersPage} />
 
         <Route path="" component={NotFoundPage} />
       </Switch>

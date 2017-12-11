@@ -16,9 +16,7 @@ function* getProducts() {
 
 function* addProducts(action) {
   try {
-    // const product = yield select(selectors.makeSelectListProducts());
-    console.log(action.product);
-    const sendProduct = yield call(services.addProductsApi(action.product));
+    yield call(services.addProductsApi, action.product);
   } catch(err) {
     yield put(actions.apiError(err));
   }

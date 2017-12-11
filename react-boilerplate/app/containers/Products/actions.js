@@ -38,16 +38,10 @@ export function getProduct(product) {
 export function addProduct(product) {
   return {
     type: ADD_PRODUCTS,
-    product,
+    product
   };
 }
 
-export function addProductSuccess(product) {
-  return {
-    type: ADD_PRODUCTS_SUCCESS,
-    product,
-  };
-}
 
 export function editProduct(product) {
   return {
