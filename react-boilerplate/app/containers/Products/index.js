@@ -6,14 +6,13 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
-import {connect} from 'react-redux';
-import {Helmet} from 'react-helmet';
-import {createStructuredSelector} from 'reselect';
-import {compose} from 'redux';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import { connect } from 'react-redux';
+import { createStructuredSelector } from 'reselect';
+import { compose } from 'redux';
+import { Route, Switch } from 'react-router-dom';
 import injectSaga from 'utils/injectSaga';
 import injectReducer from 'utils/injectReducer';
-import makeSelectProducts, {makeSelectListProducts} from './selectors';
+import makeSelectProducts, { makeSelectListProducts } from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import * as actions from './actions';
@@ -24,86 +23,87 @@ import ListProducts from './component/ListProducts/Loadable';
 import AddProducts from './component/AddProducts/Loadable';
 import EditProducts from './component/EditProducts/Loadable';
 import DetailProducts from './component/DetailProducts/Loadable';
-
-
-import Navbar from './Navbar';
-import Link from './Link';
-import Content from './Content';
+import Wrapper from './Wrapper';
 
 export class Products extends React.Component { // eslint-disable-line react/prefer-stateless-function
 
   constructor(props) {
     super(props);
     this.state = {
-      url: ''
-    }
+      url: '',
+    };
   }
 
   componentDidMount() {
     this.props.getProducts();
-    // this.props.router.history.push('/products/lists-products');
   }
 
-  submitForm = (dataForm) => {
-    // const files = dataForm.images;
-    // const imageUrl = URL.createObjectURL(files);
+  addProduct = (productForm) => {
+    // const imageUrl = URL.createObjectURL(productForm.images);
     // console.log(imageUrl);
-    this.props.addProducts(dataForm);
-    // this.props.router.history.push('/');
-    // this.props.router.history.push('/products/lists-products');
-  }
+    this.props.addProducts(productForm);
+    this.props.router.history.push('/products');
+  };
 
-  componentWillReceiveProps(nextProps) {
+  deleteProduct = (id) => {
+    this.props.router.history.push('/products');
+    console.log(id);
+  };
+
+  editProduct = (id) => {
+    this.props.router.history.push(`/products/edit/${id}`);
+    console.log(id);
+  };
+
+  // componentWillReceiveProps(nextProps) {
     // console.log(nextProps);
-  }
+  // }
 
   render() {
-    const {listProducts, router} = this.props;
+    const { listProducts } = this.props;
     return (
-      <Router>
-           <div>
-             <Helmet>
-               <title>Products</title>
-               <meta name="description" content="Description of Products"/>
-             </Helmet>
+      <Wrapper>
+        <Switch>
+          <Route
+            exact
+            path="/products"
+            render={({ history }) => (
+              <ListProducts
+                listProducts={listProducts}
+                history={history}
+              />
+            )}
+          />
 
-             <Navbar>
-               <Link to="/products/add">Add Products</Link>
-             </Navbar>
-             <ListProducts
-               listProducts={listProducts}
-               history={router.history}
-             />
+          <Route
+            path="/products/add"
+            render={() => (
+              <AddProducts
+                onSubmitForm={this.addProduct}
+              />
+            )}
+          />
 
-             <Content>
-               <Switch>
-                 <Route exact path="/products/add" render={({history}) => {
-                   // console.log(history);
-                   return (
-                     <AddProducts
-                       router={{history}}
-                     />
-                   )
-                 }}/>
+          <Route
+            path="/products/edit/:id"
+            render={(props) => (
+              <EditProducts router={{ ...props }} />
+            )}
+          />
 
-                 <Route  path="/products/:id" children={(props) => {
-                   return (
-                     <DetailProducts
-                       router={{...props}}
-                       listProducts={listProducts}
-                     />
-                   )
-                 }}/>
-
-                 <Route exact path="/products/edit/:id" children={(props) => (
-                   <EditProducts router={{...props}}/>
-                 )}/>
-                 {/*<Route path="" render={() => (<h1>Not Found </h1>)}/>*/}
-               </Switch>
-             </Content>
-
-           </div>
-      </Router>
+          <Route
+            path="/products/:id"
+            render={({ match }) => (
+              <DetailProducts
+                match={match}
+                listProducts={listProducts}
+                deleteProduct={this.deleteProduct}
+                editProduct={this.editProduct}
+              />
+            )}
+          />
+        </Switch>
+      </Wrapper>
     );
   }
 }
@@ -118,6 +118,10 @@ Products.propTypes = {
   ]).isRequired,
 };
 
+Products.defaultTypes = {
+  router: {},
+};
+
 const mapStateToProps = createStructuredSelector({
   products: makeSelectProducts(),
   listProducts: makeSelectListProducts(),
@@ -127,6 +131,8 @@ function mapDispatchToProps(dispatch) {
   return {
     getProducts: () => dispatch(actions.getProductsSuccess()),
     addProducts: (product) => dispatch(actions.addProduct(product)),
+    // editProducts: (id) => dispatch(actions.editProduct(id)),
+    // deleteProducts: (id) => dispatch(actions.addProduct(product)),
   };
 }
 

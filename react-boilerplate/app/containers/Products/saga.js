@@ -3,7 +3,7 @@ import { LOCATION_CHANGE } from 'react-router-redux';
 import * as typeActions from './constants';
 import * as actions from './actions';
 import * as services from './service';
-import * as selectors from './selectors';
+// import * as selectors from './selectors';
 
 function* getProducts() {
   try {
@@ -17,7 +17,7 @@ function* getProducts() {
 function* addProducts(action) {
   try {
     yield call(services.addProductsApi, action.product);
-  } catch(err) {
+  } catch (err) {
     yield put(actions.apiError(err));
   }
 }

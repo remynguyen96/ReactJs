@@ -18,8 +18,6 @@ import UsersPage from 'containers/Users/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import DetailProducts from 'containers/Products/component/DetailProducts';
-
 
 const AppWrapper = styled.div`
   max-width: calc(${window.innerWidth}px + 16px * 2);
@@ -43,17 +41,15 @@ export default function App() {
       <Switch>
         <Route exact path="/" component={HomePage} />
 
-        <Route exact path="/products" children={(props) => (
-          <ProductsPage router={{...props}} />
-        )} />
+        <Route path="/products" render={(props) => (<ProductsPage router={props} />)} />
 
-        <Route exact path="/posts" component={PostsPage} />
+        <Route path="/posts" component={PostsPage} />
 
-        <Route exact path="/users" component={UsersPage} />
+        <Route path="/users" component={UsersPage} />
 
         <Route path="" component={NotFoundPage} />
       </Switch>
-      {/*<Footer />*/}
+      <Footer />
     </AppWrapper>
   );
 }
