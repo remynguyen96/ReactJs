@@ -6,9 +6,7 @@
 
 import { fromJS } from 'immutable';
 import * as typeActions from './constants';
-import {GET_PRODUCTS} from "./constants";
-import {ADD_PRODUCTS} from "./constants";
-import {ADD_PRODUCTS_SUCCESS} from "./constants";
+
 
 const initialState = fromJS({
   listProducts: [
@@ -27,18 +25,26 @@ const initialState = fromJS({
 });
 
 function productsReducer(state = initialState, action) {
-  const products = state.get('listProducts');
+  // const products = state.get('listProducts');
   switch (action.type) {
     case typeActions.GET_PRODUCTS:
       return state.set('listProducts', action.products);
     case typeActions.ADD_PRODUCTS:
-      // add before [] console.log([action.product].concat(products));
-      // add after [] console.log(products.concat(action.product));
-      return state.set('listProducts', [action.product].concat(products));
+      return state.update('listProducts', (lists) => [action.product].concat(lists));
     case typeActions.EDIT_PRODUCTS:
+      // const test = state.update('listProducts', (list) => list.find((item) => item.id === (action.id)));
+      const test = state.update('listProducts', (list) => {
+        console.log(list);
+      });
+      // const test = state.update('listProducts',
+      //   (list) => list
+      //     .update(list
+      //     .findIndex((item) => item.id === action.id), () => ({...action.product})
+      //     ));
       return state;
     case typeActions.DELETE_PRODUCTS:
-      return state;
+      return state.update('listProducts',
+            (lists) => lists.filter((product) => product.id !== action.idProduct));
     default:
       return state;
   }

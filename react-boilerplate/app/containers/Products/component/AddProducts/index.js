@@ -51,11 +51,11 @@ class AddProducts extends React.Component {
         </Helmet>
         <div>
           <label htmlFor="name">Name</label>
-          <input autoComplete="off" type="text" onChange={(e) => this.onChangeInput(e)} value={name} name="name" id="name" />
+          <input autoComplete="off" type="text" onChange={this.onChangeInput} value={name} name="name" id="name" />
         </div>
         <div>
           <label htmlFor="description">Description</label>
-          <input autoComplete="off" type="text" onChange={(e) => this.onChangeInput(e)} id="description" value={description} name="description" />
+          <input autoComplete="off" type="text" onChange={this.onChangeInput} id="description" value={description} name="description" />
         </div>
         <div>
           <label htmlFor="price">Price</label>

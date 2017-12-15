@@ -30,7 +30,10 @@ export class Products extends React.Component { // eslint-disable-line react/pre
   constructor(props) {
     super(props);
     this.state = {
-      url: '',
+      name: '',
+      description: '',
+      images: {},
+      price: '',
     };
   }
 
@@ -38,22 +41,56 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     this.props.getProducts();
   }
 
+  /*
+   * @Description: Add Product
+   */
   addProduct = (productForm) => {
     // const imageUrl = URL.createObjectURL(productForm.images);
     // console.log(imageUrl);
     this.props.addProducts(productForm);
     this.props.router.history.push('/products');
   };
-
+  /*
+   * @Description: Delete Product
+   */
   deleteProduct = (id) => {
     this.props.router.history.push('/products');
-    console.log(id);
+    this.props.deleteProducts(id);
   };
-
+  /*
+   * @Description: Edit Product
+   */
   editProduct = (id) => {
     this.props.router.history.push(`/products/edit/${id}`);
-    console.log(id);
   };
+
+  changeInput = ({ target }) => {
+    const { value, id } = target;
+    this.setState({
+      [id] : value,
+    });
+  }
+
+  uploadFile = ({ target }, img) => {
+    const { files } = target;
+    if (files.length > 0) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        img.src = reader.result;
+      };
+      reader.readAsDataURL(files[0]);
+      this.setState({
+        images: files[0],
+      });
+    }
+  }
+
+
+  submitEdit = (event, id) => {
+    event.preventDefault();
+    this.props.editProducts(id, this.state);
+    // this.props.router.history.push(`/products/${id}`);
+  }
 
   // componentWillReceiveProps(nextProps) {
     // console.log(nextProps);
@@ -63,46 +100,55 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     const { listProducts } = this.props;
     return (
       <Wrapper>
-        <Switch>
-          <Route
-            exact
-            path="/products"
-            render={({ history }) => (
-              <ListProducts
-                listProducts={listProducts}
-                history={history}
-              />
-            )}
-          />
+        {listProducts && (
+          <Switch>
+            <Route
+              exact
+              path="/products"
+              render={({ history }) => (
+                <ListProducts
+                  listProducts={listProducts}
+                  history={history}
+                />
+              )}
+            />
 
-          <Route
-            path="/products/add"
-            render={() => (
-              <AddProducts
-                onSubmitForm={this.addProduct}
-              />
-            )}
-          />
+            <Route
+              path="/products/add"
+              render={() => (
+                <AddProducts
+                  onSubmitForm={this.addProduct}
+                />
+              )}
+            />
 
-          <Route
-            path="/products/edit/:id"
-            render={(props) => (
-              <EditProducts router={{ ...props }} />
-            )}
-          />
+            <Route
+              path="/products/edit/:id"
+              render={({ match }) => (
+                <EditProducts
+                  match={match}
+                  listProducts={listProducts}
+                  infoProduct={this.state}
+                  uploadFile={this.uploadFile}
+                  changeInput={this.changeInput}
+                  submitEdit={this.submitEdit}
+                />
+              )}
+            />
 
-          <Route
-            path="/products/:id"
-            render={({ match }) => (
-              <DetailProducts
-                match={match}
-                listProducts={listProducts}
-                deleteProduct={this.deleteProduct}
-                editProduct={this.editProduct}
-              />
-            )}
-          />
-        </Switch>
+            <Route
+              path="/products/:id"
+              render={({ match }) => (
+                <DetailProducts
+                  match={match}
+                  listProducts={listProducts}
+                  deleteProduct={this.deleteProduct}
+                  editProduct={this.editProduct}
+                />
+              )}
+            />
+          </Switch>
+        )}
       </Wrapper>
     );
   }
@@ -112,14 +158,18 @@ Products.propTypes = {
   router: PropTypes.object.isRequired,
   getProducts: PropTypes.func.isRequired,
   addProducts: PropTypes.func.isRequired,
+  deleteProducts: PropTypes.func,
+  editProducts: PropTypes.func,
   listProducts: PropTypes.oneOfType([
     PropTypes.object,
     PropTypes.array,
-  ]).isRequired,
+  ]),
 };
 
 Products.defaultTypes = {
   router: {},
+  deleteProducts: () => null,
+  editProducts: () => null,
 };
 
 const mapStateToProps = createStructuredSelector({
@@ -131,8 +181,8 @@ function mapDispatchToProps(dispatch) {
   return {
     getProducts: () => dispatch(actions.getProductsSuccess()),
     addProducts: (product) => dispatch(actions.addProduct(product)),
-    // editProducts: (id) => dispatch(actions.editProduct(id)),
-    // deleteProducts: (id) => dispatch(actions.addProduct(product)),
+    editProducts: (id, product) => dispatch(actions.editProduct(id, product)),
+    deleteProducts: (id) => dispatch(actions.deleteProduct(id)),
   };
 }
 

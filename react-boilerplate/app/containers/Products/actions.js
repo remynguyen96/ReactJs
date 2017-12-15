@@ -43,9 +43,10 @@ export function addProduct(product) {
 }
 
 
-export function editProduct(product) {
+export function editProduct(id, product) {
   return {
     type: EDIT_PRODUCTS,
+    id,
     product,
   };
 }
