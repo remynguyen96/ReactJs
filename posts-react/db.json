@@ -1,0 +1,38 @@
+{
+  "menu": [
+    {
+      "label": "Login",
+      "url": "router2/login",
+      "id": "wvbEBwm"
+    },
+    {
+      "label": "Sign Up",
+      "url": "router2/sign-up",
+      "id": "JUgT~TX"
+    },
+    {
+      "label": "Dashboard",
+      "url": "router2/dashboard",
+      "id": "9LmRjez"
+    },
+    {
+      "label": "List Posts",
+      "url": "router2/list-posts",
+      "id": "7SuVz4Y"
+    }
+  ],
+  "auth": [
+    {
+      "email": "user1",
+      "password": "user1"
+    },
+    {
+      "email": "user2",
+      "password": "user2"
+    },
+    {
+      "email": "user3",
+      "password": "user3"
+    }
+  ]
+}
