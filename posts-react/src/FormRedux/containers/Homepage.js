@@ -6,7 +6,7 @@ const Wrapper = styled.div`
 
 `;
 
-class FormAsync extends React.Component {
+class Homepage extends React.Component {
     render() {
         return (
             <Wrapper>
@@ -16,5 +16,5 @@ class FormAsync extends React.Component {
     }
 }
 
-export default FormAsync;
+export default Homepage;
 

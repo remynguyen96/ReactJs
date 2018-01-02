@@ -4,7 +4,7 @@ import reducers from './reducers';
 import createSagaMiddleware from 'redux-saga';
 import mySaga from './saga';
 import createHistory from 'history/createBrowserHistory';
-import {routerMiddleware} from 'react-router-redux';
+import { routerMiddleware } from 'react-router-redux';
 
 /**
  * @Description: Setup redux extentions

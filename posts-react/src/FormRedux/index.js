@@ -2,12 +2,16 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import store from './store';
 import {Switch, Route, Link} from 'react-router-dom';
-import FormSimple from './containers/FormSimple';
+import {ConnectedRouter} from 'react-router-redux';
+import createHistory from "history/createBrowserHistory";
 import ContactForm from './containers/ContactForm';
-import FormAsync from './containers/FormAsync';
+import Login from './containers/Login';
+import Homepage from './containers/Homepage';
+
+
+
 
 class FormRedux extends React.Component {
-
     componentWillMount() {
         this.style = {
             margin: '0 25px 0 0',
@@ -17,18 +21,17 @@ class FormRedux extends React.Component {
             padding: '8px 25px',
         }
     }
-
     render() {
         return (
            <div>
                <Link style={this.style} to='/redux-form/contact-form'>Contact Form</Link>
-               <Link style={this.style} to='/redux-form/form-simple'>Form Simple</Link>
-               <Link style={this.style} to='/redux-form/form-async'>Form Async</Link>
+               <Link style={this.style} to='/redux-form/login'>Login</Link>
+               <Link style={this.style} to='/redux-form/homepage'>Homepage</Link>
                <div style={{marginTop: '30px'}}>
                    <Switch>
                        <Route path='/redux-form/contact-form' component={ContactForm}></Route>
-                       <Route path='/redux-form/form-simple' component={FormSimple}></Route>
-                       <Route path='/redux-form/form-async' component={FormAsync}></Route>
+                       <Route path='/redux-form/login' component={Login}></Route>
+                       <Route path='/redux-form/homepage' component={Homepage}></Route>
                    </Switch>
                </div>
            </div>
@@ -36,8 +39,11 @@ class FormRedux extends React.Component {
     }
 }
 
+const history = createHistory();
 export default () => (
     <Provider store={store}>
-        <FormRedux />
+        <ConnectedRouter history={history}>
+            <FormRedux />
+        </ConnectedRouter>
     </Provider>
 );
