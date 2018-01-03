@@ -6,6 +6,7 @@ import {AUTH_FAIL, AUTH_SUCCESS} from './constants';
 const initialize = {
     isAuthenticated: false,
 };
+
 const authReducer = (state = initialize, action) => {
     switch (action.type) {
         case AUTH_SUCCESS:

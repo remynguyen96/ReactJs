@@ -7,9 +7,7 @@ import createHistory from "history/createBrowserHistory";
 import ContactForm from './containers/ContactForm';
 import Login from './containers/Login';
 import Homepage from './containers/Homepage';
-
-
-
+import PrivateRoute from './containers/PrivateRoute';
 
 class FormRedux extends React.Component {
     componentWillMount() {
@@ -29,9 +27,9 @@ class FormRedux extends React.Component {
                <Link style={this.style} to='/redux-form/homepage'>Homepage</Link>
                <div style={{marginTop: '30px'}}>
                    <Switch>
-                       <Route path='/redux-form/contact-form' component={ContactForm}></Route>
-                       <Route path='/redux-form/login' component={Login}></Route>
-                       <Route path='/redux-form/homepage' component={Homepage}></Route>
+                       <Route path='/redux-form/contact-form' component={ContactForm} />
+                       <Route path='/redux-form/login' component={Login} />
+                       <PrivateRoute exact path='/redux-form/homepage' component={Homepage} />
                    </Switch>
                </div>
            </div>
