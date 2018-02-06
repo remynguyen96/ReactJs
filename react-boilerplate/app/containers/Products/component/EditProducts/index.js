@@ -8,15 +8,25 @@ const urlImages = `${urlServer}/image-products/`;
 
 class EditProducts extends React.Component {
 
+  constructor(props) {
+    super(props);
+    this.product = null;
+    this.id = null;
+  }
+
+  componentWillMount() {
+    const { match, listProducts, infoUpdate } = this.props;
+    this.id = match.params.id;
+    this.product = listProducts.find((prod) => prod.id === parseInt(id, 10));
+    infoUpdate(this.product);
+  }
 
   render() {
-    const { match, listProducts, changeInput, submitEdit, uploadFile } = this.props;
-    const { id } = match.params;
-    const product = listProducts.find((prod) => prod.id === parseInt(id, 10));
-    if (!product) {
+    const { changeInput, submitEdit, uploadFile } = this.props;
+    if (!this.product) {
       return null;
     }
-    const { name, price, images, description } = product;
+    const { name, price, images, description } = this.product;
     return (
       <ErrorBoundary>
         <Wrapper>

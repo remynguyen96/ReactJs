@@ -16,7 +16,12 @@ function* getProducts() {
 
 function* addProducts(action) {
   try {
-    yield call(services.addProductsApi, action.product);
+    const images = action.product.images;
+    if (Object.keys(images).length === 0 && images.constructor === Object) {
+      yield call(services.addWithoutImg, action.product);
+    } else {
+      yield call(services.addProductsApi, action.product);
+    }
   } catch (err) {
     yield put(actions.apiError(err));
   }
@@ -27,5 +32,5 @@ export default function* defaultSaga() {
   const watcher2 = yield takeLatest(typeActions.ADD_PRODUCTS, addProducts);
   yield take(LOCATION_CHANGE);
   yield cancel(watcher1);
-  yield cancel(watcher2);
+  // yield cancel(watcher2);
 }

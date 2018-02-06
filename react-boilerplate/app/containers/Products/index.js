@@ -21,7 +21,7 @@ import * as actions from './actions';
  */
 import ListProducts from './component/ListProducts/Loadable';
 import AddProducts from './component/AddProducts/Loadable';
-import EditProducts from './component/EditProducts/Loadable';
+import EditProducts from "./component/EditProducts/Loadable";
 import DetailProducts from './component/DetailProducts/Loadable';
 import Wrapper from './Wrapper';
 
@@ -30,10 +30,10 @@ export class Products extends React.Component { // eslint-disable-line react/pre
   constructor(props) {
     super(props);
     this.state = {
-      name: '',
-      description: '',
+      name: "",
+      description: "",
       images: {},
-      price: '',
+      price: "",
     };
   }
 
@@ -48,13 +48,13 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     // const imageUrl = URL.createObjectURL(productForm.images);
     // console.log(imageUrl);
     this.props.addProducts(productForm);
-    this.props.router.history.push('/products');
+    this.props.router.history.push("/products");
   };
   /*
    * @Description: Delete Product
    */
   deleteProduct = (id) => {
-    this.props.router.history.push('/products');
+    this.props.router.history.push("/products");
     this.props.deleteProducts(id);
   };
   /*
@@ -85,6 +85,10 @@ export class Products extends React.Component { // eslint-disable-line react/pre
     }
   }
 
+  infoUpdate = (data) => {
+     console.log(data);
+     this.setState(data);
+  }
 
   submitEdit = (event, id) => {
     event.preventDefault();
@@ -128,7 +132,7 @@ export class Products extends React.Component { // eslint-disable-line react/pre
                 <EditProducts
                   match={match}
                   listProducts={listProducts}
-                  infoProduct={this.state}
+                  infoUpdate={this.infoUpdate}
                   uploadFile={this.uploadFile}
                   changeInput={this.changeInput}
                   submitEdit={this.submitEdit}

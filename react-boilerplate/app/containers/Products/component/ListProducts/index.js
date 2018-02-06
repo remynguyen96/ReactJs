@@ -13,9 +13,13 @@ import Navbar from './Navbar';
 import Link from './Link';
 import Wrapper from './Wrapper';
 
-const urlImages = `${urlServer}/image-products/`;
 
 class ListProducts extends React.Component {
+
+
+  componentWillMount() {
+    this.urlImages = `${urlServer}/image-products/`;
+  }
 
   getDetail = (id) => {
     this.props.history.push(`/products/${id}`);
@@ -29,7 +33,7 @@ class ListProducts extends React.Component {
       <span>Images: </span>
       <span>Price: {product.price}</span>
       <span>createdAt: {moment(product.createdAt).fromNow()}</span>
-      <img src={urlImages + product.images} alt={product.name} />
+      <img src={this.urlImages + product.images} alt={product.name} />
     </div>
   );
 

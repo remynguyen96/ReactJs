@@ -32,6 +32,21 @@ export const addProductsApi = async (product) => {
     return addProducts;
 };
 
+export const addWithoutImg = async (product) => {
+    const addProducts = await fetch(`${urlApi}/add`, {
+      method: 'post',
+      headers: {
+        'Content-Type' : 'application/json',
+      },
+      body: JSON.stringify(product),
+    })
+    .then((res) => res.json())
+    .catch((err) => {
+      throw err;
+    });
+    return addProducts;
+}
+
 export const editProductsApi = async () => {
 
 };
