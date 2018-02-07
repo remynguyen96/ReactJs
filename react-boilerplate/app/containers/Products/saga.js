@@ -1,4 +1,4 @@
-import {take, takeLatest, call, put, cancel, select} from 'redux-saga/effects';
+import { take, takeLatest, call, put, cancel } from 'redux-saga/effects';
 import { LOCATION_CHANGE } from 'react-router-redux';
 import * as typeActions from './constants';
 import * as actions from './actions';
@@ -29,7 +29,7 @@ function* addProducts(action) {
 
 export default function* defaultSaga() {
   const watcher1 = yield takeLatest(typeActions.GET_PRODUCTS_SUCCESS, getProducts);
-  const watcher2 = yield takeLatest(typeActions.ADD_PRODUCTS, addProducts);
+  yield takeLatest(typeActions.ADD_PRODUCTS, addProducts);
   yield take(LOCATION_CHANGE);
   yield cancel(watcher1);
   // yield cancel(watcher2);

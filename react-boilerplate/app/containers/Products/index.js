@@ -86,8 +86,10 @@ export class Products extends React.Component { // eslint-disable-line react/pre
   }
 
   infoUpdate = (data) => {
-     console.log(data);
-     this.setState(data);
+    // for (let [key, value] of Object.entries(data)) {
+    //
+    // }
+    // this.setState(data);
   }
 
   submitEdit = (event, id) => {
@@ -192,8 +194,8 @@ function mapDispatchToProps(dispatch) {
 
 const withConnect = connect(mapStateToProps, mapDispatchToProps);
 
-const withReducer = injectReducer({key: 'products', reducer});
-const withSaga = injectSaga({key: 'products', saga});
+const withReducer = injectReducer({ key: 'products', reducer });
+const withSaga = injectSaga({ key: 'products', saga });
 
 export default compose(
   withReducer,

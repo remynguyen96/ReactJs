@@ -71,5 +71,3 @@ ListProducts.defaultProps = {
 };
 
 export default ListProducts;
-
-

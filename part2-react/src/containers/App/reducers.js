@@ -11,7 +11,7 @@ const reducers = (state = initialState, action) => {
         case USER_LOGIN_REQUEST:
             return state;
         case USER_LOGIN_SUCCESS:
-            return state = action.payload ;
+            return state = action.payload;
         default:
             return state;
     }

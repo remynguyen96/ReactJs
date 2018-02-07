@@ -51,22 +51,24 @@ class Tabs extends React.Component {
         // console.log(JSON.stringify(this.state, null, 2));
         return (
             <nav className="navTabs" ref={el => this.rootNav = el}>
-                {React.Children.map(this.props.children, (child, i) => {
-                    // let classTab = `tabs`;
-                    // if (child.key === this.props.active) {
-                    //     classTab = `${classTab} activeTab`;
-                    // }
-                    return (
-                      <li className="tabs"
-                          onClick={()  => {
-                              this.props.onChange(child.key);
-                          }}
-                          ref={el => this.els[child.key] = el}
-                      >
-                          {child}
-                      </li>
-                    )
-                })}
+                {
+                    React.Children.map(this.props.children, (child, i) => {
+                        // let classTab = `tabs`;
+                        // if (child.key === this.props.active) {
+                        //     classTab = `${classTab} activeTab`;
+                        // }
+                        return (
+                            <li className="tabs"
+                                onClick={() => {
+                                    this.props.onChange(child.key);
+                                }}
+                                ref={el => this.els[child.key] = el}
+                            >
+                                {child}
+                            </li>
+                        )
+                    })
+                }
                 <span className="underline" style={this.getUnderlineStyle()} />
             </nav>
         )
@@ -82,3 +84,7 @@ Tabs.defaultProps = {
 }
 
 export default Tabs;
+
+
+
+

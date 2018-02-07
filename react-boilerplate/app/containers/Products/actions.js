@@ -38,7 +38,7 @@ export function getProduct(product) {
 export function addProduct(product) {
   return {
     type: ADD_PRODUCTS,
-    product
+    product,
   };
 }
 

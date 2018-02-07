@@ -6,6 +6,7 @@
     "history": "^4.7.2",
     "immutable": "^3.8.2",
     "lodash": "^4.17.4",
+    "mathjs-expression-parser": "^1.0.0",
     "prop-types": "^15.6.0",
     "react": "^16.1.0",
     "react-dom": "^16.1.0",

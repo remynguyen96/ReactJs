@@ -18,7 +18,7 @@ let ContactForm = props => {
                 <label htmlFor="email">Email</label>
                 <Field type="email" component="input" name="email" />
             </div>
-            <button type="submit">Submit</button>
+            <button type="submitjj">Submit</button>             `
         </form>
     )
 };

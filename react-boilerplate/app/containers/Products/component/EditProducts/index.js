@@ -17,22 +17,24 @@ class EditProducts extends React.Component {
   componentWillMount() {
     const { match, listProducts, infoUpdate } = this.props;
     this.id = match.params.id;
-    this.product = listProducts.find((prod) => prod.id === parseInt(id, 10));
+    this.product = listProducts.find((prod) => prod.id === parseInt(this.id, 10));
     infoUpdate(this.product);
   }
+
 
   render() {
     const { changeInput, submitEdit, uploadFile } = this.props;
     if (!this.product) {
       return null;
     }
-    const { name, price, images, description } = this.product;
+
+    const { images, name, description, price } = this.product;
     return (
       <ErrorBoundary>
         <Wrapper>
           <div className="part">
             <label htmlFor="name">ID</label>
-            <span>{id}</span>
+            <span>{this.id}</span>
           </div>
           <div className="part">
             <label htmlFor="name">Name</label>
@@ -53,7 +55,7 @@ class EditProducts extends React.Component {
             <button type="button" onClick={() => this.inputFile.click()} className="btn btn-file">Upload</button>
           </div>
           <div className="part">
-            <button onClick={(e) => submitEdit(e, parseInt(id, 10))} type="submit" className="btn btn-submit">Submit Edit</button>
+            <button onClick={(e) => submitEdit(e, parseInt(this.id, 10))} type="submit" className="btn btn-submit">Submit Edit</button>
           </div>
         </Wrapper>
       </ErrorBoundary>
@@ -70,6 +72,7 @@ EditProducts.propTypes = {
   ]).isRequired,
   changeInput: PropTypes.func,
   uploadFile: PropTypes.func,
+  infoUpdate: PropTypes.func,
   submitEdit: PropTypes.func,
 }
 
@@ -78,6 +81,7 @@ EditProducts.defaultProps = {
   listProducts: null,
   changeInput: () => null,
   uploadFile: () => null,
+  infoUpdate: ({}) => null,
   submitEdit: () => null,
 }
 

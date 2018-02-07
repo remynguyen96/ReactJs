@@ -1,13 +1,23 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {getApi} from './actions';
+import Wrapper from './Wrapper';
+import ItemProduct from './components/ItemProduct'
 
 class Products extends Component {
     render() {
         return (
-            <div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore eius fuga incidunt ipsum laudantium, maxime molestiae necessitatibus officia, provident quia reiciendis tenetur vel. Culpa eum facere fuga illum, nobis voluptatum.</p>
-            </div>
+            <Wrapper>
+              <h2 className='title'>List All Products</h2>
+              <ItemProduct />
+              <ItemProduct />
+              <ItemProduct />
+              <ItemProduct />
+
+              <ItemProduct />
+              <ItemProduct />
+              <ItemProduct />
+              <ItemProduct />
+            </Wrapper>
         )
     }
 }

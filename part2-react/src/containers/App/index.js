@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter, Route, Link, Switch} from 'react-router-dom';
-import Wrapper from './wrapper';
-import Products from '../Products'
-import logo from '../../images/nodejs.png';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import Wrapper from './Wrapper';
+import Auth from '../Auth'
+import Homepage from '../Homepage'
 
 class App extends Component {
 
@@ -11,30 +11,17 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <Wrapper>
-                    <nav className='header'>
-                        <Link to='/'><img src={logo} className='logo' alt="logo"/></Link>
-                        <Link to='/login' className='btn-login'>Login</Link>
-                    </nav>
-                    <div className='content'>
-                        <Switch>
-                            {/*<IndexRoute component={ProductProfile} />*/}
-                            <Route exact path='/' component={Products} />
-                            <Route path='/login' render={() => (
-                                <div>
-                                    <h1>Login Page</h1>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto asperiores atque aut beatae, dignissimos dolores, earum eligendi enim et eveniet facere impedit minus molestias obcaecati placeat quibusdam rem tempore.</p>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto asperiores atque aut beatae, dignissimos dolores, earum eligendi enim et eveniet facere impedit minus molestias obcaecati placeat quibusdam rem tempore.</p>
-                                </div>
-                            )} />
-                        </Switch>
-                    </div>
+                    <Switch>
+                        <Route exact path='/' component={Homepage} />
+                        <Route path='/sign-up' component={Auth} />
+                        <Route path='/login' component={Auth} />
+                    </Switch>
                 </Wrapper>
             </BrowserRouter>
 
         )
     }
 }
-
 
 const mapStateToProps = state => ({});
 

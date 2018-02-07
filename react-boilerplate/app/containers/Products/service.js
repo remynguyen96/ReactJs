@@ -1,4 +1,5 @@
-import {urlServer} from 'utils/helper';
+import { urlServer } from 'utils/helper';
+
 const urlApi = `${urlServer}/api/products`;
 export const getProductsApi = async () => {
   const listProducts = await fetch(`${urlApi}`, {
@@ -14,22 +15,22 @@ export const getProductsApi = async () => {
 };
 
 export const addProductsApi = async (product) => {
-    let formData = new FormData();
-    for(let [key, val] of Object.entries(product)) {
-      formData.append(key, val);
-    }
-    const addProducts = await fetch(`${urlApi}/add`, {
-      method: 'post',
-      headers: {
-        'X-Requested-With' : 'XMLHttpRequest',
-      },
-      body: formData,
-    })
+  const formData = new FormData();
+  for (let [key, val] of Object.entries(product)) {
+    formData.append(key, val);
+  }
+  const addProducts = await fetch(`${urlApi}/add`, {
+    method: 'post',
+    headers: {
+      'X-Requested-With': 'XMLHttpRequest',
+    },
+    body: formData,
+  })
     .then((res) => res.json())
     .catch((err) => {
       throw err;
     });
-    return addProducts;
+  return addProducts;
 };
 
 export const addWithoutImg = async (product) => {
