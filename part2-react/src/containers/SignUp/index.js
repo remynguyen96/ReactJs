@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {compose} from "redux";
+import {connect} from "react-redux";
 import Wrapper from './Wrapper';
-import HeaderLink from '../../../components/Header/HeaderLink';
+import HeaderLink from '../../components/Header/HeaderLink';
 
 class SignUp extends Component {
     render() {
@@ -37,4 +37,4 @@ const mapDispatchToProps = () => ({
 
 
 
-export default compose(mapStateToProps, mapDispatchToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
