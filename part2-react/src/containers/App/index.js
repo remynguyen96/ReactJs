@@ -13,12 +13,11 @@ class App extends Component {
                 <Wrapper>
                     <Switch>
                         <Route exact path='/' component={Homepage} />
-                        <Route path='/sign-up' component={Auth} />
                         <Route path='/login' component={Auth} />
+                        <Route path='/sign-up' component={Auth} />
                     </Switch>
                 </Wrapper>
             </BrowserRouter>
-
         )
     }
 }

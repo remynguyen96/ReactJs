@@ -43,15 +43,6 @@ export default styled.div `
         padding: 16px;
     }
 
-    & .btn-register {
-        padding: 8px 20px;
-        margin-top: -20px;
-        display: flex;
-        justify-content: flex-end;
-        color: #0b83ff;
-        font-weight: 600;  
-    }
-
     & .modal-content {
         background-color: #fefefe;
         margin: 0 auto 10%;

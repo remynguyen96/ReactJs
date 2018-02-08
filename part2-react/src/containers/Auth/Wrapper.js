@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  & .fa-long-arrow-left {
-    font-size: 2em;
-    color: #717275;
-    padding: 15px;
-  }  
-    
+    & .back-link, & .auth-link {
+        display: inline-flex;
+        flex-direction: column;
+    }
+    & .auth-link {
+        float: right;
+    }
+    & .fa-long-arrow-left, & .fa-long-arrow-right {
+        align-self: center;
+        font-size: 2em;
+        color: #717275;
+    }  
 `;

@@ -1,8 +1,14 @@
 import { combineReducers } from 'redux';
-import reducerApp from '../containers/App/reducers';
-import reducerProduct from '../containers/Products/reducers';
+import apps from '../containers/App/reducers';
+import login from '../containers/Login/reducers';
+// import reducerProduct from '../containers/SignUp/reducers';
+import products from '../containers/Products/reducers';
+import { routerReducer } from 'react-router-redux';
+
 
 export default combineReducers({
-    products: reducerProduct,
-    apps: reducerApp,
+    router: routerReducer,
+    products,
+    apps,
+    login,
 });
