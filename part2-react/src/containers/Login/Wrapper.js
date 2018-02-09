@@ -5,15 +5,6 @@ export default styled.div `
     padding-top: 25px;
     width: 100%;
     height: 100%;
-    
-    & input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-    }
 
     & button {
         background-color: #4CAF50;

@@ -5,7 +5,7 @@ import Wrapper from './Wrapper';
 import Login from '../Login';
 import SignUp from '../SignUp';
 import HeaderLink from '../../components/Header/HeaderLink';
-
+import router from '../../utils/routes';
 
 class Auth extends Component {
 
@@ -21,10 +21,10 @@ class Auth extends Component {
 
     render() {
         const { match }  = this.props;
-        const linkAuth = match.path === '/login' ? this.templateLinkAuth('/sign-up' ,'Sign Up') : this.templateLinkAuth('/login' ,'Login');
+        const linkAuth = match.path === router.login ? this.templateLinkAuth(router.signUp ,'Sign Up') : this.templateLinkAuth(router.login ,'Login');
         return (
             <Wrapper>
-                <HeaderLink to='/' className='back-link'>
+                <HeaderLink to={router.homepage} className='back-link'>
                     <i className="fa fa-long-arrow-left" aria-hidden="true"></i>
                     <span>Homepage</span>
                 </HeaderLink>
@@ -32,6 +32,8 @@ class Auth extends Component {
                 <Switch>
                     <Route path='/login' component={Login}/>
                     <Route path='/sign-up' component={SignUp}/>
+                    <Route path={router.login} component={Login}/>
+                    <Route path={router.signUp} component={SignUp}/>
                 </Switch>
             </Wrapper>
         )
