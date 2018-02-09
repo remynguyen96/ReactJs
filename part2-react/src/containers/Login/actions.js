@@ -14,8 +14,9 @@ const login_error = (error) => ({
     error,
 });
 
-export const login = () => {
+export const loginPage = (infoUser) => {
     return (dispatch) => {
+        console.log(infoUser);
         dispatch(login_request());
     }
 };
