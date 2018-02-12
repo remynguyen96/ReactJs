@@ -1,10 +1,13 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {connect} from "react-redux";
+import {createStructuredSelector} from 'reselect';
 import avatar from '../../images/img_avatar.png';
 import Wrapper from './Wrapper';
 import Input from '../../components/Input';
+import {loginPage} from "./actions";
+import {subtotalSelector} from './selectors';
 
-class Login extends Component {
+class Login extends React.Component {
 
     constructor(props) {
         super(props);
@@ -25,8 +28,15 @@ class Login extends Component {
 
     submitLogin = (e) => {
         e.preventDefault();
-        console.log(this.state);
+        // console.log(form.checkValidity());
+        this.props.authLogin(this.state);
     };
+
+    validateForm = ({email, password}) => ({
+        email: /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/g.test(email),
+        password: password.trim().toLowerCase() !== '' && password.trim().toLowerCase().length >= 4,
+        // remember: false,
+    });
 
     onChange = (name, value) => {
         this.setState({
@@ -35,10 +45,12 @@ class Login extends Component {
     };
 
     render() {
+        // console.log(this.props.test);
+        const {email: validEmail, password: validPass} = this.validateForm(this.state);
         const {email, password, remember} = this.state;
         return (
             <Wrapper>
-                <form className="modal-content" onSubmit={this.submitLogin}>
+                <form className="modal-content" onSubmit={this.submitLogin} noValidate={false}>
                     <div className="imgcontainer">
                         <img src={avatar} alt="Avatar" className="avatar" />
                     </div>
@@ -49,7 +61,8 @@ class Login extends Component {
                             name="email"
                             placeholder="Enter Email"
                             value={email}
-                            // required={true}
+                            required={true}
+                            validate={validEmail}
                             onChange={this.onChange}
                         />
                         <label><b>Password</b></label>
@@ -58,7 +71,8 @@ class Login extends Component {
                             name="password"
                             placeholder="Enter Password"
                             value={password}
-                            // required={true}
+                            required={true}
+                            validate={validPass}
                             onChange={this.onChange}
                         />
                         <button type="submit">Login</button>
@@ -79,8 +93,14 @@ class Login extends Component {
 }
 
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    test: subtotalSelector(state),
+});
 
-const mapDispatchToProps = dispatch => ({});
+const mapDispatchToProps = dispatch => ({
+    authLogin(infoUser) {
+        loginPage(infoUser)(dispatch);
+    }
+});
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

@@ -9,7 +9,6 @@ import router from '../../utils/routes';
 
 class Auth extends Component {
 
-
     templateLinkAuth = (link, name) => {
         return (
             <HeaderLink to={link} className='auth-link'>

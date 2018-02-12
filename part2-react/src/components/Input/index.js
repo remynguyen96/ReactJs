@@ -4,6 +4,13 @@ import Wrapper from './Wrapper';
 
 class Input extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            validationStarted: false,
+        };
+    }
+
     static propTypes = {
         type: PropTypes.string,
         placeholder: PropTypes.string,
@@ -15,15 +22,28 @@ class Input extends Component {
             PropTypes.number,
         ]),
         checked: PropTypes.bool,
+        validate: PropTypes.bool,
         onChange: PropTypes.func,
     };
 
     static defaultProps = {
         type: 'text',
+        value: '',
         name: '',
         required: false,
         checked: false,
+        validate: false,
         onChange: () => {},
+    };
+
+    componentWillMount() {
+        if (this.props.value) {
+            this.startValidation();
+        }
+    }
+
+    startValidation = () => {
+        this.setState({ validationStarted: true });
     };
 
     changeValue = (e) => {
@@ -33,12 +53,16 @@ class Input extends Component {
     };
 
     render() {
-        const {type, placeholder, name, className, required, value, checked} = this.props;
+        const {type, placeholder, name, className, required, value, checked, validate} = this.props;
+        let classValid = className;
+        if (this.state.validationStartedk) {
+            classValid = (validate) ? `${className} dirty valid` : `${className} dirty invalid`;
+        };
         return (
             <Wrapper>
                 <input type={type}
                        name={name}
-                       className={className}
+                       className={classValid}
                        placeholder={placeholder}
                        defaultValue={value}
                        defaultChecked={checked}
