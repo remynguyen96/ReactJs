@@ -26,9 +26,6 @@ class App extends Component {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-    // login(infoUser) {
-    //     loginUser(dispatch, infoUser)
-    // },
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

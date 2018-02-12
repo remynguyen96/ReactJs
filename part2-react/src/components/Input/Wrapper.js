@@ -11,4 +11,12 @@ export default styled.div`
         border: 1px solid #ccc;
         box-sizing: border-box;
     }
+    
+    & input.dirty:not(:focus):invalid {
+        background-color: #FF5156;
+    }
+        
+    & input.dirty:not(:focus):valid {
+      background-color: #D9FFD9;
+    }
 `;
