@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from './Wrapper';
+import {debounce} from '../../utils/helper';
 
 class Input extends Component {
 
@@ -24,6 +25,7 @@ class Input extends Component {
         checked: PropTypes.bool,
         validate: PropTypes.bool,
         onChange: PropTypes.func,
+        // refInput: PropTypes.func,
     };
 
     static defaultProps = {
@@ -34,13 +36,23 @@ class Input extends Component {
         checked: false,
         validate: false,
         onChange: () => {},
+        // refInput: () => {},
     };
 
     componentWillMount() {
-        if (this.props.value) {
+        const { value } = this.props;
+        if (value && value !== '') {
             this.startValidation();
+        } else {
+            this.prepareToValidate = debounce(this.startValidation, 250);
         }
     }
+
+    // componentDidMount() {
+    //     this.props.refInput(this.input);
+    // }
+
+    prepareToValidate = () => {};
 
     startValidation = () => {
         this.setState({ validationStarted: true });
@@ -49,15 +61,26 @@ class Input extends Component {
     changeValue = (e) => {
         const { value, name, checked } = e.target;
         const { onChange, type } = this.props;
+        // this.startValidation();
+        if (!this.state.validationStarted) {
+            this.prepareToValidate();
+        }
         type === 'checkbox' ? onChange(name, checked) : onChange(name, value);
+    };
+
+    blurValue = (e) => {
+        if (!this.state.validationStarted) {
+            this.prepareToValidate();
+        }
     };
 
     render() {
         const {type, placeholder, name, className, required, value, checked, validate} = this.props;
-        let classValid = className;
-        if (this.state.validationStartedk) {
-            classValid = (validate) ? `${className} dirty valid` : `${className} dirty invalid`;
-        };
+        let classValid;
+        classValid = className && className;
+        if (this.state.validationStarted) {
+            classValid += validate ? ' valid' : ' invalid';
+        }
         return (
             <Wrapper>
                 <input type={type}
@@ -68,6 +91,8 @@ class Input extends Component {
                        defaultChecked={checked}
                        required={required}
                        onChange={this.changeValue}
+                       onBlur={this.blurValue}
+                       // ref={(input) => { this.input = input }}
                        autoComplete="off"
                 />
             </Wrapper>

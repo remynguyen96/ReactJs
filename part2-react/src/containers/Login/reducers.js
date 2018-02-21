@@ -5,6 +5,7 @@ const initialize = {
     name: '',
     email: '',
     avatar: '',
+    isPinging: false,
 };
 
 const reducers = (state = initialize, action) => {
@@ -15,6 +16,10 @@ const reducers = (state = initialize, action) => {
             return Object.assign({}, state, action.payload);
         case LOGIN_ERROR:
             return state;
+        case 'PING':
+            return Object.assign({}, state, { isPinging: true });
+        case 'PONG':
+            return Object.assign({}, state, { isPinging: false });
         default :
             return state;
     }

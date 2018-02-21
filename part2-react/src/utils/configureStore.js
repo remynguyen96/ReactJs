@@ -2,11 +2,13 @@ import {createStore, compose, applyMiddleware} from 'redux';
 import ReduxLogger from 'redux-logger';
 import {routerMiddleware} from 'react-router-redux';
 import reducers from './reducers';
+import epics from './epics';
 
 const configureStore = (history) => {
     const middlewares = [
         ReduxLogger,
         routerMiddleware(history),
+        epics,
     ];
     const composeEnhancers =
         typeof window === 'object' &&

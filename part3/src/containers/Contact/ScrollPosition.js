@@ -38,7 +38,7 @@ class ScrollPosition extends Component {
         this.setState({
             position: visibleRatio,
         });
-    }
+    };
 
     render() {
         return (
