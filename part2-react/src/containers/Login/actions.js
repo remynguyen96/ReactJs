@@ -1,7 +1,5 @@
 // @flow
 import {LOGIN_SUCCESS, LOGIN_ERROR, LOGIN_REQUEST} from './constants';
-import constants from "../../utils/constants";
-import {saveLocal} from '../../utils/helper';
 import {loginApi} from "./services";
 
 type LoginAction =  {

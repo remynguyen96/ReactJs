@@ -7,6 +7,21 @@ const isEmpty = (prop) => (
     (prop.constructor === Object && Object.keys(prop).length === 0)
 );
 
+const debounce = (func, wait, immediate) => {
+    let timeout;
+    return function() {
+        const context = this, args = arguments;
+        const later = () => {
+            timeout = null;
+            if (!immediate) func.apply(context, args);
+        };
+        const callNow = immediate && !timeout;
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+        if (callNow) func.apply(context, args);
+    };
+};
+
 const optionHeaders = {
     'Content-Type': 'application/json',
 };
@@ -31,6 +46,7 @@ const clearLocal = (tokenKey) => window && window.localStorage && window.localSt
 export {
     urlApi,
     isEmpty,
+    debounce,
     fetchApi,
     saveLocal,
     getLocal,
