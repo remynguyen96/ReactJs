@@ -16,7 +16,6 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            remember: false,
         }
     }
 
@@ -30,7 +29,7 @@ class Login extends React.Component {
 
     submitLogin = (e) => {
         e.preventDefault();
-        this.props.getProduct();
+        // this.props.getProduct();
         // if (this.formLogin.checkValidity()) {
         //     this.props.authLogin(this.state);
         // }
@@ -42,7 +41,7 @@ class Login extends React.Component {
     });
 
     onChange = (name, value) => {
-        this.props.cancelProduct();
+        // this.props.cancelProduct();
         this.setState({
             [name]: value,
         });
@@ -56,7 +55,7 @@ class Login extends React.Component {
 
     render() {
         const {email: validEmail, password: validPass} = this.validateForm(this.state);
-        const {email, password, remember} = this.state;
+        const {email, password } = this.state;
         return (
             <Wrapper>
                 <form className="modal-content"
@@ -91,15 +90,6 @@ class Login extends React.Component {
                             // refInput={this.refInput}
                         />
                         <button type="submit">Login</button>
-                        <label>
-                            <Input
-                                type="checkbox"
-                                name="remember"
-                                checked={remember}
-                                onChange={this.onChange}
-                            />
-                            Remember me
-                        </label>
                     </div>
                 </form>
             </Wrapper>

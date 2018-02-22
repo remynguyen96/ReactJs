@@ -1,17 +1,22 @@
 import { ofType, combineEpics } from 'redux-observable';
-import { mergeMap, map, takeUntil, delay, switchMap } from 'rxjs/operators';
-import { ajax } from 'rxjs/observable/dom/ajax';
+import { mergeMap, map, takeUntil, delay } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
 import { fetchUserFulfilled } from "./actions";
 
-const fetchUserEpic = (action$, store) =>
+const fetchUserEpic = (action$, store, { getJSON }) =>
     action$.pipe(
         ofType('FETCH_USER'),
-        switchMap(action => {
+        mergeMap(action => {
             // console.log(store.getState());
             // store.dispatch(login_request());
-            return ajax.getJSON(`http://localhost:4500/api/${action.payload}`).pipe(
+            return getJSON(`http://localhost:4500/api/${action.payload}`).pipe(
                      delay(1500),
                      map(response => fetchUserFulfilled(response)),
+                     // catch(error => of({
+                     //    type: 'FETCH_USER_REJECTED',
+                     //    payload: error.xhr.response,
+                     //    error: true
+                     // })),
                      takeUntil(action$.ofType('FETCH_USER_CANCELLED'))
                 );
             })

@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import Wrapper from './Wrapper';
 import {debounce} from '../../utils/helper';
+import { debounceTime, distinctUntilChanged } from 'rxjs/operators';
+import { Subject } from 'rxjs/Subject';
 
 class Input extends Component {
 
@@ -22,7 +24,6 @@ class Input extends Component {
             PropTypes.string,
             PropTypes.number,
         ]),
-        checked: PropTypes.bool,
         validate: PropTypes.bool,
         onChange: PropTypes.func,
         // refInput: PropTypes.func,
@@ -33,24 +34,36 @@ class Input extends Component {
         value: '',
         name: '',
         required: false,
-        checked: false,
         validate: false,
         onChange: () => {},
         // refInput: () => {},
     };
 
     componentWillMount() {
-        const { value } = this.props;
-        if (value && value !== '') {
-            this.startValidation();
-        } else {
-            this.prepareToValidate = debounce(this.startValidation, 250);
-        }
+        this.observableInput = new Subject();
+        // const { value } = this.props;
+        // if (value && value !== '') {
+        //     this.startValidation();
+        // } else {
+        //     this.prepareToValidate = debounce(this.startValidation, 250);
+        // }
     }
 
-    // componentDidMount() {
-    //     this.props.refInput(this.input);
-    // }
+    componentDidMount() {
+        this.subscription = this.observableInput.pipe(
+            debounceTime(300),
+            distinctUntilChanged(),
+        ).subscribe((value) => {
+            console.log(value);
+            this.startValidation();
+            const { onChange, name } = this.props;
+            onChange(name, value);
+        });
+    }
+
+    componentWillUnmount() {
+        this.subscription.unsubscribe();
+    }
 
     prepareToValidate = () => {};
 
@@ -58,24 +71,24 @@ class Input extends Component {
         this.setState({ validationStarted: true });
     };
 
-    changeValue = (e) => {
-        const { value, name, checked } = e.target;
-        const { onChange, type } = this.props;
-        // this.startValidation();
-        if (!this.state.validationStarted) {
-            this.prepareToValidate();
-        }
-        type === 'checkbox' ? onChange(name, checked) : onChange(name, value);
-    };
+    // changeValue = (e) => {
+    //     const { value, name } = e.target;
+    //     const { onChange, type } = this.props;
+    //     //
+    //     if (!this.state.validationStarted) {
+    //         this.prepareToValidate();
+    //     }
+    //     onChange(name, value);
+    // };
 
-    blurValue = (e) => {
+    blurValue = () => {
         if (!this.state.validationStarted) {
             this.prepareToValidate();
         }
     };
 
     render() {
-        const {type, placeholder, name, className, required, value, checked, validate} = this.props;
+        const {type, placeholder, name, className, required, value, validate} = this.props;
         let classValid;
         classValid = className && className;
         if (this.state.validationStarted) {
@@ -88,11 +101,9 @@ class Input extends Component {
                        className={classValid}
                        placeholder={placeholder}
                        defaultValue={value}
-                       defaultChecked={checked}
                        required={required}
-                       onChange={this.changeValue}
+                       onChange={(e) => this.observableInput.next(e.target.value)}
                        onBlur={this.blurValue}
-                       // ref={(input) => { this.input = input }}
                        autoComplete="off"
                 />
             </Wrapper>
