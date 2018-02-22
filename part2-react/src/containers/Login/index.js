@@ -6,7 +6,7 @@ import { createStructuredSelector } from 'reselect';
 import avatar from '../../images/img_avatar.png';
 import Wrapper from './Wrapper';
 import Input from '../../components/Input';
-import { loginPage, fetchUser, fetchUserCancel } from "./actions";
+import { login_request } from "./actions";
 import { loginUser } from './selectors';
 
 class Login extends React.Component {
@@ -16,7 +16,6 @@ class Login extends React.Component {
         this.state = {
             email: '',
             password: '',
-            remember: false,
         }
     }
 
@@ -30,10 +29,9 @@ class Login extends React.Component {
 
     submitLogin = (e) => {
         e.preventDefault();
-        this.props.getProduct();
-        // if (this.formLogin.checkValidity()) {
-        //     this.props.authLogin(this.state);
-        // }
+        if (this.formLogin.checkValidity()) {
+            this.props.authLogin(this.state);
+        }
     };
 
     validateForm = ({email, password}) => ({
@@ -42,26 +40,19 @@ class Login extends React.Component {
     });
 
     onChange = (name, value) => {
-        this.props.cancelProduct();
         this.setState({
             [name]: value,
         });
     };
 
-    // refInput = (ref) => {
-        // console.log(ref.validationMessage);
-        // console.log(ref.validity);
-        // ref.setCustomValidity('good job');
-    // };
-
     render() {
         const {email: validEmail, password: validPass} = this.validateForm(this.state);
-        const {email, password, remember} = this.state;
+        const {email, password } = this.state;
         return (
             <Wrapper>
                 <form className="modal-content"
                       onSubmit={this.submitLogin}
-                      noValidate={true}
+                      noValidate={false}
                       ref={(form) => { this.formLogin = form }}
                 >
                     <div className="imgcontainer">
@@ -77,7 +68,6 @@ class Login extends React.Component {
                             required={true}
                             validate={validEmail}
                             onChange={this.onChange}
-                            // refInput={this.refInput}
                         />
                         <label><b>Password</b></label>
                         <Input
@@ -88,18 +78,8 @@ class Login extends React.Component {
                             required={true}
                             validate={validPass}
                             onChange={this.onChange}
-                            // refInput={this.refInput}
                         />
                         <button type="submit">Login</button>
-                        <label>
-                            <Input
-                                type="checkbox"
-                                name="remember"
-                                checked={remember}
-                                onChange={this.onChange}
-                            />
-                            Remember me
-                        </label>
                     </div>
                 </form>
             </Wrapper>
@@ -112,11 +92,8 @@ const mapStateToProps = createStructuredSelector({
 });
 
 const mapDispatchToProps = dispatch => ({
-    authLogin(infoUser) {
-        loginPage(infoUser)(dispatch);
-    },
-    getProduct: () => dispatch(fetchUser('products')),
-    cancelProduct: () => dispatch(fetchUserCancel()),
+    // authLogin: (infoUser) => loginPage(infoUser)(dispatch),
+    authLogin: (infoUser) => dispatch(login_request(infoUser)),
 });
 
 export default compose(
