@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Wrapper from './Wrapper';
 import Auth from '../Auth';
 import Homepage from '../Homepage';
@@ -10,15 +10,16 @@ class App extends Component {
 
     render() {
         return (
-            <BrowserRouter>
+            <Router>
                 <Wrapper>
                     <Switch>
                         <Route exact path={router.homepage} component={Homepage} />
                         <Route path={router.login} component={Auth} />
                         <Route path={router.signUp} component={Auth} />
+                        {/*<Route component={NotFound} />*/}
                     </Switch>
                 </Wrapper>
-            </BrowserRouter>
+            </Router>
         )
     }
 }

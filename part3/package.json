@@ -21,12 +21,14 @@
     "redux-form": "^7.2.1",
     "redux-immutable": "^4.0.0",
     "redux-logger": "^3.0.6",
+    "redux-observable": "^0.18.0",
     "redux-saga": "^0.16.0",
     "reselect": "^3.0.1",
+    "rxjs": "^5.5.6",
     "styled-components": "^3.0.2"
   },
   "scripts": {
-    "dev": "react-scripts start",
+    "dev": "set PORT=4100 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

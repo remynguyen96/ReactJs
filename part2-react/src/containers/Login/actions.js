@@ -35,16 +35,3 @@ export const login_error = (error: any) => ({
 // };
 
 
-export const fetchUser = (username: string) => ({
-    type: 'FETCH_USER',
-    payload: username,
-});
-
-export const fetchUserFulfilled = (data: any) => ({
-    type: 'FETCH_USER_FULFILLED',
-    payload: data,
-});
-
-export const fetchUserCancel = () => ({
-    type: 'FETCH_USER_CANCELLED',
-});

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { connect } from "react-redux";
 import { compose } from 'redux'
@@ -14,17 +15,17 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            email: 'Cullen92@yahoo.com',
             password: '',
         }
     }
 
     static propTypes = {
-
+        loginUser: PropTypes.object,
     };
 
     static defaultProps = {
-
+        loginUser: {},
     };
 
     submitLogin = (e) => {

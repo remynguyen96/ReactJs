@@ -8,6 +8,6 @@ import rootReducers from './reducers/index';
 const defaultState = {};
 const sagaMiddleware = createSagaMiddleware();
 const store = createStore(rootReducers, defaultState, applyMiddleware(sagaMiddleware));
-sagaMiddleware.run(mySaga)
+sagaMiddleware.run(mySaga);
 export const history = syncHistoryWithStore(withRouter, store);
 export default store;
