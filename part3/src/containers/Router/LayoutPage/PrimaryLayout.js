@@ -8,13 +8,13 @@ import HomePage from "./HomePage";
 class PrimaryLayout extends Component {
     render() {
         const { match } = this.props;
-        // console.log(this.props);
+
         return (
            <div>
                <HeaderNav />
                <main>
                    <Switch>
-                       <Route path={`${match.path}`} exact component={HomePage} />
+                       <Route path={match.path} exact component={HomePage} />
                        <Route path={`${match.path}/users`} component={UserPage} />
                        <Route path={`${match.path}/products`} component={ProductsPage} />
                        <Redirect to={`${match.url}`} />

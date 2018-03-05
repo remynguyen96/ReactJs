@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
-import {auth} from '../../AppRoot/actions';
-
-const loginPage = (history) => {
+import { auth } from '../../AppRoot/actions';
+const loginPage = async (history) => {
     auth(true).subscribe(() => {
         history.push('/app');
     });

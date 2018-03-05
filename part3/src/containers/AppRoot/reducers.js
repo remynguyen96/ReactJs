@@ -3,15 +3,16 @@ import { GET_LOGGED_USER, SET_LOGGED_USER } from './constants';
 
 const initialize = fromJS({
     pending: false,
-    logged: true,
+    logged: false,
 });
 
 const reducers = (state = initialize, actions) => {
     switch (actions.type) {
         case GET_LOGGED_USER:
-            return state.set('pending', false);
+            return state.set('pending', actions.status);
         case SET_LOGGED_USER:
-            return state.set('pending', true).set('logged', actions.logged);
+            return state.set('pending', true)
+                        .set('logged', actions.logged);
         default:
             return state;
     }

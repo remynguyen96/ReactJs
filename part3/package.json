@@ -17,6 +17,7 @@
     "react-router-dom": "^4.2.2",
     "react-router-redux": "^5.0.0-alpha.9",
     "react-scripts": "1.1.0",
+    "react-transition-group": "^2.2.1",
     "redux": "^3.7.2",
     "redux-form": "^7.2.1",
     "redux-immutable": "^4.0.0",
@@ -28,7 +29,7 @@
     "styled-components": "^3.0.2"
   },
   "scripts": {
-    "dev": "set PORT=4100 && react-scripts start",
+    "dev": "set PORT=4200 && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

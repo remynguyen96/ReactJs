@@ -4,11 +4,6 @@ import UserNav from '../../Menu/UserNav';
 import AddUserPage from "./AddUserPage";
 import BrowseUsersPage from "./BrowseUsersPage";
 
-// Sub Layouts
-// import BrowseUsersPage from '../pages/BrowseUsersPage'
-// import AddUserPage from '../pages/AddUserPage'
-// import UserProfilePage from '../pages/UserProfilePage'
-
 const UserPage = ({ match }) => (
     <div className="user-sub-layout">
         <aside>
@@ -22,6 +17,6 @@ const UserPage = ({ match }) => (
             </Switch>
         </div>
     </div>
-)
+);
 
 export default UserPage;

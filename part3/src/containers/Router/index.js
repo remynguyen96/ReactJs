@@ -8,15 +8,14 @@ import UnauthorizedLayout from "./LayoutPage/UnauthorizedLayout";
 class RootRouter extends Component {
     render() {
         return (
-            <Router>
-                <Wrapper>
-                    <Switch>
-                        <Route path='/auth' component={UnauthorizedLayout}/>
-                        <AuthorizedRoute path='/app' component={PrimaryLayout} />
-                        <Redirect to="/auth" />
-                    </Switch>
-                </Wrapper>
-            </Router>
+            <Wrapper>
+                <Switch>
+                    <AuthorizedRoute path='/app' component={PrimaryLayout} />
+                    <Route path='/auth' component={UnauthorizedLayout}/>
+                    <Route render={() => <div>Not Found Page...</div>}/>
+                    <Redirect to="/auth" />
+                </Switch>
+            </Wrapper>
         );
     }
 }

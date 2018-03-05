@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Wrapper from './Wrapper';
-import RootRouter from '../Router';
+import ModalRouter from "../ModalRouter";
+// import RootRouter from '../Router';
 
 class App extends React.Component {
     constructor(props) {
@@ -12,7 +14,10 @@ class App extends React.Component {
     render() {
         return (
             <Wrapper>
-                <RootRouter />
+                <Router>
+                    <Route component={ModalRouter} />
+                    {/*<Route component={RootRouter} />*/}
+                </Router>
             </Wrapper>
         );
     }

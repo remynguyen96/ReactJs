@@ -3,7 +3,6 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import LoginPage from './LoginPage';
 
 const UnauthorizedLayout = (props) => {
-    // console.log(props);
     return (
         <div className="unauthorized-layout">
             <p>Unauthorized Layout !!!</p>
