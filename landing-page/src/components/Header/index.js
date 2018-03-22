@@ -21,10 +21,10 @@ class Header extends Component {
             </ul>
           </div>
           <div className="header-video">
-            <VideoFull />
+            <VideoFull className='header-video-yt' />
           </div>
-          <div className="header-white-page">
-            <WhitePage />
+          <div className="header-white">
+            <WhitePage className='header-white-page' />
           </div>
         </Wrapper>
     );

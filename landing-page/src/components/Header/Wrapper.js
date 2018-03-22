@@ -34,10 +34,26 @@ export default styled.div`
         }
       }
       &-video {
-      
+        &-yt {
+          position: absolute;
+          width: 100%;
+          top: 80px;
+          left: 0;
+          pointer-events: none;
+          @media (min-aspect-ratio: 16/9) {
+            height: 300%; 
+            top: 80px;
+          }
+          @media (max-aspect-ratio: 16/9) {
+            width: 300%; 
+            left: -100%;
+          }
+        }
       }
-      &-white-page {
-      
+      &-white {
+        &-page {
+        
+        }
       }
   }
 `;
