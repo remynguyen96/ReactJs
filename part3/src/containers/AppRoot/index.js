@@ -1,21 +1,18 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React  from 'react';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux';
 import Wrapper from './Wrapper';
-import ModalRouter from "../ModalRouter";
+// import ModalRouter from "../ModalRouter";
+import React163 from "../React163";
 // import RootRouter from '../Router';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <Wrapper>
                 <Router>
-                    <Route component={ModalRouter} />
+                    {/*<Route component={ModalRouter} />*/}
+                    <Route component={React163} />
                     {/*<Route component={RootRouter} />*/}
                 </Router>
             </Wrapper>
