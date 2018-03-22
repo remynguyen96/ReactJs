@@ -78,8 +78,7 @@
     "build": "npm run build-css && node scripts/build.js",
     "test-watch": "node scripts/test.js --env=jsdom --watch",
     "test": "node scripts/test.js --env=jsdom --coverage",
-    "serve": "NODE_ENV=development node server/index.js",
-    "deploy": "NODE_ENV=production node server/index.js"
+    "serve": "NODE_ENV=development node server/index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
