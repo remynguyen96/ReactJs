@@ -1,7 +1,42 @@
-import React, {Component} from 'react';
+import React, { PureComponent } from 'react';
+import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import colorStyle from "../../utils/colorStyle";
 
-class VideoFull extends Component {
+const WrapperVideo = styled.div`
+   & .header-video {
+        position: relative;
+        padding-bottom: 56.25%;
+        &-yt {
+          position: absolute;
+          z-index: 5;
+          top: -8rem;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          transform: skewY(5deg);
+          transform-origin: bottom right;
+        }
+        &-btn {
+          position: absolute;
+          z-index: 6;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: transparent;
+          border: none;
+          outline: none;
+          cursor: pointer;
+        }
+        &-icon {
+          font-size: 8.5rem;
+          color: ${colorStyle.white};
+        }
+   }
+`;
+
+class VideoFull extends PureComponent {
   constructor(props) {
     super(props);
     this.elPlayer = null;
@@ -10,11 +45,11 @@ class VideoFull extends Component {
   }
 
   static propTypes = {
-    className: PropTypes.string.isRequired,
+    // className: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
-    className: '',
+    // className: '',
   };
 
   componentDidMount() {
@@ -30,9 +65,9 @@ class VideoFull extends Component {
     this.loadYT.then((YT) => {
       this.YT = YT;
       new YT.Player(this.elPlayer, {
-        width: window.innerWidth - 20,
-        height: 600,
-        videoId: '9ZfN87gSjvI',
+        width: 600,
+        height: 400,
+        videoId: 'c9pQYOGIWM8',
         playerVars: {
           autoplay: 1,
           controls: 0,
@@ -40,7 +75,7 @@ class VideoFull extends Component {
           showinfo: 1,
           rel: 0,
           loop: 1,
-          playlist: '9ZfN87gSjvI',
+          playlist: 'c9pQYOGIWM8',
           fs: 0,
           modestbranding: 1,
           iv_load_policy: 3,
@@ -65,12 +100,20 @@ class VideoFull extends Component {
     }
   };
 
+  showVideo = () => {
+    console.log('show popup video !');
+  };
+
   render() {
-    const { className } = this.props;
     return (
-        <div className={className}
-             ref={(ref) => { this.elPlayer = ref }}
-        ></div>
+        <WrapperVideo>
+          <button className="header-video-btn" onClick={this.showVideo}>
+            <i className="fa fa-play-circle header-video-icon" aria-hidden="true"></i>
+          </button>
+          <section className="header-video">
+            <div className="header-video-yt" ref={(ref) => { this.elPlayer = ref }}></div>
+          </section>
+        </WrapperVideo>
     );
   }
 }

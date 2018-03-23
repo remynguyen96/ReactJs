@@ -2,7 +2,8 @@ import { injectGlobal } from 'styled-components';
 import 'normalize.css';
 
 injectGlobal`
-  @import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=vietnamese');
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=vietnamese');
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
   *,
   *:before,
   *:after {
@@ -20,7 +21,7 @@ injectGlobal`
   }
   body {
     font-size: 16px;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
   }
   ::-webkit-scrollbar {
     width: 8px;

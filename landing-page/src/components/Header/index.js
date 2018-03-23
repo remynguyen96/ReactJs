@@ -1,31 +1,16 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import Wrapper from './Wrapper';
-import Link from './Link';
 import VideoFull from './VideoFull';
 import WhitePage from "./WhitePage";
-import logo from '../../images/netleaders-logo.png';
+import Nav from "./Nav";
 
-class Header extends Component {
+class Header extends PureComponent {
   render() {
     return (
-        <Wrapper className='header'>
-          <div className='header-nav'>
-            <div className='header-logo'>
-              <img src={logo} alt="netleaders" className='header-logo-images' />
-            </div>
-            <ul className='header-menu'>
-              <Link name='Headlines 1' active={true} />
-              <Link name='Headlines 2' active={false} />
-              <Link name='Headlines 3' active={false} />
-              <Link name='Headlines 4' active={false} />
-            </ul>
-          </div>
-          <div className="header-video">
-            <VideoFull className='header-video-yt' />
-          </div>
-          <div className="header-white">
-            <WhitePage className='header-white-page' />
-          </div>
+        <Wrapper>
+          <Nav />
+          <VideoFull />
+          <WhitePage />
         </Wrapper>
     );
   }

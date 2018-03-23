@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 
 class Link extends Component {
   render() {
-    const { name, active } = this.props;
+    const { name, link, active } = this.props;
     return (
         <li className={`header-menu-items ${active ? 'active' : ''}`}>
-          <a href="" className='header-menu-item'>{name}</a>
+          <a href={link} className='header-menu-item'>
+            {name}
+          </a>
         </li>
     );
   }
