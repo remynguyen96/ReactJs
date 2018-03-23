@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import color from '../../utils/colorStyle';
+import color from '../../utils/color-style';
 import bgMap from '../../images/bg-map.png';
 
 export default styled.div`
    display: flex;
    justify-content: space-between;
    flex-direction: column;
-   padding: 11% 5% 5%;
+   padding: 11% 10% 5%;
    background-color: rgba(0, 0, 0, 0.899);
    position: relative;
    & .you {
@@ -14,7 +14,7 @@ export default styled.div`
       max-width: 32%;
       position: relative;
       z-index: 2;
-      box-shadow: 7px 7px 30px 0 rgba(0,0,0,.4);
+      box-shadow: 7px 7px 40px 0 rgba(0,0,0,.4);
       padding: 2rem;
       border: 1px solid rgba(130, 130, 130, 0.59);
       border-radius: 1rem;

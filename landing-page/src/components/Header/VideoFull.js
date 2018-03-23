@@ -1,7 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import colorStyle from "../../utils/colorStyle";
+import YoutubeApi from '../../utils/youtube-api';
+import colorStyle from "../../utils/color-style";
 
 const WrapperVideo = styled.div`
    & .header-video {
@@ -40,8 +41,6 @@ class VideoFull extends PureComponent {
   constructor(props) {
     super(props);
     this.elPlayer = null;
-    this.loadYT = null;
-    this.YT = null;
   }
 
   static propTypes = {
@@ -53,52 +52,15 @@ class VideoFull extends PureComponent {
   };
 
   componentDidMount() {
-    if (!this.loadYT) {
-      this.loadYT = new Promise((resolve) => {
-        const tag = document.createElement('script');
-        tag.src = 'https://www.youtube.com/iframe_api';
-        const firstScriptTag = document.getElementsByTagName('script')[0];
-        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-        window.onYouTubeIframeAPIReady = () => resolve(window.YT);
-      })
-    }
-    this.loadYT.then((YT) => {
-      this.YT = YT;
-      new YT.Player(this.elPlayer, {
-        width: 600,
-        height: 400,
-        videoId: 'c9pQYOGIWM8',
-        playerVars: {
-          autoplay: 1,
-          controls: 0,
-          disablekb: 1,
-          showinfo: 1,
-          rel: 0,
-          loop: 1,
-          playlist: 'c9pQYOGIWM8',
-          fs: 0,
-          modestbranding: 1,
-          iv_load_policy: 3,
-          autohide: 1,
-        },
-        events: {
-          onReady: this.onPlayerReady,
-          onStateChange: this.onPlayerStateChange,
-        }
-      });
-    })
+    const settings = {
+      element: this.elPlayer,
+      autoplay: 1,
+      controls: 0,
+      showinfo: 1,
+      mute: true,
+    };
+    YoutubeApi(settings);
   }
-
-  onPlayerReady = (event) => {
-    event.target.mute();
-    event.target.playVideo();
-  };
-
-  onPlayerStateChange = (event) => {
-    if (event.data === this.YT.PlayerState.PAUSED) {
-      event.target.playVideo();
-    }
-  };
 
   showVideo = () => {
     console.log('show popup video !');

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import color from '../../utils/colorStyle';
+import color from '../../utils/color-style';
 
 const active = `
    &::after {
@@ -72,7 +72,7 @@ export default styled.div`
       justify-content: space-evenly;
       margin-top: -15%;
       padding-top: 7%;
-      height: 260px;
+      height: 350px;
       background: rgba(0, 0, 0, 0.76);
     }
     &-btn-link {
