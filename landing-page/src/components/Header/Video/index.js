@@ -1,41 +1,7 @@
 import React, { PureComponent } from 'react';
-import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import YoutubeApi from '../../utils/youtube-api';
-import colorStyle from "../../utils/color-style";
-
-const WrapperVideo = styled.div`
-   & .header-video {
-        position: relative;
-        padding-bottom: 56.25%;
-        &-yt {
-          position: absolute;
-          z-index: 5;
-          top: -8rem;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          pointer-events: none;
-          transform: skewY(5deg);
-          transform-origin: bottom right;
-        }
-        &-btn {
-          position: absolute;
-          z-index: 6;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: transparent;
-          border: none;
-          outline: none;
-          cursor: pointer;
-        }
-        &-icon {
-          font-size: 8.5rem;
-          color: ${colorStyle.white};
-        }
-   }
-`;
+import WrapperVideo from './Wrapper';
+import { YoutubeApi, PlayerReady, PlayerStateChange } from '../../../utils/youtube-api';
 
 class VideoFull extends PureComponent {
   constructor(props) {
@@ -54,10 +20,11 @@ class VideoFull extends PureComponent {
   componentDidMount() {
     const settings = {
       element: this.elPlayer,
-      autoplay: 1,
-      controls: 0,
+      // autoplay: 1,
+      autoplay: 0,
       showinfo: 1,
-      mute: true,
+      onPlayerReady: PlayerReady,
+      onPlayerStateChange: PlayerStateChange,
     };
     YoutubeApi(settings);
   }

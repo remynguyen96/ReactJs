@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import Wrapper from './Wrapper';
-import VideoFull from './VideoFull';
+import VideoFull from './Video';
 import WhitePage from "./WhitePage";
 import Nav from "./Nav";
 

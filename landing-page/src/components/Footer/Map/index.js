@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Wrapper from './Wrapper';
+import WrapperMap from './Wrapper';
 
 class Map extends Component {
   render() {
     return (
-        <Wrapper>
+        <WrapperMap>
           <h4>Map</h4>
-        </Wrapper>
+        </WrapperMap>
     );
   }
 }

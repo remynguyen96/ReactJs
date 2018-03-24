@@ -1,42 +1,68 @@
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
 import color from '../../utils/color-style';
-// linear-gradient(180deg,#141519,#0f1014)
+import {titlePage} from "../../utils/mixin-style";
+import bgVideo from '../../images/bg-video.png';
+import bgZigzag from '../../images/bg-zigzag.png';
 
 export default styled.div`
-    h3 {
-      font-size: 4rem;
-      line-height: 100px;
-      margin: 10px;
-      padding: 2%;
-      text-align: center;
+  background-color: #121316;
+  & .bg-barrier {
+    background: url(${bgZigzag}) no-repeat center center;
+    background-size: cover;
+    height: 200px;
+  }
+  & .video-bg {
+    background: url(${bgVideo}) no-repeat 80% 20%;
+    background-size: cover;
+    margin-top: -35px;
+  }
+  & .video-title {
+    ${titlePage};
+    padding: 8rem 0 5rem;
+    color: ${color.yellow};
+    &::after {
+      margin-top: 4.5rem;
     }
-    //.slick-slider {
-    //  margin: 30px auto 50px;
-    //}
-    //.center .slick-center h3 {
-    //  color: #e67e22;
-    //  opacity: 1;
-    //  transform: scale(1.08);
-    //}
-    //.center h3 {
-    //  opacity: 0.8;
-    //  transition: all 300ms ease;
-    //}
-    //
-    .slick-arrow {
-      background-color: grey;
-    }
-    .slick-arrow:hover {
-      background-color: grey;
-    }
-    .slick-prev {
-      z-index: 100;
-      left: 20px !important;
-    }
-    .slick-next {
-      z-index: 100;
-      right: 20px !important;
-    }
+  }
+  & .yt-title {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1.5rem;
+    text-align: center;
+    opacity: 0.5;
+    color: ${color.white};
+    line-height: 4rem;
+    transform: translateY(0) scale(1);
+    transition: all 300ms ease;
+  }
+  & .slick-slide {
+    margin: 5rem auto 8rem;
+  }
+  & .yt-center {
+     & .slick-track {
+         padding-bottom: 18rem;
+     }
+     & .yt-player {
+        transform: scale(1);
+        outline: none;
+        transition: all 300ms ease-in-out;
+        margin: 0 3.3rem;
+        border-radius: 50px 10px 50px 10px;
+        height: 350px;
+        width: 350px;
+     }
+     .slick-center {
+       & .yt-title {
+        color: ${color.yellow};
+        transform: translateY(7rem) scale(1.2);
+        opacity: 1;
+       }
+       & .yt-player {
+          position: relative;
+          z-index: 8;
+          transform: scale(1.35,1.3);
+       }
+     }
+  }
 `;

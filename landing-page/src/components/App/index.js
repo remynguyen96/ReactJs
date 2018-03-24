@@ -11,13 +11,9 @@ class App extends Component {
     return (
       <Wrapper>
         <Header />
-
         <Doing />
-
         <SlideVideo />
-        <hr/>
         <SlideAuthor />
-        <hr/>
         <Footer />
       </Wrapper>
     );

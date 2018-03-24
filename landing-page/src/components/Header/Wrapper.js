@@ -9,7 +9,7 @@ const active = `
 `;
 
 export default styled.div`
-  background-color: rgba(5, 5, 5, 0.7);
+  background-color: rgba(18, 19, 22, 0.74);
   & .header {
     &-nav {
       position: relative;
@@ -73,7 +73,7 @@ export default styled.div`
       margin-top: -15%;
       padding-top: 7%;
       height: 350px;
-      background: rgba(0, 0, 0, 0.76);
+      background: rgb(18, 19, 22);
     }
     &-btn-link {
       align-self: center;

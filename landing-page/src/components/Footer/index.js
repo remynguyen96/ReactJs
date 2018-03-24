@@ -7,9 +7,12 @@ class Footer extends Component {
   render() {
     return (
         <Wrapper>
-          <h4>Footer</h4>
-          <Map />
+          <h3 className="footer-title">
+            Seventy Financial Planning can help clients anywhere in the UK, however our main geographical areas are Harrogate, Leeds, York and anywhere throughout
+            North Yorkshire.
+          </h3>
           <Contact />
+          <Map />
         </Wrapper>
     );
   }

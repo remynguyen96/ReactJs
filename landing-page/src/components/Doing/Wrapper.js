@@ -6,12 +6,12 @@ export default styled.div`
    display: flex;
    justify-content: space-between;
    flex-direction: column;
-   padding: 11% 10% 5%;
+   padding: 9% 10% 5%;
    background-color: rgba(0, 0, 0, 0.899);
    position: relative;
    & .you {
-      flex-basis: 32%;
-      max-width: 32%;
+      flex-basis: 35%;
+      max-width: 35%;
       position: relative;
       z-index: 2;
       box-shadow: 7px 7px 40px 0 rgba(0,0,0,.4);
