@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import color from '../../utils/color-style';
 import {titlePage} from "../../utils/mixin-style";
-import contact from '../../images/contact.jpg';
+import contact from '../../images/bg-contact.jpg';
 
 export default styled.div`
-  background-color: #141519;
-  //background: url(${contact}) no-repeat center center;
-  //background-size: cover;
-  margin-top: -24px;
+  & .bg-black {
+      background-color: #141519;
+      width: 100%;
+      height: 100%;
+  }
   & .footer {
+    background: url(${contact}) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
     &-title {
       ${titlePage};
       color: ${color.yellow};
@@ -24,7 +28,7 @@ export default styled.div`
     }
     &-map {
       display: flex;
-      padding: 0 8rem;
+      padding: 0 12%;
     }
     &-contact {
       color: #ffffff;

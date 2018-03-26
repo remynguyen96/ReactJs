@@ -54,7 +54,7 @@ export default styled.div`
                 border-top-left-radius: 100px;
                 border-top-right-radius: 100px;
                 border-bottom: 0;
-                animation: ${rotate} 3s linear infinite;
+                animation: ${rotate} 1s linear infinite;
              }
           }
         }

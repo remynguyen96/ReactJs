@@ -26,7 +26,7 @@ class VideoFull extends PureComponent {
     const settings = {
       videoId: this.props.videoId,
       element: this.elPlayer,
-      autoplay: 1,
+      autoplay: 0,
       showinfo: 1,
       onPlayerReady: PlayerReady,
       onPlayerStateChange: PlayerStateChange,

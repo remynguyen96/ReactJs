@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export default styled.div`
-  padding: 12rem 24rem 0;
+  padding: 12rem 20% 0;
   margin-bottom: 10rem;
   & .contact-us {
     display: flex;
@@ -12,7 +12,7 @@ export default styled.div`
   & .field {
     position: relative;
     flex-basis: 45%;
-    margin-bottom: 3.5rem;
+    margin-bottom: 6rem;
   }
   & .textarea {
     flex-basis: 100%;

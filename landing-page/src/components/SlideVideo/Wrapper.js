@@ -49,7 +49,7 @@ export default styled.div`
         outline: none;
         transition: all 300ms ease-in-out;
         margin: 0 3.3rem;
-        border-radius: 50px 10px 50px 10px;
+        border-radius: 30px 10px 30px 10px;
         height: 350px;
         width: 350px;
      }

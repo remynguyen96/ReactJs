@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import logo from '../../images/netleaders-logo.png';
 import Link from "./Link";
 
-const scrollStepIn = 50;
-const scrollSpeed = 20;
+const scrollStepIn = 40;
+const scrollSpeed = 15;
 
 class Nav extends Component {
   constructor(props) {
@@ -17,8 +17,8 @@ class Nav extends Component {
   }
 
   componentDidMount() {
-    const positionScroll = window.scrollY;
     window.addEventListener('scroll', this.handleScroll);
+    // const positionScroll = window.scrollY;
     // console.log(positionScroll);
   }
 

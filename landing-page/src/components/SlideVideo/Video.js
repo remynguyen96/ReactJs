@@ -5,11 +5,11 @@ import { YoutubeApi } from '../../utils/youtube-api';
 
 const dataVideo = [
   { id: 'UpHHPkLkoG8', name: 'Count On Me' },
-  // { id: 'Pj5PkQY9x8I', name: 'Ta Đã Gặp Mẹ Con Như Thế Nào' },
-  // { id: 'Ls6EBIR8hDE', name: 'Mân Côi' },
-  // { id: 'mdXeKm44Ubc', name: 'Bớt lo một ngày' },
-  // { id: 'Z14lqZRf2ZM', name: 'Em Hãy Nhắn Tin' },
-  // { id: 'Sa6VzCCP5Yg', name: 'Tôi Biết Em Không Biết' },
+  { id: 'Pj5PkQY9x8I', name: 'Ta Đã Gặp Mẹ Con Như Thế Nào' },
+  { id: 'Ls6EBIR8hDE', name: 'Mân Côi' },
+  { id: 'mdXeKm44Ubc', name: 'Bớt lo một ngày' },
+  { id: 'Z14lqZRf2ZM', name: 'Em Hãy Nhắn Tin' },
+  { id: 'Sa6VzCCP5Yg', name: 'Tôi Biết Em Không Biết' },
 ];
 
 class Video extends Component {

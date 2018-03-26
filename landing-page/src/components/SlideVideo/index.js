@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 import Video from "./Video";
+import { componentVideo } from '../../utils/mockData';
 
 class SlideVideo extends Component {
   render() {
@@ -26,7 +27,7 @@ class SlideVideo extends Component {
       }]
     };
     return (
-      <Wrapper id="part3">
+      <Wrapper id={componentVideo}>
         <div className="bg-barrier"></div>
         <div className="video-bg">
           <h3 className="video-title">Slide Video Youtube</h3>

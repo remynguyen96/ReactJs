@@ -12,7 +12,7 @@ const pulse = keyframes`
 
 export default styled.div`
    flex-basis: 60%;
-   height: 400px;
+   height: 450px;
    & .marker {
     position: relative;
     span {

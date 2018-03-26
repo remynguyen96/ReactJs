@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import Wrapper from './Wrapper';
 import You from "./You";
+import { componentDoing } from '../../utils/mockData';
 
 const infomationYou1 = [
   'Chia sẻ về ước mơ của bạn.',
@@ -20,7 +20,6 @@ class Doing extends Component {
 
   constructor(props) {
     super(props);
-    this.elementBg = null;
     this.state = {
       scrolling: false,
     };
@@ -35,8 +34,13 @@ class Doing extends Component {
   };
 
   scrollImage = () => {
-    const { top } = this.elementBg.getBoundingClientRect();
-    console.log(this.elementBg.getBoundingClientRect());
+    // const elementBg = document.querySelector('#part2');
+    // console.dir(elementBg);
+    // const { top } = this.elementBg.getBoundingClientRect();
+    // const { top } = this.elementBg;
+    // console.dir(this.elementBg)
+    // console.log(this.elementBg.getBoundingClientRect());
+    // console.log(window.scrollY, top);
     // if ((window.scrollY + 300) > top) {
     //    this.setState({ scrolling: true });
     // }
@@ -47,10 +51,8 @@ class Doing extends Component {
 
   render() {
     return (
-        <Wrapper id="part2">
-          <div className={this.state.scrolling ? 'you-bg scrolling' : 'you-bg'}
-               ref={(ref) => this.elementBg = ref}
-          >
+        <Wrapper id={componentDoing}>
+          <div className={this.state.scrolling ? 'you-bg scrolling' : 'you-bg'}>
           </div>
           <You title='Why do i need this' infomation={infomationYou1} />
           <You title='Why are you selling' infomation={infomationYou2} />

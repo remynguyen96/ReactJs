@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 import VideoAuthor from "./VideoAuthor";
+import { componentAuthor } from '../../utils/mockData';
 
 class SlideAuthor extends Component {
   render() {
@@ -26,7 +27,7 @@ class SlideAuthor extends Component {
       }]
     };
     return (
-        <Wrapper id="part4">
+        <Wrapper id={componentAuthor}>
           <div className="author-barrier"></div>
           <div className="author">
             <h3 className="author-title">Meet Our Team</h3>
