@@ -16,12 +16,24 @@ export default styled.div`
       z-index: 99;
       display: flex;
       padding: 1.5rem;
+      width: 100%;
       background-color: transparent;
-      //background-color: rgba(134, 132, 132, 0.76);
+      transition: all 380ms ease;
+      &.nav-scroll {
+        position: fixed;
+        padding: 0.5rem;
+        background-color: rgba(33, 33, 33, 0.7);
+        & .header-logo {
+          width: 18rem;
+          transform: translateY(7px);
+        }
+      }
     }
     &-logo {
       margin-left: 5%;
-      width: 20rem;
+      width: 25rem;
+      transform: translateY(0);
+      transition: width 300ms ease, transform 300ms ease-in-out;
       &-images {
         max-width: 100%;          
       }
@@ -32,10 +44,11 @@ export default styled.div`
       display: flex;
       justify-content: center;
       padding: 0 4rem;
+      transition: all 300ms ease;
       &-items {
         color: ${color.white};
         text-align: center;
-        flex-basis: 15%;
+        flex-basis: 18%;
         &.active {
           .header-menu-item {
             ${active};
@@ -79,7 +92,7 @@ export default styled.div`
       align-self: center;
       padding: 1.3rem 5rem;
       border-radius: 5rem;
-      border: 2px solid rgba(166, 166, 166, 0.4);
+      border: 2px solid rgba(145, 145, 145, 0.9);
       outline: none;
       cursor: pointer;
       font-size: 1.4rem;
@@ -88,12 +101,28 @@ export default styled.div`
       font-weight: 600;
       background-color: transparent;
       color: ${color.yellowLight};
-      transition: all 280ms ease-in-out;
-      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.6);
-      &:hover {
-        border: 2px solid rgba(255, 255, 255, 0.9);
+      transition: background-color 280ms ease-in-out;
+      box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.75);
+      position: relative;
+      overflow: hidden;
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
         background-color: rgba(146, 146, 146, 0.45);
-        box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.3);
+        width: calc(100% + 60px);
+        transform: skewX(-45deg) translateX(calc(-100% - 30px));
+        transition: transform 280ms ease;
+        z-index: -1;
+      }
+      &:hover {
+        background-color: rgba(146, 146, 146, 0.45);
+        &::before {
+          width: calc(100% + 60px);
+          transform: skewX(-45deg) translateX(-30px);
+        }
       }
     }
   }

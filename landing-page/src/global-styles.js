@@ -9,6 +9,7 @@ const arrowSlide = `
     cursor: pointer;
     color: #ffd37f;
 `;
+
 injectGlobal`
   @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&subset=vietnamese');
   @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -71,6 +72,56 @@ injectGlobal`
       content: "\f0da";
       ${arrowSlide};
       right: 0;
+    }
+  }
+  input, textarea {
+    background: none;
+    color: #f3e7d0;
+    font-size: 1.6rem;
+    padding: 1rem 1rem 1rem .5rem;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #f3e7d0;
+    &:focus {
+      outline: none;
+    }
+    &:focus ~ label,
+    &:valid ~ label {
+      top: -15px;
+      font-size: 1.2rem;
+      color: #e7b960;
+    }
+    &:focus ~ .bar:before {
+      width: 100%;
+    }         
+  }  
+  input[type="password"] {
+    letter-spacing: 0.3rem;
+  }
+  label {
+    color: #f3e7d0;
+    font-size: 1.6rem;
+    font-weight: 600;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: all 300ms ease;
+  }
+  .bar {
+    position: relative;
+    display: block;
+    &:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0;
+      position: absolute;
+      background: #ffc34f;
+      transition: all 300ms ease;
+      left: 0;
     }
   }
 `;

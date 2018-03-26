@@ -1,15 +1,8 @@
 import React, { Component } from 'react';
 import WrapperContact from './Wrapper';
 
-
 const InputValue = ({ className, onChange, type, text, value }) => (
     <div className="field">
-      <label
-          htmlFor={className}
-          className="field-label"
-      >
-        {text}
-      </label>
       <input
           type={type}
           name={className}
@@ -17,27 +10,38 @@ const InputValue = ({ className, onChange, type, text, value }) => (
           className="field-input"
           value={value}
           onChange={onChange}
+          required="required"
       />
-    </div>
-);
-const TextareaValue = ({ className, onChange, text, value }) => (
-    <div className="field">
       <label
           htmlFor={className}
           className="field-label"
       >
         {text}
       </label>
+      <span className="highlight"></span>
+      <span className="bar"></span>
+    </div>
+);
+const TextareaValue = ({ className, onChange, text, value }) => (
+    <div className="field textarea">
       <textarea
           name={className}
           id={className}
           className="field-textarea"
           onChange={onChange}
-          cols="30"
-          rows="10"
+          value={value}
+          rows="4"
+          required="required"
       >
-        {value}
       </textarea>
+      <span className="highlight"></span>
+      <span className="bar"></span>
+      <label
+          htmlFor={className}
+          className="field-label"
+      >
+        {text}
+      </label>
     </div>
 );
 
@@ -46,17 +50,16 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      firstName: '',
-      lastName: '',
+      name: '',
       email: '',
       phone: '',
+      location: '',
       message: '',
     };
   }
 
   onChange = (event) => {
     const { value, name } = event.target;
-    console.log(value, name);
     this.setState({
       [name]: value
     });
@@ -64,26 +67,19 @@ class Contact extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    console.log(this.state);
+    // console.log(this.state);
   };
 
   render() {
-    const { email, message, firstName, lastName, phone } = this.state;
+    const { email, message, location, name, phone } = this.state;
     return (
       <WrapperContact>
         <form className="contact-us" onSubmit={this.onSubmit}>
           <InputValue
               type="text"
-              text="First Name *"
-              className="firstName"
-              value={firstName}
-              onChange={this.onChange}
-          />
-          <InputValue
-              type="text"
-              text="Last Name *"
-              className="lastName"
-              value={lastName}
+              text="Full Name *"
+              className="name"
+              value={name}
               onChange={this.onChange}
           />
           <InputValue
@@ -100,13 +96,20 @@ class Contact extends Component {
               value={phone}
               onChange={this.onChange}
           />
+          <InputValue
+              type="text"
+              text="Location *"
+              className="location"
+              value={location}
+              onChange={this.onChange}
+          />
           <TextareaValue
               text="Message"
               className="message"
               value={message}
               onChange={this.onChange}
           />
-          <button type="submit" className="btn-submit">Submit</button>
+          <button type="submit" className="btn btn-submit">Submit</button>
         </form>
       </WrapperContact>
     );

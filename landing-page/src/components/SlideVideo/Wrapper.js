@@ -15,6 +15,7 @@ export default styled.div`
   & .video-bg {
     background: url(${bgVideo}) no-repeat 80% 20%;
     background-size: cover;
+    background-attachment: fixed;
     margin-top: -35px;
   }
   & .video-title {
@@ -30,7 +31,7 @@ export default styled.div`
     font-weight: 600;
     font-size: 1.5rem;
     text-align: center;
-    opacity: 0.5;
+    opacity: 0.7;
     color: ${color.white};
     line-height: 4rem;
     transform: translateY(0) scale(1);

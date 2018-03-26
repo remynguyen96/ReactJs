@@ -41,7 +41,7 @@ export default styled.div`
         line-height: 2.8rem;
         font-size: 1.4rem;
         text-align: center;
-        color: ${color.whiteDark};
+        color: #cfcfcf;
         padding: 0 5rem;
       }
       &-list {

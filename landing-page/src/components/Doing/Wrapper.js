@@ -34,6 +34,9 @@ export default styled.div`
         height: 100%;
         top: 0;
         left: 0;
+        &.scrolling {
+          background-attachment: fixed;
+        }
       }
       &-til {
         font-size: 2.2rem;

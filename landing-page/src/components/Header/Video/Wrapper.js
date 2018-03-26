@@ -1,5 +1,10 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import colorStyle from "../../../utils/color-style";
+
+const rotate = keyframes`
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+`;
 
 export default styled.div`
    & .header-video {
@@ -26,6 +31,32 @@ export default styled.div`
           border: none;
           outline: none;
           cursor: pointer;
+          &::after {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            position: absolute;
+            top: 51%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transform-origin: 50% 100%;
+            transition: border-bottom 280ms ease-in-out;
+          }
+          &:hover {
+             &::after {
+                content: '';
+                top: 25%;
+                height: 50%;
+                border-radius: 0;
+                border-top-left-radius: 100px;
+                border-top-right-radius: 100px;
+                border-bottom: 0;
+                animation: ${rotate} 3s linear infinite;
+             }
+          }
         }
         &-icon {
           font-size: 8.5rem;

@@ -4,21 +4,21 @@ import Slider from 'react-slick';
 import { YoutubeApi } from '../../utils/youtube-api';
 
 const dataVideo = [
-  {
-    id: 'Pj5PkQY9x8I',
-    name: 'Ta Đã Gặp Mẹ Con Như Thế Nào',
-    info: 'State of the art technology and an incentivized marketing community, perfectly balanced.',
-  },
-  {
-    id: 'mdXeKm44Ubc',
-    name: 'Bớt lo một ngày',
-    info: 'The more that people take part and contribute, the more the system itself is empowered, becoming more valuable to all those that use it.',
-  },
-  {
-    id: 'Sa6VzCCP5Yg',
-    name: 'Tôi Biết Em Không Biết',
-    info: 'We have designed a better kind of network; an ecosystem, where everyone can benefit and be empowered by a myriad of blockchain-based services and applications.',
-  },
+  // {
+  //   id: 'Pj5PkQY9x8I',
+  //   name: 'Ta Đã Gặp Mẹ Con Như Thế Nào',
+  //   info: 'State of the art technology and an incentivized marketing community, perfectly balanced.',
+  // },
+  // {
+  //   id: 'mdXeKm44Ubc',
+  //   name: 'Bớt lo một ngày',
+  //   info: 'The more that people take part and contribute, the more the system itself is empowered, becoming more valuable to all those that use it.',
+  // },
+  // {
+  //   id: 'Sa6VzCCP5Yg',
+  //   name: 'Tôi Biết Em Không Biết',
+  //   info: 'We have designed a better kind of network; an ecosystem, where everyone can benefit and be empowered by a myriad of blockchain-based services and applications.',
+  // },
   {
     id: 'Z14lqZRf2ZM',
     name: 'Em Hãy Nhắn Tin',

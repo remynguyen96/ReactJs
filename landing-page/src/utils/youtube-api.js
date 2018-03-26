@@ -11,39 +11,39 @@ if (!loadYT) {
   })
 }
 
-export const PlayerReady = ({ target }) => {
-  target.mute();
-  target.setVolume(0);
+export const PlayerReady = (event) => {
+  event.target.mute();
+  event.target.setVolume(0);
 };
 
-export const PlayerStateChange = ({ data, target }) => {
-  if (data === YT.PlayerState.PAUSED) {
-    target.playVideo();
+export const PlayerStateChange = (event) => {
+  if (event.data === YT.PlayerState.PAUSED) {
+    event.target.playVideo();
   }
 };
 
-function changeBorderColor(playerStatus) {
-  var color;
-  if (playerStatus == -1) {
-    color = "#37474F"; // unstarted = gray
-  } else if (playerStatus == 0) {
-    color = "#FFFF00"; // ended = yellow
-  } else if (playerStatus == 1) {
-    color = "#33691E"; // playing = green
-  } else if (playerStatus == 2) {
-    color = "#DD2C00"; // paused = red
-  } else if (playerStatus == 3) {
-    color = "#AA00FF"; // buffering = purple
-  } else if (playerStatus == 5) {
-    color = "#FF6DOO"; // video cued = orange
-  }
-  if (color) {
-    document.getElementById('existing-iframe-example').style.borderColor = color;
-  }
-}
-function onPlayerStateChange(event) {
-  changeBorderColor(event.data);
-}
+// function changeBorderColor(playerStatus) {
+//   var color;
+//   if (playerStatus == -1) {
+//     color = "#37474F"; // unstarted = gray
+//   } else if (playerStatus == 0) {
+//     color = "#FFFF00"; // ended = yellow
+//   } else if (playerStatus == 1) {
+//     color = "#33691E"; // playing = green
+//   } else if (playerStatus == 2) {
+//     color = "#DD2C00"; // paused = red
+//   } else if (playerStatus == 3) {
+//     color = "#AA00FF"; // buffering = purple
+//   } else if (playerStatus == 5) {
+//     color = "#FF6DOO"; // video cued = orange
+//   }
+//   if (color) {
+//     document.getElementById('existing-iframe-example').style.borderColor = color;
+//   }
+// }
+// function onPlayerStateChange(event) {
+//   changeBorderColor(event.data);
+// }
 
 export const YoutubeApi = ({ element, autoplay= 0, controls= 0, showinfo= 0, videoId= 'c9pQYOGIWM8', onPlayerReady= null, onPlayerStateChange= null }) => {
 

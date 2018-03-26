@@ -26,10 +26,10 @@ class SlideVideo extends Component {
       }]
     };
     return (
-      <Wrapper>
+      <Wrapper id="part3">
         <div className="bg-barrier"></div>
         <div className="video-bg">
-          <h3 className="video-title">Slide Video Youtube 3</h3>
+          <h3 className="video-title">Slide Video Youtube</h3>
           <Video settings={settings} width={450} height={450} />
         </div>
       </Wrapper>

@@ -1,27 +1,32 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
+import Rodal from 'rodal';
 import WrapperVideo from './Wrapper';
 import { YoutubeApi, PlayerReady, PlayerStateChange } from '../../../utils/youtube-api';
+import 'rodal/lib/rodal.css';
 
 class VideoFull extends PureComponent {
   constructor(props) {
     super(props);
     this.elPlayer = null;
+    this.state = {
+      visible: false,
+    };
   }
 
   static propTypes = {
-    // className: PropTypes.string.isRequired,
+    videoId: PropTypes.string.isRequired,
   };
 
   static defaultProps = {
-    // className: '',
+    videoId: 'c9pQYOGIWM8',
   };
 
   componentDidMount() {
     const settings = {
+      videoId: this.props.videoId,
       element: this.elPlayer,
-      // autoplay: 1,
-      autoplay: 0,
+      autoplay: 1,
       showinfo: 1,
       onPlayerReady: PlayerReady,
       onPlayerStateChange: PlayerStateChange,
@@ -30,12 +35,19 @@ class VideoFull extends PureComponent {
   }
 
   showVideo = () => {
-    console.log('show popup video !');
+    this.setState({ visible: true });
+  };
+
+  hideVideo = () => {
+    this.setState({ visible: false });
   };
 
   render() {
     return (
         <WrapperVideo>
+          <Rodal closeOnEsc={true} animation='slideUp' visible={this.state.visible} onClose={this.hideVideo}>
+            <div>Video Here !!!!</div>
+          </Rodal>
           <button className="header-video-btn" onClick={this.showVideo}>
             <i className="fa fa-play-circle header-video-icon" aria-hidden="true"></i>
           </button>

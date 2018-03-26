@@ -26,7 +26,7 @@ class SlideAuthor extends Component {
       }]
     };
     return (
-        <Wrapper>
+        <Wrapper id="part4">
           <div className="author-barrier"></div>
           <div className="author">
             <h3 className="author-title">Meet Our Team</h3>

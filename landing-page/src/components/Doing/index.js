@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Wrapper from './Wrapper';
 import You from "./You";
 
@@ -16,10 +17,41 @@ const infomationYou2 = [
 ];
 
 class Doing extends Component {
+
+  constructor(props) {
+    super(props);
+    this.elementBg = null;
+    this.state = {
+      scrolling: false,
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.scrollImage);
+  };
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.scrollImage);
+  };
+
+  scrollImage = () => {
+    const { top } = this.elementBg.getBoundingClientRect();
+    console.log(this.elementBg.getBoundingClientRect());
+    // if ((window.scrollY + 300) > top) {
+    //    this.setState({ scrolling: true });
+    // }
+    // if (top <= -200 || top ) {
+    //   this.setState({ scrolling: false });
+    // }
+  };
+
   render() {
     return (
-        <Wrapper>
-          <div className="you-bg"></div>
+        <Wrapper id="part2">
+          <div className={this.state.scrolling ? 'you-bg scrolling' : 'you-bg'}
+               ref={(ref) => this.elementBg = ref}
+          >
+          </div>
           <You title='Why do i need this' infomation={infomationYou1} />
           <You title='Why are you selling' infomation={infomationYou2} />
         </Wrapper>
