@@ -74,6 +74,26 @@ export default styled.div`
     }
     
     @media only screen and (max-width: 1024px) {
-    
+        & .author {
+          &-name {
+            font-size: 1.8rem;
+            line-height: 3.2rem;
+          }
+          &-desc {
+            font-size: 1.6rem;
+         }
+          &-player {
+             width: 580px;
+             height: 420px;
+          };
+        }
+    };
+    @media only screen and (max-width: 768px) {
+        & .author {
+          &-player {
+             width: 500px;
+             height: 400px;
+          };
+        }
     };
 `;

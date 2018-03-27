@@ -80,6 +80,7 @@ export default styled.div`
   @media only screen and (max-width: 1024px) {
     & .yt-title {
       line-height: 3rem;
+      font-size: 1.8rem;
     }
     & .yt-center {
        & .slick-slide {

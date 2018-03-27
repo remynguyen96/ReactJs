@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import logo from '../../images/netleaders-logo.png';
 import Link from "./Link";
+import NavMobile from './NavMobile';
 import { componentApp, componentAuthor, componentDoing, componentFooter, componentVideo } from '../../utils/mockData';
 
 const scrollStepIn = 40;
@@ -98,6 +99,31 @@ class Nav extends Component {
   render() {
     const { scrolling, activeMenu } = this.state;
     const { listMenu } = this.props;
+    if (window.innerWidth <= 768) {
+      return (
+          <div className="mobl">
+            <div className="mobl-logo"></div>
+            <button className="mobl-btn">
+              <span className="mobl-icon"></span>
+              <span className="mobl-icon"></span>
+              <span className="mobl-icon"></span>
+            </button>
+            <div className="mobl-main">
+              <ul className="header-menu">
+                {listMenu.map(({name}, index) => (
+                    <Link
+                        key={arrComponent[index]}
+                        name={name}
+                        link={arrComponent[index]}
+                        activeMenu={activeMenu}
+                        handleClick={this.scrollToPoint}
+                    />
+                ))}
+              </ul>
+            </div>
+          </div>
+      )
+    }
     return (
         <div className={scrolling ? 'header-nav nav-scroll': 'header-nav'} ref={(ref) => { this.navMenu = ref }}>
           <div className="header-logo" >
@@ -122,6 +148,7 @@ class Nav extends Component {
 }
 
 export default Nav;
+
 
 
 
