@@ -5,6 +5,14 @@ import {titlePage} from "../../utils/mixin-style";
 import bgVideo from '../../images/bg-video.png';
 import bgZigzag from '../../images/bg-zigzag.png';
 
+const { innerWidth } = window;
+const paddingSliderDesktop = 50;
+const paddingSliderMobile = 75;
+let widthSlider = (innerWidth - (2 * paddingSliderDesktop)) / 3;
+if (innerWidth <= 1024) {
+  widthSlider = (innerWidth - (2 * paddingSliderMobile)) / 2;
+};
+
 export default styled.div`
   background-color: #121316;
   & .bg-barrier {
@@ -13,14 +21,15 @@ export default styled.div`
     height: 200px;
   }
   & .video-bg {
-    background: url(${bgVideo}) no-repeat 80% 20%;
+    background: url(${bgVideo}) no-repeat 100% 0;
     background-size: cover;
     background-attachment: fixed;
     margin-top: -35px;
+    padding-bottom: 0;
   }
   & .video-title {
     ${titlePage};
-    padding: 8rem 0 5rem;
+    padding: 15rem 0 12rem;
     color: ${color.yellow};
     &::after {
       margin-top: 4.5rem;
@@ -34,24 +43,26 @@ export default styled.div`
     opacity: 0.7;
     color: ${color.white};
     line-height: 4rem;
+    margin-bottom: 0;
     transform: translateY(0) scale(1);
     transition: all 300ms ease;
   }
-  & .slick-slide {
-    margin: 5rem auto 8rem;
-  }
   & .yt-center {
-     & .slick-track {
-         padding-bottom: 18rem;
+     & .slick-arrow {
+        top: 25%;
      }
+     & .slick-slide {
+        margin: 5rem auto 0;
+        width: ${widthSlider}px;
+      }
      & .yt-player {
         transform: scale(1);
         outline: none;
         transition: all 300ms ease-in-out;
-        margin: 0 3.3rem;
+        margin: 0 15%;
         border-radius: 30px 10px 30px 10px;
-        height: 350px;
-        width: 350px;
+        height: 300px;
+        width: 300px;
      }
      .slick-center {
        & .yt-title {
@@ -66,4 +77,14 @@ export default styled.div`
        }
      }
   }
+  @media only screen and (max-width: 1024px) {
+    & .yt-title {
+      line-height: 3rem;
+    }
+    & .yt-center {
+       & .slick-slide {
+          margin: 5rem auto 3%;
+       }
+    }
+  };
 `;

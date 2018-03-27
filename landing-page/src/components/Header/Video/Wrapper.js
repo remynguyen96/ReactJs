@@ -63,4 +63,12 @@ export default styled.div`
           color: ${colorStyle.white};
         }
    }
+   
+  @media only screen and (max-width: 1024px) {
+    & .header-video {
+      &-btn {
+        top: 18%;
+      }
+    }
+  };
 `;

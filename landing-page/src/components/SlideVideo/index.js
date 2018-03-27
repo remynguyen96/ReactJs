@@ -9,22 +9,20 @@ class SlideVideo extends Component {
       className: 'yt-center',
       centerMode: true,
       infinite: true,
-      slidesToShow: 3,
+      lazyLoad: true,
       slidesToScroll: 3,
-      speed: 850,
+      slidesToShow: 3,
+      speed: 900,
+      variableWidth: true,
       responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-        }
-      },{
-        breakpoint: 768,
+        breakpoint: 1025,
         settings: {
           slidesToShow: 1,
+          centerPadding: '75px',
           slidesToScroll: 1,
+          arrows: false,
         }
-      }]
+    }]
     };
     return (
       <Wrapper id={componentVideo}>

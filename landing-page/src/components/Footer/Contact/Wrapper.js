@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-
 export default styled.div`
   padding: 12rem 20% 0;
   margin-bottom: 10rem;
@@ -21,7 +20,6 @@ export default styled.div`
        left: auto;
     }
   }
-
   & .btn-submit {
     background: #caad3f;
     color: #f6efd0;
@@ -41,4 +39,16 @@ export default styled.div`
       box-shadow: 0 7px 14px rgba(0, 0, 0, 0.18), 0 5px 5px rgba(0, 0, 0, 0.12);
     }
   }
+  @media only screen and (max-width: 1024px) {
+     padding: 12rem 5% 0;
+  };
+  @media only screen and (max-width: 768px) {
+  padding: 10rem 4% 0;
+  margin-bottom: 5rem;
+  
+    & .textarea {
+      padding: 0 2rem;
+    }
+  };
 `;
+

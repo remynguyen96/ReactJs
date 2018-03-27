@@ -66,5 +66,32 @@ export default styled.div`
          list-style-type: decimal;
          color: ${color.white};
       }
+      &-more {
+         font-size: 2.4rem;
+         font-weight: 600;
+         color: ${color.white};
+         align-self: flex-end;
+         cursor: pointer;
+      }
    }
+  @media only screen and (max-width: 1024px) {
+   padding-left: 5%;
+   padding-right: 5%;
+   & .you {
+      flex-basis: 45%;
+      max-width: 45%;
+      &:last-child {
+         margin-top: 2%;
+      }
+   } 
+  };
+  @media only screen and (max-width: 768px) {
+   & .you {
+      flex-basis: 60%;
+      max-width: 60%;
+      &:last-child {
+         margin-top: 5%;   
+      }
+   } 
+  };
 `;

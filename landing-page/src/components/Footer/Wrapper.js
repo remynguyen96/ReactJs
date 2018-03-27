@@ -5,9 +5,12 @@ import contact from '../../images/bg-contact.jpg';
 
 export default styled.div`
   & .bg-black {
-      background-color: #141519;
-      width: 100%;
-      height: 100%;
+    background-color: #141519;
+    width: 100%;
+    height: 190px;
+    transform: skewY(1deg);
+    transform-origin: bottom right;
+    margin-bottom: -5rem;
   }
   & .footer {
     background: url(${contact}) no-repeat center center;
@@ -35,8 +38,6 @@ export default styled.div`
       flex-basis: 40%;
       display: flex;
       flex-direction: column;
-      padding: 0 4rem;
-      margin-bottom: 3rem;
     }
   }
   & .contact {
@@ -64,4 +65,33 @@ export default styled.div`
     margin-top: 2rem;
     line-height: 5rem;
   }
+  @media only screen and (max-width: 1024px) {
+    & .footer {
+      &-title {
+        width: 80%;
+        &::after {
+          margin-top: 12rem;
+        }
+      }
+      &-map {
+        padding: 0 4%;
+      }
+    }
+  };
+  @media only screen and (max-width: 768px) {
+    & .footer {
+      &-title {
+        width: 92%;
+        &::after {
+          margin-top: 14rem;
+        }
+      }
+      &-map {
+        flex-direction: column;
+      }
+      &-contact {
+          margin-bottom: 4rem;
+      }
+    }
+  };
 `;

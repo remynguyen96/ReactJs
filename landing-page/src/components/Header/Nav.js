@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import logo from '../../images/netleaders-logo.png';
 import Link from "./Link";
+import { componentApp, componentAuthor, componentDoing, componentFooter, componentVideo } from '../../utils/mockData';
 
 const scrollStepIn = 40;
 const scrollSpeed = 15;
+const arrComponent = [componentApp, componentDoing, componentVideo, componentAuthor, componentFooter];
 
 class Nav extends Component {
   constructor(props) {
@@ -13,13 +15,12 @@ class Nav extends Component {
       scrolling: false,
       intervalScroll: 0,
       pointerScroll: 0,
+      activeMenu: componentApp,
     };
   }
 
   componentDidMount() {
     window.addEventListener('scroll', this.handleScroll);
-    // const positionScroll = window.scrollY;
-    // console.log(positionScroll);
   }
 
   componentWillUnmount() {
@@ -27,6 +28,7 @@ class Nav extends Component {
   }
 
   handleScroll = () => {
+    this.scrollPoint();
     const heightMenu = this.navMenu.offsetHeight;
     this.setState({
       scrolling: ((window.scrollY - 10) > heightMenu) ? true : false,
@@ -70,8 +72,31 @@ class Nav extends Component {
     }
   };
 
+  scrollPoint = () => {
+    const { offsetTop: app } = document.querySelector(`#${componentApp}`);
+    const { offsetTop: doing } = document.querySelector(`#${componentDoing}`);
+    const { offsetTop: video } = document.querySelector(`#${componentVideo}`);
+    const { offsetTop: author } = document.querySelector(`#${componentAuthor}`);
+    const { offsetTop: footer } = document.querySelector(`#${componentFooter}`);
+    const { scrollY } = window;
+    switch (true) {
+      case (0 <= scrollY && scrollY <= app) || (app <= scrollY && scrollY <= doing) :
+        return this.setState({ activeMenu: componentApp });
+      case doing <= scrollY && scrollY <= video :
+        return this.setState({ activeMenu: componentDoing });
+      case  video <= scrollY && scrollY <= author:
+        return this.setState({ activeMenu: componentVideo });
+      case  author <= scrollY && scrollY <= footer:
+        return this.setState({ activeMenu: componentAuthor });
+      case  footer <= scrollY:
+        return this.setState({ activeMenu: componentFooter });
+      default:
+        return this.setState({ activeMenu: componentApp });
+    }
+  };
+
   render() {
-    const { scrolling } = this.state;
+    const { scrolling, activeMenu } = this.state;
     const { listMenu } = this.props;
     return (
         <div className={scrolling ? 'header-nav nav-scroll': 'header-nav'} ref={(ref) => { this.navMenu = ref }}>
@@ -81,12 +106,12 @@ class Nav extends Component {
             </a>
           </div>
           <ul className="header-menu">
-            {listMenu.map((menu) => (
+            {listMenu.map(({ name }, index) => (
                 <Link
-                    key={menu.name}
-                    name={menu.name}
-                    link={menu.link}
-                    active={menu.active}
+                    key={arrComponent[index]}
+                    name={name}
+                    link={arrComponent[index]}
+                    activeMenu={activeMenu}
                     handleClick={this.scrollToPoint}
                 />
             ))}

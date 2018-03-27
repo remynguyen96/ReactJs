@@ -5,7 +5,10 @@ import bgAuthor from '../../images/bg-author.jpg';
 
 const { innerWidth } = window;
 const paddingSlider = 15;
-const widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
+let widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
+if (innerWidth <= 1024) {
+  widthSlider = innerWidth - ((innerWidth * paddingSlider / 100) * 2);
+};
 
 export default styled.div`
     background-color: #0F1014;
@@ -24,12 +27,7 @@ export default styled.div`
         color: ${color.yellow};
       }
       &-info {
-        //position: absolute;
-        //top: 50%;
-        //left: 50%;
-        //transform: translate(-50%, -50%);
-        //margin: 15rem -4%;
-        padding: 4rem 18%;
+        padding: 2rem 18%;
       }
       &-name {
         text-transform: capitalize;
@@ -70,11 +68,12 @@ export default styled.div`
         text-align: center;
       }
       &-player {
-        //width: 380px;
-        //height: 435px;
-        //padding-bottom: 20%;
         margin: 4rem 2rem;
         border-radius: .5rem;
       };
     }
+    
+    @media only screen and (max-width: 1024px) {
+    
+    };
 `;

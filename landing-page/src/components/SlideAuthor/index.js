@@ -7,22 +7,22 @@ class SlideAuthor extends Component {
   render() {
     const settings = {
       className: 'author-list',
+      initialSlide: 0,
       infinite: true,
+      lazyLoad: true,
       slidesToScroll: 1,
       slidesToShow: 2,
       speed: 1200,
+      autoplay: true,
+      autoplaySpeed: 4800,
+      cssEase: 'linear',
       variableWidth: true,
       responsive: [{
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        }
-      },{
-        breakpoint: 768,
+        breakpoint: 1025,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          arrows: false,
         }
       }]
     };

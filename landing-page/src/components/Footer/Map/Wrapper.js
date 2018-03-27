@@ -29,4 +29,7 @@ export default styled.div`
      animation: ${pulse} .8s linear infinite alternate;
     }
    }
+  @media only screen and (max-width: 1024px) {
+        
+  };
 `;

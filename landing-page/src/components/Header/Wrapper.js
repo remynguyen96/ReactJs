@@ -126,4 +126,13 @@ export default styled.div`
       }
     }
   }
+  
+  @media only screen and (max-width: 1024px) {
+     & .header {
+        &-white-page {
+          margin-top: -25%;
+          padding-top: 15%;
+        }
+     }
+  };
 `;

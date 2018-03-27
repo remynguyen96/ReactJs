@@ -4,12 +4,10 @@ import Slider from 'react-slick';
 import { YoutubeApi } from '../../utils/youtube-api';
 
 const dataVideo = [
-  { id: 'UpHHPkLkoG8', name: 'Count On Me' },
-  { id: 'Pj5PkQY9x8I', name: 'Ta Đã Gặp Mẹ Con Như Thế Nào' },
-  { id: 'Ls6EBIR8hDE', name: 'Mân Côi' },
-  { id: 'mdXeKm44Ubc', name: 'Bớt lo một ngày' },
-  { id: 'Z14lqZRf2ZM', name: 'Em Hãy Nhắn Tin' },
-  { id: 'Sa6VzCCP5Yg', name: 'Tôi Biết Em Không Biết' },
+  { id: '1v5ZsM10S0o', name: 'Ngày trở về của Alice' },
+  { id: 'u0e0AdP2Jds', name: 'Tôi yêu quê hương tôi từ khi mới thành người' },
+  { id: 'JedTFseze7o', name: 'Đêm mơ mình nói tiếng Việt Nam' },
+  { id: '7ayAiF3hHRc', name: 'Trở về và lập nghiệp tại đất mẹ' },
 ];
 
 class Video extends Component {

@@ -19,14 +19,14 @@ class VideoFull extends PureComponent {
   };
 
   static defaultProps = {
-    videoId: 'c9pQYOGIWM8',
+    videoId: 'Ftm2uv7-Ybw',
   };
 
   componentDidMount() {
     const settings = {
       videoId: this.props.videoId,
       element: this.elPlayer,
-      autoplay: 0,
+      autoplay: 1,
       showinfo: 1,
       onPlayerReady: PlayerReady,
       onPlayerStateChange: PlayerStateChange,
