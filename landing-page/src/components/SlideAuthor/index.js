@@ -17,14 +17,16 @@ class SlideAuthor extends Component {
       autoplaySpeed: 4800,
       cssEase: 'linear',
       variableWidth: true,
-      responsive: [{
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          arrows: false,
-        }
-      }]
+      responsive: [
+        {
+          breakpoint: 1025,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        },
+      ]
     };
     return (
         <Wrapper id={componentAuthor}>

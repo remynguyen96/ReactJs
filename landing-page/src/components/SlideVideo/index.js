@@ -14,7 +14,8 @@ class SlideVideo extends Component {
       slidesToShow: 3,
       speed: 900,
       variableWidth: true,
-      responsive: [{
+      responsive: [
+      {
         breakpoint: 1025,
         settings: {
           slidesToShow: 1,
@@ -22,7 +23,17 @@ class SlideVideo extends Component {
           slidesToScroll: 1,
           arrows: false,
         }
-    }]
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerPadding: '0',
+          arrows: false,
+        }
+      }
+    ]
     };
     return (
       <Wrapper id={componentVideo}>

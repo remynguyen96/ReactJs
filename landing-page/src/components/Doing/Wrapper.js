@@ -94,4 +94,14 @@ export default styled.div`
       }
    } 
   };
+  @media only screen and (max-width: 414px) {
+     & .you {
+        flex-basis: 100%;
+        max-width: 100%;
+        &:last-child {
+           margin-top: 10%;   
+        }
+     } 
+  };
 `;
+

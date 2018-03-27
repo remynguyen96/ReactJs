@@ -138,17 +138,56 @@ export default styled.div`
   
   @media only screen and (max-width: 768px) {
      & .mobl {
+        position: relative;
+        z-index: 99;
+        padding: 2rem;
         &-logo {
-        
+           max-width: 25%;
         }
         &-btn {
-        
+          display: block;
+          font-size: 0;
+          z-index: 100;
         }
         &-icon {
-        
+          transition: all .3s ease-in-out;
+          display: block;
+          width: 22px;
+          height: 2px;
+          border-radius: 1px;
+          background-color: #fff;
+          &+.icon-bar {
+             margin-top: 5px;
+          }
         }
         &-main {
-        
+          position: absolute;
+          display: none;
+        }
+     }
+      & .header {
+        &-white-page {
+          margin-top: -20%;
+          padding-top: 5%;
+          height: 250px;
+        }
+     }
+  };
+  @media only screen and (max-width: 414px) {
+     & .header {
+        &-white-page {
+          margin-top: -25%;
+          padding-left: 2rem;
+          padding-right: 2rem;
+          flex-direction: column;
+        }
+        &-btn-link {
+          &:first-child {
+            align-self: flex-start;
+          } 
+          &:last-child {
+            align-self: flex-end;
+          }   
         }
      }
   };

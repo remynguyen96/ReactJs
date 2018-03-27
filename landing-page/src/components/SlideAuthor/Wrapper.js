@@ -5,10 +5,15 @@ import bgAuthor from '../../images/bg-author.jpg';
 
 const { innerWidth } = window;
 const paddingSlider = 15;
-let widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
-if (innerWidth <= 1024) {
-  widthSlider = innerWidth - ((innerWidth * paddingSlider / 100) * 2);
-};
+let widthSlider = 0;
+switch (true) {
+  case innerWidth > 1024:
+    widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
+  case innerWidth <= 1024:
+    widthSlider = innerWidth - ((innerWidth * paddingSlider / 100) * 2);
+  case innerWidth <= 414:
+    widthSlider = innerWidth;
+}
 
 export default styled.div`
     background-color: #0F1014;
@@ -89,6 +94,14 @@ export default styled.div`
         }
     };
     @media only screen and (max-width: 768px) {
+        & .author {
+          &-player {
+             width: 500px;
+             height: 400px;
+          };
+        }
+    };
+    @media only screen and (max-width: 414px) {
         & .author {
           &-player {
              width: 500px;

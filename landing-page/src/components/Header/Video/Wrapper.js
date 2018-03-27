@@ -66,9 +66,24 @@ export default styled.div`
    
   @media only screen and (max-width: 1024px) {
     & .header-video {
-      &-btn {
-        top: 18%;
+      &-yt {
+        pointer-events: all;
       }
     }
+  };
+  @media only screen and (max-width: 768px) {
+    & .header-video {
+       &-yt {
+          top: -11.2rem;
+          transform: skewY(3deg);
+       }
+    };
+  };
+  @media only screen and (max-width: 414px) {
+    & .header-video {
+       &-yt {
+         top: -7.8rem;
+       }
+    };
   };
 `;

@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import logo from '../../images/netleaders-logo.png';
 import Link from "./Link";
-import NavMobile from './NavMobile';
 import { componentApp, componentAuthor, componentDoing, componentFooter, componentVideo } from '../../utils/mockData';
 
 const scrollStepIn = 40;
@@ -30,9 +29,9 @@ class Nav extends Component {
 
   handleScroll = () => {
     this.scrollPoint();
-    const heightMenu = this.navMenu.offsetHeight;
+    const { offsetHeight } = this.navMenu;
     this.setState({
-      scrolling: ((window.scrollY - 10) > heightMenu) ? true : false,
+      scrolling: ((window.scrollY - 10) > offsetHeight) ? true : false,
     });
   };
 
@@ -101,8 +100,12 @@ class Nav extends Component {
     const { listMenu } = this.props;
     if (window.innerWidth <= 768) {
       return (
-          <div className="mobl">
-            <div className="mobl-logo"></div>
+          <div className="mobl" ref={(ref) => { this.navMenu = ref }}>
+            <div className="mobl-logo">
+              <a href="/">
+                <img src={logo} alt="netleaders" className='header-logo-images' />
+              </a>
+            </div>
             <button className="mobl-btn">
               <span className="mobl-icon"></span>
               <span className="mobl-icon"></span>

@@ -7,11 +7,17 @@ import bgZigzag from '../../images/bg-zigzag.png';
 
 const { innerWidth } = window;
 const paddingSliderDesktop = 50;
-const paddingSliderMobile = 75;
-let widthSlider = (innerWidth - (2 * paddingSliderDesktop)) / 3;
-if (innerWidth <= 1024) {
-  widthSlider = (innerWidth - (2 * paddingSliderMobile)) / 2;
-};
+const paddingMobileS = 75;
+let widthSlider = 0;
+switch (true) {
+  case innerWidth > 1024:
+    widthSlider = (innerWidth - (2 * paddingSliderDesktop)) / 3;
+  case innerWidth <= 1024:
+    widthSlider = (innerWidth - (2 * paddingMobileS)) / 2;
+  case innerWidth <= 414:
+    widthSlider = innerWidth;
+}
+
 
 export default styled.div`
   background-color: #121316;
@@ -86,6 +92,14 @@ export default styled.div`
        & .slick-slide {
           margin: 5rem auto 3%;
        }
+    }
+  };
+  @media only screen and (max-width: 414px) {
+    & .yt-title {
+      padding: 0 5rem;
+    }
+    & .yt-center {
+       margin: 0 13.5%;
     }
   };
 `;
