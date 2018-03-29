@@ -244,6 +244,11 @@ export default styled.div`
           }   
         }
      }
+     & .mobl {
+        &-logo {
+           max-width: 40%;
+        }
+     }
   };
   @media only screen and (max-width: 375px) {
      & .header {

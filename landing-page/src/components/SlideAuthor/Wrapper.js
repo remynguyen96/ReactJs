@@ -120,4 +120,11 @@ export default styled.div`
             }
         }
     };
+    @media only screen and (max-width: 375px) {
+      & .author {
+        &-player {
+           margin-left: 0;
+        };
+      }
+    };
 `;

@@ -23,14 +23,16 @@ class VideoFull extends PureComponent {
   };
 
   componentDidMount() {
-    const settings = {
+    let settings = {
       videoId: this.props.videoId,
       element: this.elPlayer,
       autoplay: 1,
       showinfo: 1,
-      onPlayerReady: PlayerReady,
-      onPlayerStateChange: PlayerStateChange,
     };
+    if (window.innerWidth > 1024) {
+      settings.onPlayerReady = PlayerReady;
+      settings.onPlayerStateChange = PlayerStateChange;
+    }
     YoutubeApi(settings);
   }
 

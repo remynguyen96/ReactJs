@@ -81,6 +81,7 @@ export default styled.div`
   };
   @media only screen and (max-width: 414px) {
     & .header-video {
+       padding-bottom: 85.25%;
        &-yt {
          top: -7.8rem;
        }
