@@ -9,13 +9,15 @@ const { innerWidth } = window;
 const paddingSliderDesktop = 50;
 const paddingMobileS = 75;
 let widthSlider = 0;
-switch (true) {
-  case innerWidth > 1024:
-    widthSlider = (innerWidth - (2 * paddingSliderDesktop)) / 3;
-  case innerWidth <= 1024:
-    widthSlider = (innerWidth - (2 * paddingMobileS)) / 2;
-  case innerWidth <= 414:
-    widthSlider = innerWidth;
+
+if (innerWidth > 1024) {
+  widthSlider = (innerWidth - (2 * paddingSliderDesktop)) / 3;
+}
+if (innerWidth <= 1024) {
+  widthSlider = (innerWidth - (2 * paddingMobileS)) / 2;
+}
+if (innerWidth <= 414) {
+  widthSlider = innerWidth;
 }
 
 
@@ -96,10 +98,32 @@ export default styled.div`
   };
   @media only screen and (max-width: 414px) {
     & .yt-title {
-      padding: 0 5rem;
+      padding: 0 4rem;
     }
     & .yt-center {
-       margin: 0 13.5%;
+       & .slick-slide {
+          margin: 5rem -1px 5% 0;
+       }
     }
+  };  
+  @media only screen and (max-width: 375px) {
+      & .yt-center {
+         & .slick-slide {
+            margin: 2rem auto 5%;
+         }
+         .slick-center {
+           & .yt-title {
+            transform: translateY(7rem) scale(1);
+           }
+           & .yt-player {
+              border-radius: 0;
+              max-width: 100%;
+              transform: scale(1);
+              height: calc(${widthSlider}px - 25px);
+              width: calc(${widthSlider}px - 25px);
+              margin-left: 1rem;
+           }
+         }
+      }
   };
 `;

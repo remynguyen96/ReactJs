@@ -137,17 +137,20 @@ export default styled.div`
   };
   
   @media only screen and (max-width: 768px) {
+      & .list-menu {
+         width: 100%;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0 4rem;
+        transition: all 300ms ease;
+      }
      & .mobl {
         position: relative;
         z-index: 99;
         padding: 2rem;
         &-logo {
            max-width: 25%;
-        }
-        &-btn {
-          display: block;
-          font-size: 0;
-          z-index: 100;
         }
         &-icon {
           transition: all .3s ease-in-out;
@@ -156,15 +159,51 @@ export default styled.div`
           height: 2px;
           border-radius: 1px;
           background-color: #fff;
-          &+.icon-bar {
+          +.mobl-icon {
              margin-top: 5px;
+          }
+        }
+        &-btn {
+          background-color: transparent;
+          background-image: none;
+          cursor: pointer;
+          border: solid 1px transparent;
+          border-radius: 4px;
+          outline: 0;
+          position: absolute;
+          z-index: 100;
+          top: 3rem;
+          right: 2rem;
+          &.mobl-open {
+             & .mobl-icon:nth-child(1) {
+                 transform: translate(-1px, 7px) rotate(-225deg);
+             }
+             & .mobl-icon:nth-child(2) {
+                 opacity: 0;
+             }
+             & .mobl-icon:nth-child(3) {
+                 transform: translate(-1px,-7px) rotate(225deg);
+             }
           }
         }
         &-main {
           position: absolute;
-          display: none;
+          visibility: hidden;
+          top: 0;
+          right: 0;
+          transition: all 300ms ease-in-out;
+          &.mobl-main-open {
+            visibility: visible;
+            & .list-menu {
+                position: absolute;
+                flex-direction: column;
+                top: 5rem;
+                right: -5rem;
+            }
+          }
         }
      }
+     
       & .header {
         &-white-page {
           margin-top: -20%;
@@ -191,4 +230,21 @@ export default styled.div`
         }
      }
   };
+  @media only screen and (max-width: 375px) {
+     & .header {
+        &-white-page {
+          margin-top: -26%;
+        }
+     }
+  };
+  @media only screen and (max-width: 320px) {
+     & .header {
+        &-white-page {
+          margin-top: -30%;
+        }
+     }
+  };
 `;
+
+
+

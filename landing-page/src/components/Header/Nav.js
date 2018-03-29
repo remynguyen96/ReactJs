@@ -15,6 +15,7 @@ class Nav extends Component {
       scrolling: false,
       intervalScroll: 0,
       pointerScroll: 0,
+      openMenu: false,
       activeMenu: componentApp,
     };
   }
@@ -95,24 +96,32 @@ class Nav extends Component {
     }
   };
 
+  openNav = () => {
+    this.setState((prevState) => ({
+      openMenu: !prevState.openMenu
+    }));
+  };
+
   render() {
-    const { scrolling, activeMenu } = this.state;
-    const { listMenu } = this.props;
+    const {scrolling, activeMenu, openMenu} = this.state;
+    const {listMenu} = this.props;
     if (window.innerWidth <= 768) {
       return (
-          <div className="mobl" ref={(ref) => { this.navMenu = ref }}>
+          <div className="mobl" ref={(ref) => {
+            this.navMenu = ref
+          }}>
             <div className="mobl-logo">
               <a href="/">
-                <img src={logo} alt="netleaders" className='header-logo-images' />
+                <img src={logo} alt="netleaders" className='header-logo-images'/>
               </a>
             </div>
-            <button className="mobl-btn">
+            <button className={openMenu ? 'mobl-btn mobl-open' : 'mobl-btn'} onClick={this.openNav}>
               <span className="mobl-icon"></span>
               <span className="mobl-icon"></span>
               <span className="mobl-icon"></span>
             </button>
-            <div className="mobl-main">
-              <ul className="header-menu">
+            <div className={`mobl-main ${openMenu ? 'mobl-main-open' : ''}`}>
+              <ul className="list-menu">
                 {listMenu.map(({name}, index) => (
                     <Link
                         key={arrComponent[index]}

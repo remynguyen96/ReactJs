@@ -22,7 +22,7 @@ export const PlayerStateChange = (event) => {
   }
 };
 
-export const YoutubeApi = ({ element, autoplay= 0, controls= 0, showinfo= 0, videoId= 'NUKKzdVy0EI', onPlayerReady= null, onPlayerStateChange= null }) => {
+export const YoutubeApi = ({ element = 'youtube-video', autoplay= 0, controls= 0, showinfo= 0, videoId= 'NUKKzdVy0EI', onPlayerReady= null, onPlayerStateChange= null }) => {
 
   return loadYT.then((youtube) => {
     YT = youtube;

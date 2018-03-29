@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Wrapper from './Wrapper';
 import You from "./You";
 import { componentDoing } from '../../utils/mockData';
+import { YoutubeApi } from "../../utils/youtube-api";
 
 const infomationYou1 = [
   'Chia sẻ về ước mơ của bạn.',
@@ -18,43 +19,20 @@ const infomationYou2 = [
 
 class Doing extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      scrolling: false,
-    };
-  }
-
   componentDidMount() {
-    window.addEventListener('scroll', this.scrollImage);
-  };
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.scrollImage);
-  };
-
-  scrollImage = () => {
-    // const elementBg = document.querySelector('#part2');
-    // console.dir(elementBg);
-    // const { top } = this.elementBg.getBoundingClientRect();
-    // const { top } = this.elementBg;
-    // console.dir(this.elementBg)
-    // console.log(this.elementBg.getBoundingClientRect());
-    // console.log(window.scrollY, top);
-    // if ((window.scrollY + 300) > top) {
-    //    this.setState({ scrolling: true });
-    // }
-    // if (top <= -200 || top ) {
-    //   this.setState({ scrolling: false });
-    // }
-  };
+    const settings = {
+      videoId: 'UVmWLJVMBa8',
+      element: this.elPlayer,
+    };
+    YoutubeApi(settings);
+  }
 
   render() {
     return (
         <Wrapper id={componentDoing}>
-          <div className={this.state.scrolling ? 'you-bg scrolling' : 'you-bg'}>
-          </div>
+          <div className="you-bg"></div>
           <You title='Why do i need this' infomation={infomationYou1} />
+          <div className="you-video" ref={(ref) => { this.elPlayer = ref }}></div>
           <You title='Why are you selling' infomation={infomationYou2} />
         </Wrapper>
     );

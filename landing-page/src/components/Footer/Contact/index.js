@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import WrapperContact from './Wrapper';
+import { YoutubeApi } from "../../../utils/youtube-api";
 
 const InputValue = ({ className, onChange, type, text, value }) => (
     <div className="field">
@@ -22,28 +23,6 @@ const InputValue = ({ className, onChange, type, text, value }) => (
       <span className="bar"></span>
     </div>
 );
-const TextareaValue = ({ className, onChange, text, value }) => (
-    <div className="field textarea">
-      <textarea
-          name={className}
-          id={className}
-          className="field-textarea"
-          onChange={onChange}
-          value={value}
-          rows="4"
-          required="required"
-      >
-      </textarea>
-      <span className="highlight"></span>
-      <span className="bar"></span>
-      <label
-          htmlFor={className}
-          className="field-label"
-      >
-        {text}
-      </label>
-    </div>
-);
 
 class Contact extends Component {
 
@@ -56,6 +35,14 @@ class Contact extends Component {
       location: '',
       message: '',
     };
+  }
+
+  componentDidMount() {
+    const settings = {
+      videoId: 'Sd2S_dVOwq4',
+      element: this.elPlayer,
+    };
+    YoutubeApi(settings);
   }
 
   onChange = (event) => {
@@ -71,9 +58,13 @@ class Contact extends Component {
   };
 
   render() {
-    const { email, message, location, name, phone } = this.state;
+    const { email, location, name, phone } = this.state;
     return (
       <WrapperContact>
+        <div className="contact-intro">
+          <div className="contact-video" ref={(ref) => { this.elPlayer = ref }}></div>
+          <a href='#link' target="_blank" className="contact-link">Link mở tài khoản mua giấy phép</a>
+        </div>
         <form className="contact-us" onSubmit={this.onSubmit}>
           <InputValue
               type="text"
@@ -101,12 +92,6 @@ class Contact extends Component {
               text="Location *"
               className="location"
               value={location}
-              onChange={this.onChange}
-          />
-          <TextareaValue
-              text="Message"
-              className="message"
-              value={message}
               onChange={this.onChange}
           />
           <button type="submit" className="btn btn-submit">Submit</button>

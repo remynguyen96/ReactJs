@@ -94,4 +94,11 @@ export default styled.div`
       }
     }
   };
+  @media only screen and (max-width: 414px) {
+    & .footer {
+      &-title {
+        width: 100%;
+      }
+    }
+  };
 `;

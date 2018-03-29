@@ -13,7 +13,7 @@ export default styled.div`
       flex-basis: 35%;
       max-width: 35%;
       position: relative;
-      z-index: 2;
+      z-index: 3;
       box-shadow: 7px 7px 40px 0 rgba(0,0,0,.4);
       padding: 2rem;
       border: 1px solid rgba(130, 130, 130, 0.59);
@@ -24,6 +24,13 @@ export default styled.div`
       &:last-child {
          align-self: flex-end;
          margin-top: -5%;
+      }
+      &-video {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
       }
       &-bg {
         background: url(${bgMap}) no-repeat 55% 100%;
@@ -86,11 +93,23 @@ export default styled.div`
    } 
   };
   @media only screen and (max-width: 768px) {
+  background-color: rgb(18,19,22);
    & .you {
       flex-basis: 60%;
       max-width: 60%;
       &:last-child {
          margin-top: 5%;   
+      }
+      &-video {
+        position: relative;
+        align-self: center;
+        left: 0;
+        transform: translate(0);
+        margin-top: 3.5rem;
+        max-width: 100%;
+      }
+      &-bg {
+        background-size: cover;
       }
    } 
   };

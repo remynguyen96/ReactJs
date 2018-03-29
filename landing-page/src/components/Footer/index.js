@@ -13,8 +13,7 @@ class Footer extends Component {
           <div className="bg-black"></div>
           <div className="footer">
             <h3 className="footer-title">
-              Seventy Financial Planning can help clients anywhere in the UK, however our main geographical areas are Harrogate, Leeds, York and anywhere throughout
-              North Yorkshire.
+              Seventy Financial Planning can help clients anywhere in the UK anywhere throughout North Yorkshire.
             </h3>
             <Contact />
             <div className="footer-map">

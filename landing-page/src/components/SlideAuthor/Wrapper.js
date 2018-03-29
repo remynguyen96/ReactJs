@@ -6,13 +6,15 @@ import bgAuthor from '../../images/bg-author.jpg';
 const { innerWidth } = window;
 const paddingSlider = 15;
 let widthSlider = 0;
-switch (true) {
-  case innerWidth > 1024:
-    widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
-  case innerWidth <= 1024:
-    widthSlider = innerWidth - ((innerWidth * paddingSlider / 100) * 2);
-  case innerWidth <= 414:
-    widthSlider = innerWidth;
+
+if (innerWidth > 1024) {
+  widthSlider = (innerWidth - ((innerWidth * paddingSlider / 100) * 2)) / 2;
+}
+if (innerWidth <= 1024) {
+  widthSlider = innerWidth - ((innerWidth * paddingSlider / 100) * 2);
+}
+if (innerWidth <= 414) {
+  widthSlider = innerWidth;
 }
 
 export default styled.div`
@@ -96,6 +98,7 @@ export default styled.div`
     @media only screen and (max-width: 768px) {
         & .author {
           &-player {
+             max-width: 100%;
              width: 500px;
              height: 400px;
           };
@@ -104,9 +107,17 @@ export default styled.div`
     @media only screen and (max-width: 414px) {
         & .author {
           &-player {
-             width: 500px;
-             height: 400px;
+             width: 400px;
+             height: 350px;    
+             margin-left: 6px;
           };
+          &-info {
+            padding: 2rem 2%;
+          }
+          &-list {
+            & .slick-list {
+              padding: 0;
+            }
         }
     };
 `;
