@@ -121,7 +121,7 @@ class Nav extends Component {
               <span className="mobl-icon"></span>
             </button>
             <div className={`mobl-main ${openMenu ? 'mobl-main-open' : ''}`}>
-              <ul className="list-menu">
+              <ul class="header-menu">
                 {listMenu.map(({name}, index) => (
                     <Link
                         key={arrComponent[index]}

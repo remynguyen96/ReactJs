@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import color from '../../utils/color-style';
+import bgMenu from '../../images/bg-menu.jpg';
 
 const active = `
    &::after {
@@ -146,9 +147,10 @@ export default styled.div`
         transition: all 300ms ease;
       }
      & .mobl {
-        position: relative;
+        position: fixed;
         z-index: 99;
         padding: 2rem;
+        width: 100%;
         &-logo {
            max-width: 25%;
         }
@@ -188,16 +190,29 @@ export default styled.div`
         }
         &-main {
           position: absolute;
-          visibility: hidden;
           top: 0;
           right: 0;
-          transition: all 300ms ease-in-out;
+          & .header-menu {
+            position: fixed;
+            flex-direction: column;
+            top: 5rem;
+            right: -32rem;
+            width: 320px;
+            height: 100vh;
+            background-color: red;
+            justify-content: flex-start;
+            margin-top: -5rem;
+            padding-top: 7rem;
+            background-color: #4F4F4F;
+            background: url(${bgMenu}) no-repeat center center;
+            background-size: cover;
+          }
+          & .header-menu-items {
+             line-height: 5rem;
+             flex-basis: 5%;
+          }
           &.mobl-main-open {
-            visibility: visible;
-            & .list-menu {
-                position: absolute;
-                flex-direction: column;
-                top: 5rem;
+            & .header-menu {
                 right: -5rem;
             }
           }
