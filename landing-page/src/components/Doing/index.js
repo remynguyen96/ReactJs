@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Motion, spring } from 'react-motion'
 import Wrapper from './Wrapper';
 import You from "./You";
 import { componentDoing } from '../../utils/mockData';
@@ -34,7 +33,7 @@ class Doing extends Component {
           <div className="you-bg"></div>
           <You title='Why do i need this' infomation={infomationYou1} />
           <div className="you-video" ref={(ref) => { this.elPlayer = ref }}></div>
-          <You title='Why are you selling' infomation={infomationYou2} />
+          <You position="right" title='Why are you selling' infomation={infomationYou2} />
         </Wrapper>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Zoom from 'react-reveal/Zoom';
 import Wrapper from './Wrapper';
 import Video from "./Video";
 import { componentVideo } from '../../utils/mockData';
@@ -39,7 +40,9 @@ class SlideVideo extends Component {
       <Wrapper id={componentVideo}>
         <div className="bg-barrier"></div>
         <div className="video-bg">
-          <h3 className="video-title">Slide Video Youtube</h3>
+          <Zoom bottom cascade>
+            <h3 className="video-title">Slide Video Youtube</h3>
+          </Zoom>
           <Video settings={settings} width={450} height={450} />
         </div>
       </Wrapper>

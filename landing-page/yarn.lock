@@ -5727,6 +5727,12 @@ react-redux@^5.0.7:
     loose-envify "^1.1.0"
     prop-types "^15.6.0"
 
+react-reveal@^1.2.1:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/react-reveal/-/react-reveal-1.2.1.tgz#b82b04603a095b020720016fa5cc25392fd61d81"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-scripts@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-1.1.1.tgz#279d449f7311fed910506987a1ade014027788a8"

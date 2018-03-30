@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import Slide from 'react-reveal/Slide';
 import Slider from 'react-slick';
 import { YoutubeApi } from '../../utils/youtube-api';
 
@@ -31,7 +32,9 @@ class Video extends Component {
           {dataVideo.map(({id, name}) => (
               <div key={id}>
                 <div className="yt-player" ref={(element) => { YoutubeApi({ element, videoId: id, width, height }) }}></div>
-                <h4 className="yt-title">{name}</h4>
+                <Slide bottom cascade>
+                  <h4 className="yt-title">{name}</h4>
+                </Slide>
               </div>
           ))}
         </Slider>

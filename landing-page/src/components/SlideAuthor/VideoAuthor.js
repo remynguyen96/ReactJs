@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types'
+import Rotate from 'react-reveal/Rotate';
 import Slider from 'react-slick';
 import { YoutubeApi } from '../../utils/youtube-api';
 
@@ -50,10 +51,12 @@ class VideoAuthor extends Component {
                      ref={(element) => { YoutubeApi({ element, videoId: id, width, height }) }}
                 >
                 </div>
-                <div className="author-info">
-                  <h4 className="author-name">{name}</h4>
-                  <p className="author-desc">{info}</p>
-                </div>
+                <Rotate bottom left>
+                  <div className="author-info">
+                    <h4 className="author-name">{name}</h4>
+                    <p className="author-desc">{info}</p>
+                  </div>
+                </Rotate>
               </div>
           ))}
         </Slider>

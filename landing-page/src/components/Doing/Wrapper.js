@@ -6,7 +6,7 @@ export default styled.div`
    display: flex;
    justify-content: space-between;
    flex-direction: column;
-   padding: 9% 10% 5%;
+   padding: 9% 10% 3%;
    background-color: rgba(0, 0, 0, 0.899);
    position: relative;
    & .you {

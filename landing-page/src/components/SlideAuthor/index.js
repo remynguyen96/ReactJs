@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Zoom from 'react-reveal/Zoom';
 import Wrapper from './Wrapper';
 import VideoAuthor from "./VideoAuthor";
 import { componentAuthor } from '../../utils/mockData';
@@ -32,7 +33,9 @@ class SlideAuthor extends Component {
         <Wrapper id={componentAuthor}>
           <div className="author-barrier"></div>
           <div className="author">
-            <h3 className="author-title">Meet Our Team</h3>
+            <Zoom bottom cascade>
+              <h3 className="author-title">Meet Our Team</h3>
+            </Zoom>
             <VideoAuthor settings={settings} width={350} height={350} />
           </div>
         </Wrapper>
