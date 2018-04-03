@@ -52,12 +52,17 @@ class VideoFull extends PureComponent {
   };
 
   render() {
+    const styleModal = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    };
     return (
         <WrapperVideo>
           {
             !(window.innerWidth <= 1024) && (
               <Fragment>
-                <Rodal width={window.innerWidth * 70 / 100} height={window.innerHeight * 70 / 100} closeOnEsc={true} animation='slideUp' visible={this.state.visible} onClose={this.hideVideo}>
+                <Rodal customStyles={styleModal} width={window.innerWidth * 70 / 100} height={window.innerHeight * 70 / 100} closeOnEsc={true} animation='slideUp' visible={this.state.visible} onClose={this.hideVideo}>
                   <div className="header-video-yt-modal" ref={(ref) => { this.elPlayer2 = ref }}></div>
                 </Rodal>
                 <button className="header-video-btn" onClick={this.showVideo}>

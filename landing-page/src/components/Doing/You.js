@@ -36,19 +36,11 @@ class You extends Component {
           <div className="you">
             <Rodal width={600} height={350} closeOnEsc={true} animation='door' visible={this.state.visible}
                    onClose={this.hideMore}>
-              <div>Show more here !!!!</div>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem consectetur dolore dolorem
-                eligendi, illum iusto minima nam natus nesciunt nisi reiciendis rem sunt voluptate voluptates! Dolor
-                eius
-                fuga quia!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem consectetur dolore dolorem
-                eligendi, illum iusto minima nam natus nesciunt nisi reiciendis rem sunt voluptate voluptates! Dolor
-                eius
-                fuga quia!</p>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam autem consectetur dolore dolorem
-                eligendi, illum iusto minima nam natus nesciunt nisi reiciendis rem sunt voluptate voluptates! Dolor
-                eius
-                fuga quia!</p>
+              <ul className="you-list you-modal">
+                {infomation.map((item) => (
+                    <li key={item} className="you-item">{item}</li>
+                ))}
+              </ul>
             </Rodal>
             <h3 className="you-til">{title}</h3>
             <section className="you-desc">

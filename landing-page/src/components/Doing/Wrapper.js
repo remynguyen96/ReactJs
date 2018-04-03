@@ -73,6 +73,11 @@ export default styled.div`
          list-style-type: decimal;
          color: ${color.white};
       }
+      &-modal {
+        .you-item {
+          color: #4E4E4E;
+        }
+      }
       &-more {
          font-size: 2.4rem;
          font-weight: 600;

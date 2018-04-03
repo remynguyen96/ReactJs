@@ -21,6 +21,10 @@ export default styled.div`
           transform: skewY(5deg);
           transform-origin: bottom right;
         }
+        &-yt-modal {
+          width: ${window.innerWidth * 60 / 100}px;
+          height: ${window.innerHeight * 60 / 100}px;
+        }
         &-btn {
           position: absolute;
           z-index: 6;
@@ -81,7 +85,7 @@ export default styled.div`
   };
   @media only screen and (max-width: 414px) {
     & .header-video {
-       padding-bottom: 85.25%;
+       padding-bottom: 85.25%;                               yt-modal
        &-yt {
          top: -7.8rem;
        }
