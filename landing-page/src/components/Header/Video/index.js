@@ -9,6 +9,7 @@ class VideoFull extends PureComponent {
   constructor(props) {
     super(props);
     this.elPlayer = null;
+    this.elPlayer2 = null;
     this.state = {
       visible: false,
     };
@@ -38,6 +39,12 @@ class VideoFull extends PureComponent {
 
   showVideo = () => {
     this.setState({ visible: true });
+    YoutubeApi({
+      videoId: this.props.videoId,
+      element: this.elPlayer2,
+      autoplay: 1,
+      showinfo: 1,
+    });
   };
 
   hideVideo = () => {
@@ -50,8 +57,8 @@ class VideoFull extends PureComponent {
           {
             !(window.innerWidth <= 1024) && (
               <Fragment>
-                <Rodal closeOnEsc={true} animation='slideUp' visible={this.state.visible} onClose={this.hideVideo}>
-                  <div>Video Here !!!!</div>
+                <Rodal width={window.innerWidth * 70 / 100} height={window.innerHeight * 70 / 100} closeOnEsc={true} animation='slideUp' visible={this.state.visible} onClose={this.hideVideo}>
+                  <div className="header-video-yt-modal" ref={(ref) => { this.elPlayer2 = ref }}></div>
                 </Rodal>
                 <button className="header-video-btn" onClick={this.showVideo}>
                   <i className="fa fa-play-circle header-video-icon" aria-hidden="true"></i>
