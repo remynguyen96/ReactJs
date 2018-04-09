@@ -9,7 +9,6 @@ import TextField from 'material-ui/TextField';
 import LoadingHOC from "../Contact/LoadingHOC";
 import ScrollPosition from "./ScrollPosition";
 
-
 const styles = theme => ({
     root: {
         display: 'flex',
