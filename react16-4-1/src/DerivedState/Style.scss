@@ -1,0 +1,12 @@
+.button {
+  position: relative;
+}
+
+.button:hover .tooltip {
+  display: block;
+}
+
+.button .tooltip {
+  display: none;
+  position: absolute;
+}
