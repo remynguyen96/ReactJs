@@ -1,30 +1,35 @@
 {
-  "name": "react16-4-1",
+  "name": "react16-typescript",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-redux": "^6.0.3",
     "immutable": "^3.8.2",
     "node-sass-chokidar": "^1.3.0",
     "npm-run-all": "^4.1.3",
-    "prop-types": "^15.6.1",
-    "ramda": "^0.25.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^4.0.8",
-    "react-scripts": "1.1.4",
+    "react-scripts-ts": "2.16.0",
     "redux": "^4.0.0",
     "reselect": "^3.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
-    "start-js": "set PORT=4200 && react-scripts start",
+    "start-js": "set PORT=4200 && react-scripts-ts start",
     "start": "npm-run-all -p watch-css start-js",
-    "build": "npm run build-css && react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.2",
+    "@types/node": "^10.3.6",
+    "@types/react": "^16.4.2",
+    "@types/react-dom": "^16.0.6",
+    "typescript": "^2.9.2"
   }
 }
