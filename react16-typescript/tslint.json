@@ -5,5 +5,11 @@
       "config/**/*.js",
       "node_modules/**/*.ts"
     ]
+  },
+  "rules": {
+    "member-access": false,
+    "ordered-imports": false,
+    "no-console": false,
+    "interface-name": [true, "never-prefix"]
   }
 }
