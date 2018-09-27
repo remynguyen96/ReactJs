@@ -1,5 +1,11 @@
 @charset 'UTF-8';
 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
 // 1. Configuration and helpers
 @import 'abstracts/styles';
 // 2. Vendors
