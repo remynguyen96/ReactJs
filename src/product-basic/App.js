@@ -1,6 +1,9 @@
 import React, { PureComponent } from 'react';
 import Rows from './Rows';
 import Styles from './Styles.scss';
+import LazyLoading from "../lazy-loading";
+import images from '../lazy-loading/image.jpg';
+import UndoRedoApp from "../undo-redo";
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -21,8 +24,14 @@ export default class App extends PureComponent {
     if (listData.length === 0) return null;
     return (
       <div className={Styles.app}>
+        <UndoRedoApp />
         <h3 className={Styles.title}>List Product In One Year</h3>
         <Rows listData={listData} />
+        <LazyLoading
+          src={images}
+          width="100%"
+          height="auto"
+        />
       </div>
     );
   }

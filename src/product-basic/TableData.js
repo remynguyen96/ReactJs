@@ -11,8 +11,8 @@ const TableData = ({ listData, searchTxt, hasFilter }) => (
           <ul className={Styles.productsTable}>
             {Object.keys(products).map(product => {
               const price = products[product];
-              if (!convertStr(product).includes(convertStr(searchTxt))) return;
-              if (hasFilter && parseFloat(price.slice(1)) <= 60) return;
+              if (!convertStr(product).includes(convertStr(searchTxt))) return null;
+              if (hasFilter && parseFloat(price.slice(1)) <= 60) return null;
               return (
                 <li className={Styles.productsItems} key={product}>
                   <span className={Styles.productsItemsName}>{product}: </span>
