@@ -2,6 +2,14 @@ import React, { PureComponent } from 'react';
 import Styles from './Styles.scss';
 import UndoRedo from "./UndoRedo";
 
+const createMarkup = () => ({
+  __html: '<i>First &shortmid; Second</i>',
+});
+
+function MyComponent() {
+  return <div dangerouslySetInnerHTML={createMarkup()}></div>
+}
+
 const initialize = {
   step1: 'Step 1: Create a new value and apply it !',
   step2: 'Step 2: Continue create a new value and apply it !',
@@ -49,9 +57,9 @@ export default class UndoRedoApp extends PureComponent {
         valApply: txt,
         process: this.checkProcess(process),
         txt: '',
-        undo: [...undo, valApply],
+        undo: undo.length === 0 ? [valApply] : [...undo, valApply],
         redo: [txt],
-      }
+      };
     });
   };
 
@@ -61,7 +69,7 @@ export default class UndoRedoApp extends PureComponent {
 
   handleMethodUndo() {
     const { undo } = this.state;
-    if (undo.length === 0) return null;
+    if (undo.length === 0) return;
     /* Change value of state but don't render template */
     const valUndo = undo.pop();
     valUndo && this.setState(prevState => {
@@ -75,12 +83,12 @@ export default class UndoRedoApp extends PureComponent {
 
   handleMethodRedo() {
     const { redo } = this.state;
-    if (redo.length < 2) return null;
+    if (redo.length < 2) return;
     const valRedo = redo.pop();
     const state = redo[redo.length - 1];
     !!valRedo && this.setState(prevState => ({
       valApply: state,
-      undo: [...new Set([prevState.undo, valRedo])],
+      undo: [...new Set([...prevState.undo, valRedo])],
     }));
   };
 
@@ -94,7 +102,7 @@ export default class UndoRedoApp extends PureComponent {
                  required
                  value={txt}
                  className={Styles.inputTxt}
-                 onChange={this.handleChangeTxt}  />
+                 onChange={this.handleChangeTxt} />
           <button type="submit" className={Styles.btnSubmit}>Apply</button>
           <button type="button" onClick={this.clearStash} className={Styles.btnClear}>Clear</button>
         </form>
@@ -102,6 +110,7 @@ export default class UndoRedoApp extends PureComponent {
           handleMethodUndo={this.handleMethodUndo}
           handleMethodRedo={this.handleMethodRedo}
         />
+        <MyComponent />
         <p className={Styles.processDoc}>{process}</p>
       </div>
     );

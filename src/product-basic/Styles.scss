@@ -22,17 +22,19 @@
 .products {
   &-title {
     @include titl(20px, left, 600, #363636);
+    margin-bottom: 15px;
   }
   &-table {
     display: flex;
     flex-direction: column;
+    margin: 0 0 15px 15px;
   }
   &-items {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px;
     &-name {
-      @include titl(18px, left, 400, #3E744B);
+      @include titl(16px, left, 400, #3E744B);
     }
     &-price {
       color: #7E7E7C;
@@ -83,5 +85,3 @@
     }
   }
 }
-
-
