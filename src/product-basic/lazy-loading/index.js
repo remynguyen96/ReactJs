@@ -9,7 +9,8 @@ const elementInViewport = (el) => {
     top >= 0 && left >= 0 && top <= (innerHeight || clientHeight)
   );
 };
-export default class LazyLoading extends PureComponent {
+
+class LazyLoading extends PureComponent {
   constructor(prop) {
     super(prop);
     this.imgRef = createRef();
@@ -58,4 +59,4 @@ export default class LazyLoading extends PureComponent {
     );
   }
 }
-
+export default LazyLoading;

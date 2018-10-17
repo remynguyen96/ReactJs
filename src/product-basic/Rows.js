@@ -5,7 +5,7 @@ import Search from "./Search";
 import Filter from "./Filter";
 
 let timeOut;
-export default class Rows extends PureComponent {
+class Rows extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {
@@ -13,6 +13,7 @@ export default class Rows extends PureComponent {
       searchTxt: '',
     };
   };
+
   /**
    @Description: Search Method
    */
@@ -48,3 +49,4 @@ export default class Rows extends PureComponent {
     );
   }
 }
+export default Rows

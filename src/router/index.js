@@ -1,27 +1,47 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Loadable from 'react-loadable';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import NotFound from "../product-basic/NotFound";
+import { Navigation } from "./Navigation";
+import { Spinner } from "./Spinner";
 
-const Loading = () => <div>Loading ...</div>;
+const menu = [
+  { link: '/', name: 'Homepage' },
+  { link: '/hocs', name: 'Hocs' },
+  { link: '/context', name: 'Context' },
+  { link: '/not-found-page', name: 'NotFound' },
+];
 
-const Home = Loadable({
+const HomeComponent = Loadable({
   loader: () => import('../product-basic/App'),
-  loading: Loading,
+  loading: Spinner,
 });
 
-// const NotFound = Loadable({
-//   loader: () => import('../product-basic/NotFound'),
-//   loading: Loading,
-// });
+const HocsComponent = Loadable({
+  loader: () => import('../hocs'),
+  loading: Spinner,
+});
+
+const ContextApi = Loadable({
+  loader: () => import('../Context'),
+  loading: Spinner,
+});
+
+const NotFoundComponent = Loadable({
+  loader: () => import('../NotFound'),
+  loading: Spinner,
+});
 
 const AppRouter = () => (
   <Router>
-    <Switch>
-      <Route exac path='/' component={Home} />
-      {/*<Route component={NotFound} />*/}
-      <Route component={NotFound} />
-    </Switch>
+    <Fragment>
+      <Navigation menu={menu} />
+      <Switch>
+        <Route exact path='/' component={HomeComponent} />
+        <Route exact path='/hocs' component={HocsComponent} />
+        <Route exact path='/context' component={ContextApi} />
+        <Route component={NotFoundComponent} />
+      </Switch>
+    </Fragment>
   </Router>
 );
 export default AppRouter;

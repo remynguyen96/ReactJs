@@ -7,7 +7,7 @@ const createMarkup = () => ({
 });
 
 function MyComponent() {
-  return <div dangerouslySetInnerHTML={createMarkup()}></div>
+  return <div dangerouslySetInnerHTML={createMarkup()}></div>;
 }
 
 const initialize = {
@@ -24,7 +24,7 @@ const initialState = {
   valApply: '',
 };
 
-export default class UndoRedoApp extends PureComponent {
+class UndoRedoApp extends PureComponent {
   constructor(props) {
     super(props);
     this.state = initialState;
@@ -116,3 +116,5 @@ export default class UndoRedoApp extends PureComponent {
     );
   }
 }
+
+export default UndoRedoApp;

@@ -1,12 +1,13 @@
 import React, { PureComponent } from 'react';
-import Styles from './StylesNotFound.scss';
+import { StrictModeComponent } from '../hocs/StrictModeComponent';
+import Styles from './Styles.scss';
 
-export default class NotFound extends PureComponent {
+class NotFound extends PureComponent {
   render() {
     return (
       <div>
         {/*include the svg assets later used in the project*/}
-        <svg style={{display: 'none'}}>
+        <svg style={{ display: 'none' }}>
           <symbol id="keyhole" xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 26.458333 26.458334">
             <g transform="translate(0 -270.542)">
               <circle cx="13.229" cy="279.141" r="8.599" fill="#f1eedb" paint0rder="stroke fill markers" />
@@ -70,3 +71,5 @@ export default class NotFound extends PureComponent {
     );
   }
 }
+
+export default StrictModeComponent(NotFound);
