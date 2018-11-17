@@ -1,0 +1,16 @@
+[
+  {
+    "id": "footer.copyright",
+    "description": "Copyright text link in footer",
+    "defaultMessage": "© 2018 Bản quyền thuộc về Home Credit",
+    "file": "src\\components\\Footer\\Footer.js",
+    "start": {
+      "line": 9,
+      "column": 13
+    },
+    "end": {
+      "line": 13,
+      "column": 3
+    }
+  }
+]

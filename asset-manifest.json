@@ -1,0 +1,14 @@
+{
+  "client.js": "/assets/client.906955dd.js",
+  "login.js": "/assets/login.390db0a5.chunk.js",
+  "login~not-found~report~thank.js": "/assets/login~not-found~report~thank.d2a9bdf1.chunk.js",
+  "logo.png": "/assets/dc1ace94.png",
+  "not-found.js": "/assets/not-found.0023f3a0.chunk.js",
+  "polyfills.js": "/assets/polyfills.ac2a785b.chunk.js",
+  "report.js": "/assets/report.20f570f2.chunk.js",
+  "thank.js": "/assets/thank.86c57d36.chunk.js",
+  "vendors.js": "/assets/vendors.c60de928.chunk.js",
+  "vendors~login.js": "/assets/vendors~login.816353ec.chunk.js",
+  "vendors~login~not-found~report~thank.js": "/assets/vendors~login~not-found~report~thank.d3af0472.chunk.js",
+  "vendors~polyfills.js": "/assets/vendors~polyfills.7078fd3e.chunk.js"
+}

@@ -1,0 +1,31 @@
+{
+  "client": [
+    "/assets/vendors.c60de928.chunk.js",
+    "/assets/client.906955dd.js"
+  ],
+  "polyfills": [
+    "/assets/vendors~polyfills.7078fd3e.chunk.js",
+    "/assets/polyfills.ac2a785b.chunk.js"
+  ],
+  "not-found": [
+    "/assets/vendors~login~not-found~report~thank.d3af0472.chunk.js",
+    "/assets/login~not-found~report~thank.d2a9bdf1.chunk.js",
+    "/assets/not-found.0023f3a0.chunk.js"
+  ],
+  "login": [
+    "/assets/vendors~login~not-found~report~thank.d3af0472.chunk.js",
+    "/assets/vendors~login.816353ec.chunk.js",
+    "/assets/login~not-found~report~thank.d2a9bdf1.chunk.js",
+    "/assets/login.390db0a5.chunk.js"
+  ],
+  "report": [
+    "/assets/vendors~login~not-found~report~thank.d3af0472.chunk.js",
+    "/assets/login~not-found~report~thank.d2a9bdf1.chunk.js",
+    "/assets/report.20f570f2.chunk.js"
+  ],
+  "thank": [
+    "/assets/vendors~login~not-found~report~thank.d3af0472.chunk.js",
+    "/assets/login~not-found~report~thank.d2a9bdf1.chunk.js",
+    "/assets/thank.86c57d36.chunk.js"
+  ]
+}

@@ -1,0 +1,56 @@
+[
+  {
+    "id": "navigation.about",
+    "description": "About link in header",
+    "defaultMessage": "About",
+    "message": "",
+    "files": [
+      "src/components/Navigation/Navigation.js"
+    ]
+  },
+  {
+    "id": "navigation.contact",
+    "description": "Contact link in header",
+    "defaultMessage": "Contact",
+    "message": "",
+    "files": [
+      "src/components/Navigation/Navigation.js"
+    ]
+  },
+  {
+    "id": "navigation.login",
+    "description": "Log in link in header",
+    "defaultMessage": "Log in",
+    "message": "",
+    "files": [
+      "src/components/Navigation/Navigation.js"
+    ]
+  },
+  {
+    "id": "navigation.separator.or",
+    "description": "Last separator in list, lowercase \"or\"",
+    "defaultMessage": "or",
+    "message": "",
+    "files": [
+      "src/components/Navigation/Navigation.js"
+    ]
+  },
+  {
+    "id": "navigation.signup",
+    "description": "Sign up link in header",
+    "defaultMessage": "Sign up",
+    "message": "",
+    "files": [
+      "src/components/Navigation/Navigation.js"
+    ]
+  },
+  {
+    "id": "footer.copyright",
+    "description": "Copyright text link in footer",
+    "defaultMessage": "© 2018 Bản quyền thuộc về Home Credit",
+    "message": "© 2018 Bản quyền thuộc về Home Credit",
+    "files": [
+      "src/components/Footer/Footer.js"
+    ]
+  }
+]

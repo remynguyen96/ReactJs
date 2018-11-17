@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../fonts/Open_Sans/OpenSans-Light.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../fonts/Open_Sans/OpenSans-Italic.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../fonts/Open_Sans/OpenSans-Regular.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'), url(../fonts/Open_Sans/OpenSans-SemiBold.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../fonts/Open_Sans/OpenSans-Bold.ttf) format('opentype');
+}
+
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Material Icons'), local('MaterialIcons-Regular'), url(../fonts/material-icons.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: Material Icons, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased; /* Support for all WebKit browsers. */
+  text-rendering: optimizeLegibility; /* Support for Safari and Chrome. */
+  -moz-osx-font-smoothing: grayscale; /* Support for Firefox. */
+  font-feature-settings: 'liga'; /* Support for IE. */
+}

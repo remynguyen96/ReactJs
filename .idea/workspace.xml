@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7ddc4a27-5a48-495f-8750-8782a5a7e3b7" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/asset-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/asset-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chunk-manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/chunk-manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chunks/login~not-found~report~thank.js" beforeDir="false" afterPath="$PROJECT_DIR$/chunks/login~not-found~report~thank.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chunks/login~not-found~report~thank.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/chunks/login~not-found~report~thank.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chunks/report.js" beforeDir="false" afterPath="$PROJECT_DIR$/chunks/report.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chunks/report.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/chunks/report.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/client.459c8f2e.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/client.459c8f2e.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/login.3d602aeb.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/login.3d602aeb.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/login~not-found~report~thank.b351a4e7.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/login~not-found~report~thank.b351a4e7.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/not-found.4e5e3489.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/not-found.4e5e3489.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/polyfills.7d1ae262.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/polyfills.7d1ae262.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/report.a71285c9.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/report.a71285c9.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/thank.1f2bd525.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/thank.1f2bd525.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors.4f828e94.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors.4f828e94.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~login.e62ef4dc.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~login.e62ef4dc.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~login~not-found~report~thank.32ef93e1.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~login~not-found~report~thank.32ef93e1.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~polyfills.479ba96e.chunk.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/vendors~polyfills.479ba96e.chunk.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/server.js.map" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-46796058">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="gitignore" value="1" />
+          <entry key="js" value="11" />
+          <entry key="json" value="7" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Git file" value="1" />
+          <entry key="JSON" value="7" />
+          <entry key="JavaScript" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="gitignore" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Git file" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="112">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>home</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="D:/Other/important.txt" />
+        <option value="D:/Other/important (2).txt" />
+        <option value="D:/Other/Ubutu" />
+        <option value="D:/Other/edetail.txt" />
+        <option value="D:/Other/Account" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="NodePackageJsonFileManager">
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/package.json" />
+    </packageJsonPaths>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="754" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="ReactJs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ReactJs" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="editorconfig.notification" value="null" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.prettier" value="true" />
+    <property name="node.js.path.for.package.prettier" value="project" />
+    <property name="node.js.selected.package.prettier" value="" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Project\ReactJs" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Project\ReactJs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7ddc4a27-5a48-495f-8750-8782a5a7e3b7" name="Default" comment="" />
+      <created>1523721634478</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1523721634478</updated>
+      <workItem from="1523721706370" duration="2204000" />
+      <workItem from="1523798465365" duration="1494000" />
+      <workItem from="1523884560394" duration="1208000" />
+      <workItem from="1542416468920" duration="3973000" />
+      <workItem from="1542426261676" duration="53000" />
+      <workItem from="1542426336944" duration="137000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="9069000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24627976" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.46859902" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://D:/Other/important.txt" />
+    <entry file="file://D:/Other/important (2).txt" />
+    <entry file="file://D:/Other/jquery-javascript.txt" />
+    <entry file="file://D:/Other/Ubutu" />
+    <entry file="file://D:/Other/edetail.txt" />
+    <entry file="file://D:/Other/BasicMongoDB.txt" />
+    <entry file="file://D:/Other/Account" />
+    <entry file="file://$PROJECT_DIR$/chunks/0.js" />
+    <entry file="file://$PROJECT_DIR$/asset-manifest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="140">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="105" column="8" lean-forward="true" selection-start-line="105" selection-start-column="8" selection-end-line="105" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chunks/not-found.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chunks/login~not-found~report~thank.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret column="201" selection-start-column="201" selection-end-column="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chunks/thank.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chunks/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret column="643" selection-start-column="643" selection-end-column="643" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "navigation.about",
+    "description": "About link in header",
+    "defaultMessage": "About",
+    "file": "src\\components\\Navigation\\Navigation.js",
+    "start": {
+      "line": 9,
+      "column": 9
+    },
+    "end": {
+      "line": 13,
+      "column": 3
+    }
+  },
+  {
+    "id": "navigation.contact",
+    "description": "Contact link in header",
+    "defaultMessage": "Contact",
+    "file": "src\\components\\Navigation\\Navigation.js",
+    "start": {
+      "line": 14,
+      "column": 11
+    },
+    "end": {
+      "line": 18,
+      "column": 3
+    }
+  },
+  {
+    "id": "navigation.login",
+    "description": "Log in link in header",
+    "defaultMessage": "Log in",
+    "file": "src\\components\\Navigation\\Navigation.js",
+    "start": {
+      "line": 19,
+      "column": 9
+    },
+    "end": {
+      "line": 23,
+      "column": 3
+    }
+  },
+  {
+    "id": "navigation.separator.or",
+    "description": "Last separator in list, lowercase \"or\"",
+    "defaultMessage": "or",
+    "file": "src\\components\\Navigation\\Navigation.js",
+    "start": {
+      "line": 24,
+      "column": 6
+    },
+    "end": {
+      "line": 28,
+      "column": 3
+    }
+  },
+  {
+    "id": "navigation.signup",
+    "description": "Sign up link in header",
+    "defaultMessage": "Sign up",
+    "file": "src\\components\\Navigation\\Navigation.js",
+    "start": {
+      "line": 29,
+      "column": 10
+    },
+    "end": {
+      "line": 33,
+      "column": 3
+    }
+  }
+]
