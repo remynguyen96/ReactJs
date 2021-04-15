@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export function Grudge({ grudge, onForgive }) {
+export const Grudge = memo(({ grudge, onForgive }) => {
   const forgive = () => onForgive(grudge.id);
-
   console.log('Rendering Grudge', grudge.id);
 
   return (
@@ -11,10 +10,9 @@ export function Grudge({ grudge, onForgive }) {
       <p>{grudge.reason}</p>
       <div className="Grudge-controls">
         <label className="Grudge-forgiven">
-          <input type="checkbox" checked={grudge.forgiven} onChange={forgive} />{' '}
-          Forgiven
+          <input type="checkbox" checked={grudge.forgiven} onChange={forgive} /> Forgiven
         </label>
       </div>
     </article>
   );
-}
+});

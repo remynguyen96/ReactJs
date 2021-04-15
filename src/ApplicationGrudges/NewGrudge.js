@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, memo } from 'react';
 
-export function NewGrudge({ onSubmit }) {
+export const NewGrudge = memo(({ onSubmit }) => {
   const [person, setPerson] = useState('');
   const [reason, setReason] = useState('');
 
@@ -10,24 +10,24 @@ export function NewGrudge({ onSubmit }) {
   };
 
   console.log('Rendering NewGrudge!!');
-  
+
   return (
-   <form className="NewGrudge" onSubmit={handleChange}>
+    <form className="NewGrudge" onSubmit={handleChange}>
       <input
         className="NewGrudge-input"
         placeholder="Person"
         type="text"
         value={person}
-        onChange={event => setPerson(event.target.value)}
+        onChange={(event) => setPerson(event.target.value)}
       />
       <input
         className="NewGrudge-input"
         placeholder="Reason"
         type="text"
         value={reason}
-        onChange={event => setReason(event.target.value)}
+        onChange={(event) => setReason(event.target.value)}
       />
       <input className="NewGrudge-submit button" type="submit" />
     </form>
   );
-}
+});
