@@ -1,12 +1,12 @@
 import React, { useState, memo } from 'react';
 
-export const NewGrudge = memo(({ onSubmit }) => {
+export const NewGrudge = memo(() => {
   const [person, setPerson] = useState('');
   const [reason, setReason] = useState('');
 
   const handleChange = (event) => {
     event.preventDefault();
-    onSubmit({ person, reason });
+    // onSubmit({ person, reason });
   };
 
   console.log('Rendering NewGrudge!!');

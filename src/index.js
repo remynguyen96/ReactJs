@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 // import App from './App';
 // import Count from './Count';
+import { GrudgesProvider } from './ApplicationGrudges/GrudesContext';
 import ApplicationGrudges from './ApplicationGrudges';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Count max={15} step={5} /> */}
-    <ApplicationGrudges />
+    <GrudgesProvider>
+      <ApplicationGrudges />
+    </GrudgesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
