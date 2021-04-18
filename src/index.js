@@ -7,22 +7,23 @@ import './index.css';
 
 // import Count from './Count';
 
-// import { GrudgesProvider } from './ApplicationGrudges/GrudesContext';
-// import ApplicationGrudges from './ApplicationGrudges';
+import { GrudgesProvider } from './ApplicationGrudges/GrudesContext';
+import ApplicationGrudges from './ApplicationGrudges';
 
-import ApplicationStartWars from './ApplicationStartWars';
+// import ApplicationStartWars from './ApplicationStartWars';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Count max={15} step={5} /> */}
 
-    {/* <GrudgesProvider>
+    <GrudgesProvider>
       <ApplicationGrudges />
-    </GrudgesProvider> */}
-    <Router>
+    </GrudgesProvider>
+
+    {/* <Router>
       <ApplicationStartWars />
-    </Router>
+    </Router> */}
   </React.StrictMode>,
   document.getElementById('root')
 );
