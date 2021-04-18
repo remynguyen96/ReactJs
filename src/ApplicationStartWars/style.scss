@@ -92,7 +92,8 @@ input[type='submit'] {
     color: lighten($font-color, 10%);
   }
   margin: 0.5em auto;
-  max-width: 800px;
+  padding: 0 64px;
+  max-width: 100%;
 
   main {
     display: flex;
@@ -100,8 +101,10 @@ input[type='submit'] {
 }
 
 .sidebar {
-  width: 100%;
-  flex: 1;
+  width: 60%;
+}
+.character-view {
+  width: 40%;
 }
 
 .CharacterView {
@@ -131,4 +134,8 @@ input[type='submit'] {
   li {
     padding: 1em;
   }
+}
+
+li {
+  line-height: 32px;
 }

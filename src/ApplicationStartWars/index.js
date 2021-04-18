@@ -1,6 +1,9 @@
-import { isFunction } from 'lodash';
 import React, { useReducer, useCallback } from 'react';
+import { Route } from 'react-router-dom';
+import { isFunction } from 'lodash';
+
 import { CharacterList } from './CharacterList';
+import { CharacterView } from './CharacterView';
 import endpoint from './endpoint';
 
 import './style.scss';
@@ -77,6 +80,9 @@ const ApplicationStartWars = () => {
           <button onClick={onClick}>Fetch Characters</button>
           {loading ? <p>Loading ...</p> : <CharacterList characters={characters} />}
           {error && <p className="error">{error.message}</p>}
+        </section>
+        <section className="character-view">
+          <Route path="/characters/:id" component={CharacterView} />
         </section>
       </main>
     </div>
