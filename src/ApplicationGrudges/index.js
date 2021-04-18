@@ -2,7 +2,7 @@ import React from 'react';
 
 import { NewGrudge } from './NewGrudge';
 import { Grudges } from './Grudges';
-import './style.css';
+import './style.scss';
 
 export default function ApplicationGrudges() {
   return (

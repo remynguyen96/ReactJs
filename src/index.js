@@ -1,18 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import './index.css';
 // import App from './App';
+
 // import Count from './Count';
-import { GrudgesProvider } from './ApplicationGrudges/GrudesContext';
-import ApplicationGrudges from './ApplicationGrudges';
+
+// import { GrudgesProvider } from './ApplicationGrudges/GrudesContext';
+// import ApplicationGrudges from './ApplicationGrudges';
+
+import ApplicationStartWars from './ApplicationStartWars';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <Count max={15} step={5} /> */}
-    <GrudgesProvider>
+
+    {/* <GrudgesProvider>
       <ApplicationGrudges />
-    </GrudgesProvider>
+    </GrudgesProvider> */}
+    <Router>
+      <ApplicationStartWars />
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
