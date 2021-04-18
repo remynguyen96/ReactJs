@@ -1,36 +1,67 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useReducer } from 'react';
 import { CharacterList } from './CharacterList';
 import endpoint from './endpoint';
-// import { dummyData } from './dummy-data';
 
 import './style.scss';
 
+const LOADING = 'LOADING';
+const FETCH_API_SUCCESS = 'FETCH_API_SUCCESS';
+const FETCH_API_ERROR = 'FETCH_API_ERROR';
+const initialState = {
+  response: null,
+  error: null,
+  loading: true,
+};
+
+const fetchReducer = (state, action) => {
+  switch (action.type) {
+    case LOADING:
+      return {
+        loading: true,
+        response: null,
+        error: null,
+      };
+    case FETCH_API_SUCCESS:
+      return {
+        response: action.payload.response,
+        loading: false,
+        error: null,
+      };
+    case FETCH_API_ERROR:
+      return {
+        error: action.payload.error,
+        response: null,
+        loading: false,
+      };
+    default:
+      return state;
+  }
+};
+
 const useFetch = (apiEndpoint) => {
-  const [response, setResponse] = useState(null);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [state, dispatch] = useReducer(fetchReducer, initialState);
 
   useEffect(() => {
+    dispatch({ type: LOADING });
+
     (async () => {
       try {
-        const response = await fetch(apiEndpoint);
-        const data = await response.json();
+        let response = await fetch(apiEndpoint);
+        response = await response.json();
 
-        setResponse(data);
+        dispatch({ type: FETCH_API_SUCCESS, payload: { response } });
       } catch (error) {
-        setError(error.message);
-      } finally {
-        setLoading(false);
+        dispatch({ type: FETCH_API_ERROR, payload: { error } });
       }
     })();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [apiEndpoint]);
 
-  return { loading, error, response };
+  return state;
 };
 
 const ApplicationStartWars = () => {
-  const { error, loading, response } = useFetch(`${endpoint}/characters`);
+  const state = useFetch(`${endpoint}/characters`);
+  const { error, loading, response } = state;
   const characters = (response && response.characters) || [];
 
   return (
@@ -41,7 +72,7 @@ const ApplicationStartWars = () => {
       <main>
         <section className="sidebar">
           {loading ? <p>Loading ...</p> : <CharacterList characters={characters} />}
-          {error && <p className="error">{error}</p>}
+          {error && <p className="error">{error.message}</p>}
         </section>
       </main>
     </div>
