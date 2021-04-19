@@ -1,0 +1,212 @@
+{
+  "vim.leader": " ",
+  "vim.easymotion": true,
+  "vim.surround": true,
+  "vim.sneak": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "editor.lineNumbers": "relative",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": [":nohl"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["lineHighlightBookmark.toogleBookmarks"]
+    },
+    {
+      "before": ["<leader>", "c", "b"],
+      "commands": ["lineHighlightBookmark.clearAllBookmarks"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": ["lineHighlightBookmark.navigateToNextBookmark"]
+    },
+    {
+      "before": ["<C-m>"],
+      "commands": ["lineHighlightBookmark.navigateToPrevBookmark"]
+    },
+
+    {
+      "before": ["leader", "e"],
+      "commands": ["workbench.action.files.revert"]
+    },
+    {
+      "before": ["leader", "s"],
+      "commands": ["workbench.action.files.save"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+
+  "window.zoomLevel": 0,
+  "breadcrumbs.enabled": true,
+  "workbench.editor.labelFormat": "default",
+  "workbench.editor.showTabs": true,
+  "workbench.activityBar.visible": true,
+  "workbench.editor.enablePreview": false,
+  "workbench.colorTheme": "Dracula",
+  "workbench.panel.defaultLocation": "right",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Editor Tweak
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "editor.suggestSelection": "first",
+  "editor.renderIndentGuides": true,
+  "editor.codeLens": false,
+  "editor.fontFamily": "JetBrains Mono", // Fira Code
+  "editor.fontLigatures": true,
+  "editor.fontSize": 16,
+  "terminal.integrated.fontSize": 16,
+  "editor.cursorBlinking": "solid",
+  "editor.lineHeight": 36,
+  "editor.wordWrap": "off",
+  "editor.wordWrapColumn": 120,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.renderWhitespace": "none",
+  "editor.tabCompletion": "on",
+
+  "files.trimTrailingWhitespace": true,
+  "files.autoSave": "off",
+  "files.eol": "\n",
+  "explorer.compactFolders": false,
+
+  // Prettier
+  "prettier.printWidth": 120,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "all",
+  "prettier.eslintIntegration": true,
+  "prettier.semi": true,
+
+  "gitlens.hovers.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.statusBar.enabled": false,
+  "gitlens.currentLine.enabled": true,
+  "gitlens.blame.heatmap.enabled": false,
+  "gitlens.mode.statusBar.enabled": false,
+  "gitlens.blame.highlight.enabled": false,
+  "gitlens.hovers.currentLine.over": "line",
+  "git.path": "/usr/bin/git",
+  "terminal.integrated.shell.osx": "zsh",
+  "terminal.integrated.drawBoldTextInBrightColors": false,
+  "terminal.integrated.fontWeightBold": "600",
+
+  "zenMode.hideTabs": false,
+  "zenMode.hideLineNumbers": false,
+
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": true,
+    // For TSLint
+    "source.fixAll.tslint": true,
+    // For Stylelint
+    "source.fixAll.stylelint": true
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+
+  // "sync.gist": "d68162adf391b733e13691a2ca65636f",
+
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/package-lock.json": true
+  },
+
+  "screencastMode.fontSize": 24,
+  "screencastMode.keyboardOverlayTimeout": 750,
+  "screencastMode.verticalOffset": 10,
+
+  "files.associations": {
+    "cmath": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "fstream": "cpp",
+    "sstream": "cpp",
+    "iostream": "cpp",
+    "__bit_reference": "cpp",
+    "__config": "cpp",
+    "__debug": "cpp",
+    "__errc": "cpp",
+    "__functional_base": "cpp",
+    "__hash_table": "cpp",
+    "__locale": "cpp",
+    "__mutex_base": "cpp",
+    "__node_handle": "cpp",
+    "__nullptr": "cpp",
+    "__split_buffer": "cpp",
+    "__string": "cpp",
+    "__threading_support": "cpp",
+    "__tuple": "cpp",
+    "algorithm": "cpp",
+    "array": "cpp",
+    "atomic": "cpp",
+    "bit": "cpp",
+    "bitset": "cpp",
+    "cctype": "cpp",
+    "chrono": "cpp",
+    "complex": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "exception": "cpp",
+    "functional": "cpp",
+    "initializer_list": "cpp",
+    "iomanip": "cpp",
+    "ios": "cpp",
+    "iosfwd": "cpp",
+    "istream": "cpp",
+    "iterator": "cpp",
+    "limits": "cpp",
+    "locale": "cpp",
+    "memory": "cpp",
+    "mutex": "cpp",
+    "new": "cpp",
+    "optional": "cpp",
+    "ostream": "cpp",
+    "ratio": "cpp",
+    "stack": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "typeinfo": "cpp",
+    "unordered_map": "cpp",
+    "utility": "cpp"
+  }
+}
