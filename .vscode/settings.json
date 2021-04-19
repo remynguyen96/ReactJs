@@ -1,3 +1,5 @@
+
+
 {
   "vim.leader": " ",
   "vim.easymotion": true,
@@ -43,12 +45,16 @@
 
     {
       "before": ["leader", "e"],
-      "commands": ["workbench.action.files.revert"]
+      "commands": [
+        "workbench.action.files.revert"
+      ]
     },
     {
       "before": ["leader", "s"],
-      "commands": ["workbench.action.files.save"]
-    }
+      "commands": [
+          "workbench.action.files.save",
+      ]
+    },
   ],
   "vim.handleKeys": {
     "<C-a>": false,
